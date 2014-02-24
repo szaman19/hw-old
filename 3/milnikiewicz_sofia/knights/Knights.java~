@@ -1,0 +1,20 @@
+import java.io.*;
+import java.util.*;
+
+class Knights{
+
+    private char[][] board;
+    
+    public Knights(int n){
+	board = new char[n][n];	
+    }
+
+    public void solveKnights(int nummoves, int x, int y){
+	board[x][y] = move_number;
+	if (nummoves == ((n*n)-1)){
+	    System.out.println(board.toString());
+	}
+	else
+	    for 
+
+}
