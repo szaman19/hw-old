@@ -1,0 +1,38 @@
+Set 3
+1. loc1.getRow();
+2. false
+3. (4,4)
+4. southeast
+5. It returns the next adjacent location in the direction of the given parameter.
+
+Set 4
+1. You can get the size of the ArrayList returned by getOccupiedLocations().
+   You can subtract the size from the total area of the grid.
+2. gr.isValid(new Location(10,10));
+3. Grid is an interface, you can find the code in all class files that implement it
+4. Arrays must be sized when they are initialized, ArrayLists don't, so ArrayLists are more flexible in that sense. 
+
+Set 5
+1. color, direction, and location
+2. blue and NORTH
+3. Actors need instance variables and already implemented methods, something that an interface cannot do.
+4. No
+   No
+   Yes
+5. setDirection(getDirection() + 90);
+
+Set 6
+1. if(!gr.isValid(next)) 
+	   return false; 
+2. Actor neighbor = gr.get(next); 
+   return (neighbor == null) || (neighbor instanceof Flower); 
+3. isValid and get, because you need to check if you can move to the next location, and you need what the next location is.
+4. getAdjacentLocation
+5. getLocation, getDirection, getGrid
+6. It will remove itself from the grid.
+7. Yes, because you need to store the old location. getLocation() would update with the current location.
+8. Easier to tell what bug left which flower.
+9. Not if called from the Actor class, yes if called in the Bug class
+10.Flower flower = new Flower(getColor()); 
+   flower.putSelfInGrid(gr, loc);
+11.4
