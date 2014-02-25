@@ -1,0 +1,25 @@
+Set 1:
+
+q1:
+sidelength is an integer that represents how many steps a bug can take before it is required for
+it to rotate which determines the size of the box the bug travels in
+q2:
+steps represent the current number of steps that the bug has currently taken in this side.
+Once it reaches the sidelength of the bug, then the bug turns and the steps is reset back to 0
+q3:
+the turn method is called on twice because one turn is only 45 degrees.  Calling on it twice
+is necessary to have the bug rotate a full 90 degrees to form a box
+q4:
+It can be called because boxbug extends the code of a bug.  The move method is in the super class
+bug so each sub class inherits the methods and instance variables of its super
+q5:
+The size of the square path will remain the same as long as the bug doesn't run into an edge or
+other actors.  If that happens, then the bug would be forced to do a 90 degree turn causing it 
+to not be able complete the full size of the path
+q6:
+The travels of the bug doesn't have to be the same as the movement of the bug also depends if 
+it could move to the next grid.  If it is unable to move to the next box, then it would cause
+the bug to turn.  You can also manually change the direction and location of the bug with
+setDirection and setLocation in the GUI
+q7:
+The value of steps is zero whenever you can't move forward and forced to turn
