@@ -40,6 +40,13 @@ public class Jumper extends Actor {
                 || !(myGrid.get(loc1) == null || myGrid.get(loc1) instanceof Flower || myGrid.get(loc1) instanceof Rock)
                 || !(myGrid.get(loc2) == null)
            ){
+
+            //System.out.println(!myGrid.isValid(loc1));
+            //System.out.println(!myGrid.isValid(loc2));
+            //System.out.println(!(myGrid.get(loc1) == null || myGrid.get(loc1) instanceof Flower || myGrid.get(loc1) instanceof Rock));
+            //System.out.println(!(myGrid.get(loc2) == null));
+            //System.out.println(!myGrid.isValid(loc1));
+
             setDirection(getDirection() + 45);
         }
         else {
