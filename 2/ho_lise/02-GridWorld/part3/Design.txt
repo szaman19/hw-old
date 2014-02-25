@@ -1,0 +1,16 @@
+1.
+a.The jumper will turn if the location two cells in front contains a rock.
+b. The jumper will turn if the location two cells in front is out of bounds.
+c. It will turn until the jumper can move.
+d. The jumper will turn before moving.
+e. The jumper will turn if another jumper is in its way before moving.
+f. What happens if there are other obstacles? Can jumpers jump over bugs?
+
+2. 
+a. Jumper needs to extend Actor.
+b. Bug is similar to Jumper, but Jumper is not a type of bug as it's movements are different.
+c. There definitely should be a constructor. The only parameter we could consider is a parameter to choose the color of jumper.
+d. The act method needs to be overidden.
+e.  The jump method, canJump method, setColor method, and the turn method
+f. The plan is to test the jumper in a corner, facing out of bounds, placing a rock, flower, bug, jumper/ and other actor in front of a jumper to test its reactions. 
+
