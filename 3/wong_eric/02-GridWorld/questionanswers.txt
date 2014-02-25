@@ -1,0 +1,36 @@
+Set 3
+1. loc1.getRow();
+2. false
+3. (4,4)
+4. southeast
+5. It returns the location adjacent in the direction that is passed by the parameter.
+
+Set 4
+1. The size of the ArrayList is returned by getOccupiedLocations().
+   Then subtract this number from the total area of the grid to get the unoccupied spots.
+2. gr.isValid(newLocation(10,10)).
+3. Grid is an interface whose code is in all class files that implement it.
+4. Arrays must be initialized with a set size while ArrayLists can be expanded.
+
+Set 5
+1. color, direction, location
+2. blue and NORTH
+3. Actors need instance variables and already implemented methods.
+4. No, No, Yes
+5. setDirection(getDirection() + 90);
+
+Set 6
+1. if (!gr.isValid(next))
+	return false;
+2. Actor neighbor = gr.get(next);
+   return (neighbor == null) || (neighbor instanceof Flower);
+3. isValid and get are the methods used to determine if the next location is valid.
+4. getAdjacentLocation
+5. getLocation, getDirection, getGrid
+6. It will remove itself.
+7. Yes because you still need the old location. getLocation() will update with the current location.
+8. Differentiate between which bug left the flower.
+9. Yes if called from Bug class, no if called from Actor class
+10.Flower flower = new Flower(getColor());
+   flower.putSelfInGrid(gr, loc);
+11.4
