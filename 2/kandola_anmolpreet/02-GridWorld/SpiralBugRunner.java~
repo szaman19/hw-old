@@ -1,0 +1,13 @@
+import info.gridworld.actor.ActorWorld;
+import info.gridworld.grid.Location;
+import java.awt.Color;
+
+public class SpiralBugRunner {
+    public static void main(String[] args) {
+	ActorWorld universe = new ActorWorld();
+	SpiralBug spin = new SpiralBug(3);
+	spin.setColor(Color.BLACK);
+        universe.add(new Location (5,5), spin);
+	universe.show();
+    }
+}
