@@ -22,10 +22,6 @@ public class Jumper extends Actor {
 			turn(); 
 	} 
 
-	public void turn() { 
-		setDirection(getDirection() + Location.HALF_RIGHT); 
-	} 
-
 	public void jump() { 
 		Grid<Actor> g = getGrid(); 
 		if (g == null) 
@@ -59,3 +55,9 @@ public class Jumper extends Actor {
 		neighbor = g.get(twoPlacesOver); 
 		return (neighbor == null) || (neighbor instanceof Flower); 
 	} 
+
+	public void turn() { 
+		setDirection(getDirection() + Location.HALF_RIGHT); 
+	} 
+}
+	
