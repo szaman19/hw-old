@@ -29,7 +29,7 @@ public class Tour{
 	    return;
 	}else if(inBounds && board[x][y] == 0){
 	    board[x][y] = moves;
-	    moves += 1;
+	    moves ++;
 	    if(!solved){
 		solve(x+2, y+1);
 	    }
@@ -54,8 +54,13 @@ public class Tour{
 	    if(!solved){
 		solve(x-1, y-2);
 	    }
+	    if(!solved){
+		board[x][y] = 0;
+		moves--;
+	    }
 	}
     }
+
 
     public String toString(){
 	String info = "";
