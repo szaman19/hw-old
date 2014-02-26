@@ -1,0 +1,14 @@
+//GridWorld Case Study Part 3 Group Activity
+// 1a. Jumper would turn 45 degrees
+// 1b. Jumper would turn 45 degrees
+// 1c. Jumper would turn 45 degrees
+// 1d. Jumper would remove Actor from Grid
+// 1e. Jumper would remove Actor from Grid
+// 1f. Can the Jumper jump over actors? I'll say no.
+// 2a. Jumper should extend Actor. It says it is an actor in the description.
+// 2b. Bug is an actor with similar capabilities of Jumper (canMove/move).
+// 2c. No need. Only thing you could add is color, and I don't want to.
+// 2d. Act: is different.
+// 2e. canJump, Jump, turn
+// 2f. To test: create Jumper and JumperRunner. Place one, and test it: make it jump across actors/flowers/rocks, 
+onto actor/flowers/rocks. Set it next to an edge and in a position where two ahead is out of the grid. 

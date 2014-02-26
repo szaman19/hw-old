@@ -1,0 +1,34 @@
+Jane Chen
+Grid World Part 3
+
+Group Activity
+
+1. Specify: Each group creates a class called Jumper. This actor can move forward two cells in each move. It ¡°jumps¡± over rocks and flowers. It does not leave anything behind it when it jumps.
+
+a. What will a jumper do if the location in front of it is empty, but the location two cells in front contains a flower or a rock?
+The jumper will turn.
+b. What will a jumper do if the location two cells in front of the jumper is out of the grid?
+The jumper will turn.
+c. What will a jumper do if it is facing an edge of the grid?
+The jumper will turn.
+d. What will a jumper do if another actor (not a flower or a rock) is in the cell that is two cells in front of the jumper?
+The jumper will turn.
+e. What will a jumper do if it encounters another jumper in its path?
+The jumper will turn.
+f. Are there any other tests the jumper needs to make?
+What will a jumper do if the location in front of it is occupied? 
+
+2. Design: Groups address important design decisions to solve the problem:
+
+a. Which class should Jumper extend?
+The Jumper class should extend Actor.
+b. Is there an existing class that is similar to the Jumper class?
+The Bug class is similar to the Jumper class. 
+c. Should there be a constructor? If yes, what parameters should be specified for the constructor?
+There can be a constructor to set the color of the jumper.
+d. Which methods should be overridden?
+The act method should be overridden since it acts differently than an Actor.
+e. What methods, if any, should be added?
+canJump (boolean), jump (void), turn (void)
+f. What is the plan for testing the class?
+Place the jumper such that it faces the edge. Surround the jumper by flowers, rocks, and other Actors one tile away. Do the same two tiles away. 
