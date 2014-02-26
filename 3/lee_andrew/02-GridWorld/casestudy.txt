@@ -1,0 +1,86 @@
+Part 1:
+1. After a while the bug continues to go around the edges of the grid. However, if it cannot move it stays in the same place and turns every step.
+2. The bug moves in a clockwise direction.
+3. If the bug does not move, it turs 45 degrees every step.
+4. The bug leaves behind a flower when it moves.
+5. When the bug is at the edge of the grid, it turns clockwise until it can move in that direction.
+6. When a rock is in front of the bug, the bug turns clockwise until it can move again.
+7. A flower does not move.
+8. A flower turns darker with every step.
+9. The rock does not move or do anythign else.
+10. There can only be on actor on one location.
+
+Exercises:
+1.   Degrees	Compass Direction
+	0	     North
+	45	   Northeast
+	90	     East
+	135	   Southeast
+	180	     South
+	225	   Southwest
+	270	     West
+	315	   Northwest
+	360	     North
+2. You can basically move the bug to anywhere that is on the grid. If you try to move it somewhere not on the grid, it gives an error.
+3. I used the setColor method.
+4. The bug disappeared.
+
+Part 2:
+1. The instance variable sideLength is to construct a box of the same length as sideLength.
+2. The instance variable steps is to see if it is less than the sideLength so it can continue moving.
+3. The turn method is called twice when steps is equal to sideLength in order to create a right angle.
+4. The move in the super class can be used instead.
+5. The box will always be the same length because the instance variable sideLength is never changed, unless something is blocking its path.
+6. The path the BoxBug travels can be changed by playing objects in order to prevent it from moving in that direction.
+7. The value of steps will be zero whenever the BoxBug has steps equal to sideLength.
+
+Exercises:
+1. It's behavior is different in that it creates a shape that looks like a circle.
+5. First I would create another BoxBug and then I would add it to a specific location.
+
+Part 3:
+1. loc1.getRow()
+2. false
+3. (4,4)
+4. 135 degrees
+5. The parameter in getAdjacentLocation gives the direction of the adjacent location.
+
+1. You use the getOccupiedLocations().size() to get the number of occupied locations.
+Multiply getNumRows() by getNumCols() then subtract getOccupiedLocations().size() to get number of empty locations.
+2. You use the isValid(new Location (10,10)) method
+3. Grid is an interface and just tells what methods other classes have to implement. AbstractGrid, BoundedGrid, and UnboundedGrid implement the methods.
+4. It would be easier to use ArrayList because it is more flexible. You don't have to initialize the amount of spaces.
+
+1. Every actor has color, direction, and location.
+2. It's blue and it faces north.
+3. Class lets people create instance variables and implement methods.
+4. An actor cannot put itself into a grid twice without first removing itself. It cannot remove itself from a grid twice. An actor can be placed, remove itself, and put itself back.
+5. setDirection(getDirection() + 90)
+
+1. if(!gr.isValid(next)) return false;
+2. Actor neighbor = gr.get(next);
+return (neighbor == null) || (neighbor instanceof Flower);
+3. isValid and get to check if it's a valid location and to make sure it's empty or a flower.
+4. getAdjacentLocation to find the next possible location.
+5. getLocation, getDirection, getGrid
+6. The bug removes itself.
+7. The variable loc is needed for the flower.
+8. To show that the flower is dropped by a specific bug.
+9. If using removeSelfFromGrid no, but in bug move yes.
+10. Flower flower = new Floer(getColor());
+flower.putSelfInGrid(gr, loc);
+11. Four times
+
+Group Activity:
+1a. Turn
+b. Turn
+c. Turn
+d. Turn
+e. Turn
+f. Jump over other actors?
+2a. Extend Actor
+b. Bug
+c. If you want a specific color, otherwise it'd be a default color so no need for constructor.
+d. act
+e. turn, canMove, move
+f. Place it somewhere and see if it jumps depending on obstacles, grid location, etc.

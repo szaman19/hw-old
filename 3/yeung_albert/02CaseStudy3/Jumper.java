@@ -2,7 +2,12 @@ import info.gridworld.actor.ActorWorld;
 import info.gridworld.grid.Location;
 public class Jumper extends Bug{
     public void act(){
-        if (getDirection()==WEST){
+        if (canMove()){
+            move();
+            if (canMove()){
+                move();
+            }
+        }else if (getDirection()==WEST){
             if (getCol()>=2){
                 moveTo(new Location (getRow(),getCol()-2));
             }
