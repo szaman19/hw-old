@@ -65,3 +65,4 @@ public class KnightsTour{
 	    System.exit(0);
 	}
     }
+}
