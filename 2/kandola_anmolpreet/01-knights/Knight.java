@@ -1,6 +1,8 @@
 import java.io.*;
 import java.util.*;
 
+//The reason I had so much difficulty was I tried to do it with characters first but then it didn't work for making the numbers. When I tried to make an int board, the resulting if statements and board creation didn't work as planned.
+
 public class Knight {
     private int counter;
     private int[][] chessboard;
@@ -42,7 +44,7 @@ public class Knight {
 	    System.exit(0);
 	}
     }
-
+    // There's a lot of if statements, nested, but the point was to cover every case. It may have been part of the reason my code doesn't work. The excpetion error occurs during the 'else if.." part of the solve. I spent a long time trying to fix it but it hasn't worked yet. I'm thinking about scrapping the idea, and making a solution that is close to the one in class.
     public void solve(int x, int y) {
 	counter = 1;
 	for (int i=0;i<h;h++) {
