@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Maze{
+public class Knights{
     public String[][] board;
     public int xcor,ycor;
     public boolean solved = false;
