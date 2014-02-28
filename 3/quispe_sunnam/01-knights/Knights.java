@@ -1,10 +1,10 @@
-public class KnightsTour {
+public class Knights {
     private int[][] board;
     private int count;
     private int n;
     private boolean solved;
    
-    public KnightsTour(int length) {
+    public Knights(int length) {
 	n = length;
 	board = new int[n][n];
 	count = 0;
