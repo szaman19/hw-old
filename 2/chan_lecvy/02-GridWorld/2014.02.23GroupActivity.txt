@@ -1,0 +1,44 @@
+﻿1. Specify: Each group creates a class called Jumper. This actor can move
+forward two cells in each move. It “jumps” over rocks and flowers. It does not
+leave anything behind it when it jumps.
+In the small groups, discuss and clarify the details of the problem:
+a. What will a jumper do if the location in front of it is empty, but the
+location two cells in front contains a flower or a rock?
+b. What will a jumper do if the location two cells in front of the jumper is
+out of the grid?
+c. What will a jumper do if it is facing an edge of the grid?
+d. What will a jumper do if another actor (not a flower or a rock) is in the
+cell that is two cells in front of the jumper?
+e. What will a jumper do if it encounters another jumper in its path?
+f. Are there any other tests the jumper needs to make?
+2. Design: Groups address important design decisions to solve the problem:
+a. Which class should Jumper extend?
+b. Is there an existing class that is similar to the Jumper class?
+c. Should there be a constructor? If yes, what parameters should be specified
+for the constructor?
+d. Which methods should be overridden?
+e. What methods, if any, should be added?
+f. What is the plan for testing the class?
+3. Code: Implement the Jumper and JumperRunner classes.
+4. Test: Carry out the test plan to verify that the Jumper class meets the
+specification.
+
+
+
+
+1. a) The jumper can turn.  
+    b) The jumper can turn.
+    c) The jumper can turn.
+    d) The jumper can turn or remove the actor from the grid.
+    e) The jumper can turn.
+    f) What will a jumper do if the location in front of it is occupied?
+
+
+2. a) The Jumper class should extend Actor.
+    b) The Bug class is similar. 
+    c) There does not need to be a constructor.
+    d) the act method should be overwritten.
+    e)  canJump and jump needs to be added.
+    f) → Put Jumper at a location: edge of grid  + facing the edge
+            Surrounded by rocks/Actors for neighbors.
+        Put Actors/rocks two locations in front of jumper.
