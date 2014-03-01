@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Maze{
+public class Knights{
     public String[][] board;
     public int xcor,ycor;
     public boolean solved = false;
@@ -49,9 +49,7 @@ public class Maze{
     public void solve(int x,int y){
 	
 	if(x > xcor - 1 || x < 0 || y > ycor - 1 || y < 0)
-	    
 	    return;
-	
 	if(counter == (xcor * ycor) + 1){
 	    System.out.println(this);
 	    solved = true;
