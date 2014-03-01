@@ -22,7 +22,7 @@ public class knightsTour{
 	String s = "";
 	for (int i = 0; i <n; i++){
 	    for (int j = 0; j < n; j ++){
-		s = s +"  "+ board[j][i];
+		s = s + " " + String.format("%3d", board[j][i]); // number of digits given to each number
 	    }
 	    s = s + "\n\n";
 	}
@@ -44,10 +44,13 @@ public class knightsTour{
 	    solved = true;
 	    System.out.println(this);
 	}
+	else if(board[x][y]!= 0){
+	    return;
+	}
 	else if(board[x][y] == 0){
-	    delay(75);
+	    //delay(75);
 	    board[x][y] = moves+1;
-	    System.out.println(this);
+	    //System.out.println(this);
 	    moves = moves + 1;
 	    try{
 		solve(x+2, y+1);
@@ -102,6 +105,10 @@ public class knightsTour{
 		}
 		catch (ArrayIndexOutOfBoundsException e) {
 		}
+	    }
+	    if(!solved){
+		board[x][y]=0;
+		moves = moves -1;
 	    }
 		    
        
