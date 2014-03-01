@@ -4,66 +4,64 @@ import java.util.*;
 public class Chess {
 
     private int[][] board;
-    private int h,w,maxy,maxx;
+    private int n;
     final private char untravelled = '0';
     private boolean solved = false;
     private int knightStep = 0;
 
-    public void knightTour(int row, int col) {
-	h = maxy = col;
-	w = maxx = row;
-	board = new int[row][col];
-	for (int i=0;i<h;i++) {
-	    for (int j=0;j<w;j++) {
+    public void knightTour(int n) {
+	this.n = n;
+	board = new int[n][n];
+	for (int i=0;i<n;i++) {
+	    for (int j=0;j<n;j++) {
 		board[j][i] = untravelled;
 	    }
 	}
-	knightSolve(0,0);
+	knightSolve(0,0,1);
     }
 
-    public void knightSolve(int x, int y) {
+    public void knightSolve(int x, int y, int count) {
 	delay(25);
-	if (solved) {
+	if (count > this.n*this.n) {
+	    solved = true;
 	    System.out.println(this);
 	    return;
 	}
-	else if (x + 1 > w || x - 1 < 0 ||
-		 y + 2 > h || y - 2 < 0) {
+	else if (x < 0 || x >= n ||
+		 y < 0 || y >= n) {
 	    System.out.println(this);
 	    return;
 	}
 	else if (board[x][y] == untravelled) {
 	    board[x][y] = knightStep;
 	    System.out.println(this);
-	    knightSolve(x+1,y+2);
-	    knightSolve(x-1,y+2);
-	    knightSolve(x+1,y-2);
-	    knightSolve(x-1,y-2);
-	    knightSolve(x+2,y+1);
-	    knightSolve(x-2,y+1);
-	    knightSolve(x+2,y-1);
-	    knightSolve(x-2,y-1);
+	    knightSolve(x+1,y+2,n+1);
+	    knightSolve(x-1,y+2,n+1);
+	    knightSolve(x+1,y-2,n+1);
+	    knightSolve(x-1,y-2,n+1);
+	    knightSolve(x+2,y+1,n+1);
+	    knightSolve(x-2,y+1,n+1);
+	    knightSolve(x+2,y-1,n+1);
+	    knightSolve(x-2,y-1,n+1);
 	    board[x][y] = untravelled;
 	}
     }
 
-    public String go(int x,int y){
-	return (""+x+";"+y+"H");
-    }
-        
-    public String clear(){
-	return  "2J";
-    }
-        
-    public String toString(){
-	String ans = ""+maxx+","+maxy+"\n";
-	for(int i=0;i<maxx*maxy;i++){
-	    if(i%maxx ==0 && i!=0){
-		ans+="\n";
+    public String toString()
+    {
+	String s = "[0;0H";
+
+	int i,j;
+	for (i=0;i<n;i++)
+	    {
+		for (j=0;j<n;j++)
+		    {
+			s = s + board[j][i];
+		    }
+
+		s = s + "\n";
 	    }
-	    ans += board[i%maxx][i/maxx];
-	}
-	return clear()+go(0,0)+ans+"\n";
+	return s;
     }
 
     private void delay(int n) {
@@ -76,7 +74,7 @@ public class Chess {
 
     public static void main(String[] args) {
 	Chess c = new Chess();
-	c.knightTour(5, 5);
+	c.knightTour(5);
     }
 
 }
