@@ -46,7 +46,8 @@ class Merge {
 	int countertwo = 0;
 
 	for (int i = 0; i < ans.length; i++) {
-	    if (countertwo >= two.length || (counterone < one.length && one[counterone] <= two[countertwo])) {
+	    if (countertwo >= two.length // makes sure it doesnt go out of bounds
+		|| (counterone < one.length && one[counterone] <= two[countertwo])) {
 		ans[i] = one[counterone];
 		counterone++;
 	    }
