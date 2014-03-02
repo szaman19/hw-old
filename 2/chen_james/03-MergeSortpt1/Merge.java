@@ -3,6 +3,7 @@ import java.util.*;
 
 class Merge {
 
+    //worked with lecvy
     public void mergeSort(int[] array) {
 	if (array.length > 1) {
 	    //splits the array into one[] and two[]
