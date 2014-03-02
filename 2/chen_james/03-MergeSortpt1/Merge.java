@@ -46,7 +46,7 @@ class Merge {
 	int countertwo = 0;
 
 	for (int i = 0; i < ans.length; i++) {
-	    if (countertwo >= two.length // makes sure it doesnt go out of bounds
+	    if (countertwo >= two.length // makes sure it doesnt go out of bounds and indicate that we're done with the 2nd array.
 		|| (counterone < one.length && one[counterone] <= two[countertwo])) {
 		ans[i] = one[counterone];
 		counterone++;
