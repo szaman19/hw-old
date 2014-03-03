@@ -1,0 +1,16 @@
+1a.A jumper will move twice if the location in front of it is empty
+ b.A jumper will just move once if the location two ceels in front is
+ out of the grid.
+ c.A jumper will turn once.
+ d.A jumper will just move once.
+ e.A jumper will jump over the jumper in its path.
+ f.If there is a rock in front of it and a rock in the place it plans
+ on jumping to.
+
+2a.It should extend Bug.
+ b.The Bug is the closest to the Jumper class.
+ c.There doesn't need to be a constructer because the classic Bug
+ constructor will suffice.
+ d.The act() method should be overwritten.
+ e.No methods need to be added.
+ f.Make a JumperRunner class and run that.
