@@ -1,0 +1,36 @@
+Set 3
+1. To access the row value for loc1, you would use loc1.getRow()
+2. The value of b would be false.
+3. The value of loc3 wuld be (4, 4)
+4. The value of dir would be 135
+5. getAdjacentLocation knows which advacent location to return by first checking direction.
+   Then, it uses this direction to point its way towards the closest location.
+
+Set 4
+1. To obtain a count of the objects, use the getOccupidLocations() and find the length of it.
+   TO identify the number of empty locations, subtract the occupied from the product of rows and columns.
+2. To check if location (10, 10) is on the grid, use isValid(10, 10)
+3. Grid contains no code because it is an interface. The classes that use and implement it will have the methods.
+4. It wouldn't be better because coordinates are a set of two numbers, which would be confusing within arrays.
+
+Set 5
+1. Every Actor has a color, integer direction, and a location.
+2. When an actor is contructed, its direction is North and its color is blue.
+3. The Actor class was created a class because it needs its own methods to carry out, unlike the interface that serves as a blueprint.
+4. No, the actor cannot put itself on the grid twice without removing itself firest.
+   An actor can't remove itself from the grid twice either--an exception is provided.
+   Finally, an actor can place itself back on the grid after removing itself.
+5. To turn 90 degrees to the right, an Actor needs to set the direction 90 degrees plus their original direction.
+
+Set 6
+1. Within the canMove method, the bug checks if the location it is moving to is valid.
+2. The bug will not move into a rock because it will return false. The rock is not mentioned as an exception to which it can move.
+3. The methods invoked are isValid and get, so that the bug can check if it is moving to a valid location.
+4. The methods invoked are getAdjacentLocation, so that a bug can check the location next to it for other actors.
+5. The methods inherited are getDirection, getGrid, and getLocation.
+6. The bug will disappear by removing itself from the grid.
+7. loc is needed because it keeps in mind the bug's old location. getLocation() would only return the location it is at.
+8. Flowers dropped have the same color because the initial color for them is the same as the bug that drops them.
+9. Yes, if the bug has moved and removed itself from the grid, a flower will be placed. Otherwise, no.
+10. The statement flower.putSelfInGrid(gr, loc) puts the flower into the grid.
+11. If a bug needs to turn 180 degrees, the turn method needs to be called 4 times.

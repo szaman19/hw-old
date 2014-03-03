@@ -1,0 +1,14 @@
+1.	a. turn until it has a valid move
+	b. same as a
+	c. same as a
+	d. squish the other actor (remove the other actor and move there)
+	e. same as d
+	f. not really
+2.	a. Actor
+	b. Bug
+	c. there can be a constructor to change its default color
+	   so it can be differentiated from the Actor, as well as a
+	   constructor for choosing a color
+	d. act()
+	e. canJump(), jump(), turn()
+	f. test it by placing a jumper in the scenarios from question 1
