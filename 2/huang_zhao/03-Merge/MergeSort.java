@@ -1,10 +1,19 @@
 import java.util.*;
 public class MergeSort{
+    public void toString(int[] L){
+	String dx= "";
+	for (int d =0;d < L.length;d++){
+	    dx +=String.valueOf(L[d])+",";
+	}
+	System.out.println(dx);
+    }
     public int[] mSort(int[] L){
 	if (L.length <= 1){
+	    toString(L);
 	    return L;
 	}
 	else {
+	    if (L.length%2 ==0){
 	    int[] listA =new int[L.length/2];
 	    int[] listB =new int[L.length/2];
 	    for(int counter = 0;counter<L.length/2;counter++){
@@ -14,12 +23,34 @@ public class MergeSort{
 	    listA = mSort(listA);
 	    listB = mSort(listB);
 	    L = merge(listA,listB);
-	    System.out.println(L.length);
+	    toString(L);
+	   
 	    return L;
+	    }
+	    
+	    else {
+		
+		int[] listA =new int[(L.length/2) + 1];
+		int[] listB =new int[L.length/2];
+		listA[0]= L[0];
+		for(int counter = 0;counter<L.length/2;counter++){
+		    listA[counter+1]= L[counter+1];
+		    listB[counter]= L[counter + (L.length/2)+1];
+		    }
+		listA = mSort(listA);
+		listB = mSort(listB);
+		L = merge(listA,listB);
+		toString(L);
+		return L;
+	    }
+	   
+	    
+	    
 	}
     }
-	    
 
+	
+	    
     public int[] merge(int[]d,int[]p){
 	int size = 0;
 	int size1 = 0;
@@ -53,14 +84,10 @@ public class MergeSort{
 	for (int d =0;d<10;d++){
 	    test1[d]= rand.nextInt(20);
 	}
-	for (int d =0;d<10;d++){
-	    // System.out.println(test1[d]);
-	}
-	//System.out.println("End");
+	
+	p.toString(test1);
 	int[]dd = p.mSort(test1);
-	for (int d =0;d<10;d++){
-	    //System.out.println(dd[d]);
-	}
+	
     }
 }
 	    
