@@ -1,0 +1,47 @@
+Set 1:
+Q1:
+It does not always move to a new location.  If there is something ahead of it and blocks the path of the bug, it stops and rotates instead
+Q2:
+It moves in the direction that the bug is already facing in.
+Q3:
+It rotates clockwise by 45 degrees until it finds an empty path
+Q4:
+The bug leaves behind a flower that is originally the same color as the bug.  After some each tick passes, the color of the flower changes
+until it reaches a certain point where it stays that dead looking color
+Q5:
+If the bug is facing the edge of the grid, then it can not move forward anymore causing it to rotate.  On the other hand if the bug
+is not facing the edge, then it is just moving normally
+Q6:
+The rock acts like any other obstruction, it just causes the bug to turn.
+Q7:
+A flower does not move by itself
+Q8:
+It changes color after each and every tick.  After a certain amount, it no longer changes color as the flower is "dead"
+Q9:
+The rock does not move and has no other behavior
+Q10:
+Only one actor can be on a grid at the same time
+
+Excersizes
+1.
+0 -North
+45 -NorthEast
+90-East
+135-SouthEast
+180-South
+225-SouthWEst
+270-West
+315-NorthWest
+360-North
+
+2.
+When you use the method moveTo, you have to set the coordinates of where you want the bug to be. You can set
+the integers of the bug wherever you want it to be in the grid world and the bug will move to that location
+The direction of the bug is preserved.  Whenever, you want to move the bug out of the grid, an error occurs
+and the stacktrace of the error is pop up and displayed
+
+3.
+setColor
+
+4.
+The bug is no longer on the world and it disappears
