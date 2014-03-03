@@ -1,6 +1,5 @@
 import java.util.*;
-//either im just really stupid or java really is overbloated with boilerplate
-//im betting on both?
+//java really is overbloated with boilerplate
 public class Sort {    
     public static void main(String[] args) {   
         SortDriver.main(args);
