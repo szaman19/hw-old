@@ -17,14 +17,7 @@ public class SortDriver {
 		}
 		return array;
     }
-    /*public static int[] genInt(int size) {
-    	int[] array = new int[size];
-    	for (int i = 0; i < size; i++) {
-	    	double isNegative = (Math.round(Math.random()) * -1.0);
-	    	array[i] = (int) Math.round((2 * isNegative + 1) * Math.random() * 100.0);
-    	}
-    	return array;
-    }*/
+
     public static void bubbleTest() {
 		double[] array = new double[30];
 		System.out.println("Bubble Sort:");
@@ -52,15 +45,7 @@ public class SortDriver {
 		System.out.println("Sorted:");
 		System.out.println(toString(array));
 	}
-	/*public static void radixIntTest() {
-		int[] array = new int[30];
-		System.out.println("Radix Test (integers):");
-		array = genInt(30);
-		System.out.println(toString(array));
-		Sort.radix(array);
-		System.out.println("Sorted:");
-		System.out.println(toString(array));
-	}*/
+	
 	public static void mergeTest() {
 		double[] array = new double[30];
 		System.out.println("Merge Test:");
