@@ -1,5 +1,5 @@
 import java.util.*;
-//java really is overbloated with boilerplate
+//primitives are not objects fuck you java
 public class Sort {    
     public static void main(String[] args) {   
         SortDriver.main(args);
