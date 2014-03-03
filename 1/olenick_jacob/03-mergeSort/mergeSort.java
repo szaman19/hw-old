@@ -28,9 +28,8 @@ public class mergeSort{
 	    return A;
 	}
 	else{
-	    // int[] B = first half
-	    // int[] C = second half
-
+	    int[] B = Arrays.copyOfRange(A,0,A.length/2);
+	    int[] C = Arrays.copyOfRange(A,A.length/2,A.length);
 	    A = merge(B,C):
 	    
 	}
