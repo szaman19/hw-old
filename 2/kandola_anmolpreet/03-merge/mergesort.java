@@ -1,31 +1,42 @@
 
 
 public class mergesort {
+    
+    public static String print(int[] a) {
+	String ans = "";
+	for (int l : a) {
+	    ans += l + ",";
+	}
+	ans = ans.substring(0,ans.length()-1);
+	return ans;
+    }
+    
     public static int[] mergesort (int[] L) {
-	int[] a;
-	int[] b;
+
 	if (L.length <= 1) {
 	    return L;
 	}
-	else if (L.length % 2 == 0) {
-	    a = new int[L.length/2];
-	    b = new int[L.length/2];
-	}
 	else {
-	    a = new int[L.length/2];
-	    b = new int[L.length/2 + 1];
-	}
-	for (int i = 0; i < L.length/2;i++) {
+	    int[] a,b;
+	    if (L.length % 2 == 0) {
+		a = new int[L.length/2];
+		b = new int[L.length/2];
+	    }
+	    else {
+		a = new int[L.length/2];
+		b = new int[L.length/2 + 1];
+	    }
+	for (int i = 0; i < a.length;i++) {
 	    a[i] = L[i];
 	}
-	for (int j = 0; j>L.length/2 && j <L.length;j++) {
-	    b[j] = L[j];
+	for (int j = 0; j<b.length;j++) {
+	    b[j] = L[j + L.length/2];
 	}
-	a = mergesort(a);
-	b = mergesort(b);
-	L = merge(a,b);
-	return L;
-       
+	int[] f1 = mergesort(a);
+	int[] f2 = mergesort(b);
+	return merge(f1,f2);
+	
+	}
     }
 	
 
@@ -67,10 +78,15 @@ public class mergesort {
 	//	    System.out.print(y[l] + ", ");
 	//	}
 	// The above code checks for the functioning of the merge function.
-	int[] x = new int[] {21, 12, 4, 17, 23, 26, 14, 17, 3, 2, 7, 8};
-	mergesort(x);
-	for (int l=0;l<x.length;l++) {
-	    System.out.print(x[l] + ", ");
-	}
+	int[] x = new int[7];
+	x[0] = 21;
+	x[1] = 12;
+	x[2] = 4;
+	x[3] = 17;
+	x[4] = 2;
+	x[5] = 8;
+	x[6] = 3;
+	System.out.println(print(mergesort(x)));
+	
     }
 }
