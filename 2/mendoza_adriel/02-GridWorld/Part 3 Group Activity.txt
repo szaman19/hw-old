@@ -1,0 +1,23 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 Part 3 Group Activity:\
+\
+1. \
+a. The jumper will only move to the location in front of it, then it will turn.\
+b. The jumper will go as close to the grid and then turn.\
+c. It will turn.\
+d. The jumper will only move to the location in front of it, then it will turn.\
+e. It depends on what the distance is between them.\
+f. The jumper might be able to jump over actors that are not only rocks and flowers.\
+\
+2. \
+a. Jumper should extend the Actor class.\
+b. The Bug class is very similar to the Jumper class.\
+c. The constructor should simply call the constructor of the Actor class.\
+d. The act method should be overridden.\
+e. move, canJump, and jump should be added to the class.\
+f. Creating the jumper and testing it near a rock, a flower, another actor, another jumper, etc.}

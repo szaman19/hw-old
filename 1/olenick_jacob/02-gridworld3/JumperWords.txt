@@ -1,0 +1,15 @@
+1)
+	a) The jumper will not jump
+	b) The jumper will turn right 90
+	c) The jumper will turn right 90
+	d) The jumper will not jump
+	e) The jumper will not jump
+	f) The only test left is the case study itself, which is a test of my patience
+
+2)
+	a) Bug
+	b) Bug, that's why we're extending that one
+	c) No constructors are needed, though one may be used.
+	d) act, move, and canMove
+	e) No new methods are needed, though some may be used.
+	f) If possible, set up the world as with previous Bugs. Create an unbounded grid and put as many conceivable obstacles in the path as possible. Observe if behavior is consistent with answers from question set 1.
