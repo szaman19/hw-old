@@ -2,8 +2,16 @@ import java.io.*;
 import java.util.*;
 
 public class Sort{
-
     
+    public int[] randArray(int size, int range){
+	Random r = new Random();
+	int[] result = new int[size];
+	for (int i = 0; i < size; i++){
+	    result[i] = r.nextInt(range);
+	}
+	return result;
+    }
+
     public int[] merge(int[] A, int[] B){
 
 	int[] result = new int[A.length + B.length];
@@ -12,11 +20,11 @@ public class Sort{
 	for (int i = 0; i < result.length; i++){
 	    // from jonathan's work-------
 	    if (a == A.length){
-		result[i] == B[b];
+		result[i] = B[b];
 		b++;
 	    }
 	    if (b == B.length){
-		result[i] == A[a];
+		result[i] = A[a];
 		a++;
 	    }
 	    // ---------------------------
@@ -30,6 +38,7 @@ public class Sort{
 		b++;
 	    }
 	}
+	return result;
     }
 
     public int[] copyRange(int[] L, int start, int end){
@@ -50,10 +59,18 @@ public class Sort{
 	    int[] C = copyRange(A,A.length/2,A.length);
 	    B = mergeSort(B);
 	    C = mergeSort(C);
-	    A = merge(B,C):
+	    A = merge(B,C);
 	    return A;
 	    
 	}
+    }
+
+    public static int exp(int i, int n){//lolwut
+	int result = 1;
+	for (int a = 0; a<n; a++){
+	    result = result * i;
+	}
+	return result;
     }
 
     public int[] bubbleSort(int[] a){
