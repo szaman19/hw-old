@@ -18,28 +18,13 @@ public class MergeSort {
 		double[] arrayCopy = new double[array.length];
 		arraycopy(array, 0, arrayCopy, 0, array.length);
 		int i = 0, j = 0, k = 0;
-		while ((j != left.length) && (k != right.length)) {
-			if (left[j] < right[k]) {
-				array[i] = left[j];
-				j++;
-			}
-			else {
-				array[i] = right[k];
-				k++;
-			}
-			i++;
+		while ((j < left.length) && (k < right.length)) {
+			if (left[j] < right[k]) {arrayCopy[i++] = left[j++];}
+			else {arrayCopy[i++] = right[k++];}
 		}
-		while (j != left.length) {
-			array[i] = left[j];
-			i++;
-			j++;
-		}
-		while (k != right.length) {
-			array[i] = right[k];
-			i++;
-			k++;
-		}
-		return array;
+		while (j < left.length) {arrayCopy[i++] = left[j++];}
+		while (k < right.length) {arrayCopy[i++] = right[k++];}
+		return arrayCopy;
 	}
 	public static int[] sort(int[] array) {
 		if (array.length <= 1) {return array;}
@@ -54,27 +39,12 @@ public class MergeSort {
 		int[] arrayCopy = new int[array.length];
 		arraycopy(array, 0, arrayCopy, 0, array.length);
 		int i = 0, j = 0, k = 0;
-		while ((j != left.length) && (k != right.length)) {
-			if (left[j] < right[k]) {
-				arrayCopy[i] = left[j];
-				j++;
-			}
-			else {
-				arrayCopy[i] = right[k];
-				k++;
-			}
-			i++;
+		while ((j < left.length) && (k < right.length)) {
+			if (left[j] < right[k]) {arrayCopy[i++] = left[j++];}
+			else {arrayCopy[i++] = right[k++];}
 		}
-		while (j != left.length) {
-			arrayCopy[i] = left[j];
-			i++;
-			j++;
-		}
-		while (k != right.length) {
-			arrayCopy[i] = right[k];
-			i++;
-			k++;
-		}
+		while (j < left.length) {arrayCopy[i++] = left[j++];}
+		while (k < right.length) {arrayCopy[i++] = right[k++];}
 		return arrayCopy;
 	}
 	
@@ -102,3 +72,4 @@ public class MergeSort {
 	
 	public static String times(long t2, long t1) {return (t2 - t1) + " ns / " + ((double) (t2 - t1) / 1000000) + " ms / " + ((double) (t2 - t1) / 1000000000) + " s";}
 }
+
