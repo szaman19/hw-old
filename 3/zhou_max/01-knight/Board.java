@@ -1,5 +1,6 @@
 public class Board{
     public String[][] squares;
+    public static int counter;
 
 
 
@@ -56,12 +57,14 @@ public class Board{
 	    return 0;
 	}
 	delay(5);
-	System.out.println("[2J");
+	counter++;
+
 	System.out.println("[:H");
        	System.out.println(this);
+	System.out.println("Iteration: " + counter);
 	
-	System.out.println(move);
-	System.out.println(squares.length*squares[0].length);
+	//	System.out.println(move);
+	//	System.out.println(squares.length*squares[0].length);
 	
 	
 	if (knightSolve(row+1,col-2, move + 1) == 1){
@@ -101,6 +104,7 @@ public class Board{
 
     public static void main(String args[]){
 	Board board = new Board(5,5);
+	System.out.println("[2J");
 	board.knightSolve(0,0,1);
 	//	System.out.println(board);
 
