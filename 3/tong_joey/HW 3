@@ -1,4 +1,3 @@
-
 public class MergeSort{	     
 
     private boolean up = false;
