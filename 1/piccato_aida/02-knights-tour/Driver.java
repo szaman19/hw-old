@@ -4,6 +4,7 @@ public class Driver {
 	KnightsTour game = new KnightsTour(8);
 	System.out.println("[2J");
 	System.out.println(game);
-	game.solve(0,0);
+	game.solve(5,5);
+	System.out.println(game.getIterations());
     }
 }
