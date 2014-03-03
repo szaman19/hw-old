@@ -1,0 +1,48 @@
+Set 1:
+1. Does the bug always move to a new location? Explain.
+--The bug moves to a new location if the path in front of it is not blocked (by a wall or rock).
+2. In which direction does the bug move?
+--It moves one cell forward: straight in front of it.
+3. What does the bug do if it doesn’t move?
+--If its path is blocked, it turns 45˚ clockwise.
+4. What does a bug leave behind when it moves?
+--The bug leaves behind a flower when it moves off a cell.
+5. What happens when the bug is at the edge of the grid? (Consider when the bug is facing the edge
+as well as whether the bug is facing some other direction when answering this question.)
+--If is facing the edge, it turns clockwise until it can move. If it is facing some other direction,
+--it will move forward. The edge acts like a line of rocks.
+6. What happens when a bug has a rock in the location immediately in front of it?
+--It turns 45˚ to the right. The rock blocks its path.
+7. Does a flower move?
+--No.
+8. What behavior does a flower have?
+--It changes color depending on how recently the bug has crossed that cell.
+9. Does a rock move or have any other behavior?
+--No. It blocks the path of a bug.
+10. Can more than one actor (bug, flower, rock) be in the same location in the grid at the same time?
+--No. Only one actor can be on a location on the grid at a time.
+	
+Exercises:
+1. Test the setDirection method with the following inputs and complete
+the table, giving the compass direction each input represents.
+
+Degrees	Compass Direction
+0	      North
+45	    North East
+90    	East
+135	    South East 
+180	    South
+225	    South West
+270	    West
+315	    North West
+360	    North
+
+2. Move a bug to a different location using the MoveTo method. In which directions can you move it?
+How far can you move it? What happens if you try to move the bug outside the grid?
+--You can move the bug in all directions. You can move the bug as far as the limits of the grid
+--allow. If you try to move the bug outside of the grid, an error box will pop up and give details
+--on the error that occurred. An IllegalArgumentException occurs, stating that the location is not valid.
+3. Change the color of a bug, flower, and a rock. Which method did you use?
+I used the setColor method.
+4. Move a rock on top of a bug and then move the rock again. What happened to the bug?
+The bug disappeared when the rock moved back. The same thing happens when moving a bug or rock onto a flower.
