@@ -3,11 +3,16 @@ import java.util.*;
 
 class Merge {
 
+    //worked with lecvy
     public void mergeSort(int[] array) {
 	if (array.length > 1) {
 	    //splits the array into one[] and two[]
 	    int[] one =  splitArray(array, "one");
+	    //debug
+	    System.out.println(Arrays.toString(one));
 	    int[] two = splitArray(array, "two");
+	    //debug
+	    System.out.println(Arrays.toString(two));
 	   
 	    //sort halfs
 	    mergeSort(one);
@@ -64,7 +69,7 @@ class Merge {
 	int[] a1 = new int[10];
 	for (int i = 0; i < 10; i++) {
 	    Random r = new Random();
-	    a1[i] = r.nextInt(50) +1;
+	    a1[i] = r.nextInt(100) +1;
 	}
 	System.out.println(Arrays.toString(a1));
 	m.mergeSort(a1);
