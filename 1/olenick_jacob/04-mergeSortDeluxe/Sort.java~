@@ -2,7 +2,6 @@ import java.io.*;
 import java.util.*;
 
 public class Sort{
-
     
     public int[] merge(int[] A, int[] B){
 

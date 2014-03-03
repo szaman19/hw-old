@@ -8,7 +8,7 @@ public class MergeSort
         ArrayList<Integer> result = new ArrayList<Integer>();
         
         while ( (a1.size() != 0) &&
-                (a2.size() != 0) );
+                (a2.size() != 0) )
         {
             if ( a1.get(0) >= a2.get(0) )
                 result.add( a1.get(0) );
