@@ -1,0 +1,55 @@
+Part 3
+
+Set 3
+1. loc1.getRow()
+2. false
+3. (4,4)
+4. 135
+5. getAdjacentLocation requires a direction as a parameter
+
+Set 4
+1. getOccupiedLocations().size()
+2. isValid
+3. the methods for Grid are implemented in BoundedGrid and UnboundedGrid
+4. Arraylists are more versatile than arrays, since they don't limit size
+
+Set 5
+1. location, direction, color
+2. blue/North
+3. Actors have different behaviors, so they need to be in various states through different methods
+4a. No
+4b. No
+4c. Yes, the actor places itself, removes itself, and places itself back
+5. setDirection(getDirection() + 90)
+
+Set 6
+1. if(!gr.isValid(next))
+return false;
+2. return (neighbor == null) || (neighbor instanceof Flower);
+3. isValid and get, which look at the next location and make sure that it is valid
+4. getAdjacentLocation checks the next location to see if the bug can move there
+5. getLocation, gedDirection, getGrid
+6. the bug removes itself
+7. loc is used to remember where the bug had been in order to place a flower
+8. flowers with the same color as the bug make it easier to trace the bug's trail
+9. yes, the flower.putSelfInGrid runs no matter what
+10. Flower flower = new Flower(getColor());
+flower.putSelfInGrid(gr, loc);
+11. 4
+
+Group Activity
+1a. turn
+1b. turn
+1c. turn
+1d. replace it
+1e. replace it
+1f. 
+
+2a. Bug
+2b. Bug
+2c. No real need (other than setting color)
+2d. act, move, canMove
+2e.
+2f. testing problems 1a-1f
+
+

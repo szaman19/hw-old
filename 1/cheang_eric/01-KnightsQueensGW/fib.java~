@@ -1,0 +1,15 @@
+public class fib{
+    public int fib(int givenNumber){
+	if (givenNumber < 2){
+	    return 1;
+	}
+	else{
+	    return fib(givenNumber-1) + fib(givenNumber - 2);
+	}
+
+    }
+    public static void main(String[] args){
+	fib fibo = new fib();
+	System.out.println(fibo.fib(10));
+    }
+}

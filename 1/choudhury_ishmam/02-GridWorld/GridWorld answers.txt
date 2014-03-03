@@ -1,0 +1,39 @@
+1
+	A{
+		Turn to the Right
+	}
+	B{
+		Turn to the right
+	}
+	C{
+		Turn to the Right
+	}
+	D{
+		Turn to the Right
+	}
+	E{
+		Turn to the Right
+	}
+	F{
+		Maybe?
+	}
+	
+2
+	A{
+		Actor
+	}
+	B{
+		Bug to some degree
+	}
+	C{
+		not necessary
+	}
+	D{
+		Act		
+	}
+	E{
+		canJump and jump
+	}
+	F{
+		
+	}
