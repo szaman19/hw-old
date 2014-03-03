@@ -40,6 +40,7 @@ public class KnightGame {
 		}
 		else if (n >= board.length * board[0].length) {
 			solved = true;
+			board[x][y] = n;
 			System.out.println(this);
 		}
 		else {
