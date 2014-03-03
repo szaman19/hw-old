@@ -66,7 +66,7 @@ public class Sort {
         //merge it!
         return putItBack(left,right);
     }
-    public static int[] putItBack(int[] left, int[] right) {
+    private static int[] putItBack(int[] left, int[] right) {
         int[] answer = new int[left.length + right.length];
         int index = 0;
         while (left.length > 0 || right.length > 0) {
@@ -95,7 +95,7 @@ public class Sort {
         }
         return answer; 
     }
-    public static double[] putItBack(double[] left, double[] right) {
+    private static double[] putItBack(double[] left, double[] right) {
         double[] answer = new double[left.length + right.length];
         int index = 0;
         while (left.length > 0 || right.length > 0) {
