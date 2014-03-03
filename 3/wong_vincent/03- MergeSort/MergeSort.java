@@ -25,6 +25,10 @@ public class MergeSort {
 	}
     }
 
+    public sort (int a) {
+	
+    }
+
     public int[] merge (int[] a, int[] b) {
 	combined = new int[a.length+b.length];
 
