@@ -1,0 +1,46 @@
+// Nicholas Romanoff
+// Period One
+// Homework #02 GridWorld
+// 2014-02-24
+
+1)
+
+a. What will a jumper do if the location in front of it is empty, but the location two cells in front contains a flower or a rock? 
+The jumper won't jump.
+
+b. What will a jumper do if the location two cells in front of the jumper is out of the grid?
+The jumper will rotate ninety degrees.
+
+c. What will a jumper do if it is facing an edge of the grid?
+The jumper will rotate ninety degrees.
+
+d. What will a jumper do if another actor (not a flower or a rock) is in the cell that is two cells in front of the jumper?
+The jumper won't jump.
+
+e. What will a jumper do if it encounters another jumper in its path?
+The jumper won't jump.
+ f. Are there any other tests the jumper needs to make?
+These tests should suffice.
+
+2)
+
+a. Which class should Jumper extend?
+It should extend Bug.
+
+b. Is there an existing class that is similar to the Jumper class?
+The most similiar class is the Bug class.
+
+c. Should there be a constructor? If yes, what parameters should be specified
+for the constructor?
+Like with the bug class, there should be a constructor and an overwritten constructor taking color as a parameter.
+
+d. Which methods should be overridden?
+turn, move, & canmove should be overridden.
+
+e. What methods, if any, should be added?
+No methods need to be added.
+
+f. What is the plan for testing the class?
+Setting up multiple scenarios in which the jumper is a) near the edge or b) near rocks or flowers or another actor
+
+

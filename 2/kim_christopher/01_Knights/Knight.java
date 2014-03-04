@@ -4,26 +4,32 @@ import java.util.*;
 public class Knight
 {
     public int[][] board;
-    final public int h = 8;
+    public int h;
     public boolean solved = false;
     public int knight;
     public int path = 0;
-    public Knight() {
-	board = new int[h][h];
+    public Knight(int n) {
+	board = new int[n+4][n+4];
+	for (int i = 0; i < n + 4; i++) {
+	    for (int j = 0; j < n + 4; j++) {
+		board[i][j] = -1;
+	    }
+	}
+	for (int i = 2; i < n + 2; i ++) {
+	    for (int j = 2; j < n + 2; j++) {
+		board[i][j] = 0;
+	    }
+	}
 	knight = 1;
+	h = n + 4;
     }
     public String toString() {
 	String s = "";
 	int i,j;
 	for (i = 0; i < h; i++) {
 	    for (j = 0; j < h; j++) {
-		if (board[j][i] > 9) {
-		    s = s + " " +  board[j][i];
-		}
-		else {
-		    s = s + "  " + board[j][i];
-		} 
-	    }
+		s = s + String.format("%3d", board[j][i]);
+	    } 
 	    s = s + "\n";
 	}
 	return s;
@@ -39,44 +45,33 @@ public class Knight
     }
     public void solve(int x, int y) {
 	if (knight == h * h + 1) {
-	    solved = true;
+	    System.out.println(this);
 	}
-	else if (x >= h || y >= h || x < 0 || y < 0) {
-	    solved = false;
-	}
-	
 	else if (board[x][y] == 0) {
 	    //delay(1300);
 	    board[x][y] = knight;
-	    System.out.println(this);
+	    //System.out.println(this);
 	    knight += 1;
 	    solve(x+2, y+1);
 	    if (!solved){
-		
 		solve(x+2, y-1);
 	    }
 	    if (!solved){
-		
 		solve(x-2, y+1);
 	    }		
 	    if (!solved){
-		
 		solve(x-2, y-1);
 	    }
 	    if (!solved){
-		
 		solve(x+1, y+2);
 	    }
 	    if (!solved){
-		
 		solve(x+1, y-2);
 	    }
 	    if (!solved){
-		
 		solve(x-1, y+2);
 	    }
 	    if (!solved){
-		
 		solve(x-1, y-2);
 	    }
 	    knight -= 1;
@@ -84,8 +79,9 @@ public class Knight
 	}
     }
     public static void main(String[] args) {
-	Knight m = new Knight();
+	Knight m = new Knight(5);
 	System.out.println(m);
-	m.solve(0,0);
+	m.solve(2,2);
+	System.out.println(m);
     }
 }
