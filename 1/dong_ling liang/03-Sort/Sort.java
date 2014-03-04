@@ -3,12 +3,42 @@ import java.util.*;
 
 public class Sort {
 
+    public int[] mergeSort(int[] l){
+	if (l.length <= 1){
+	    return l;
+	}
+	else {
+	    int temp = l.length;
+	    int[] x = new int[temp/2];
+	    for (int i = 0; i< x.length; i++){
+		x[i] = l[i];
+	    }
+	    if (temp%2 == 0)
+		int[] y = new int[temp/2];
+	    else 
+		int[] y = new int[temp/2 + 1];
+	    int count = 0;
+	    for (int i = temp/2; i<l.length; i++){
+		y[count] = l[i];
+		count++;
+	    }
+	    x = mergeSort(x);
+	    y = mergeSort(y);
+	    l = merge(x, y);
+	    return l;
+	}
+    }
+
     public String toString(int[] ray){
 	String ret = "";
 	for (int i = 0; i<ray.length; i++){
 	    ret = ret + ray[i];
 	}
 	return ret;
+    }
+    
+    public int[] get(int[] x){
+	return x;
     }
     
     public int[] merge(int[] A, int[] B){
@@ -38,11 +68,15 @@ public class Sort {
 	return C;
     }
     public static void main(String[] args){
+	Random rand = new Random();
 	Sort an = new Sort();
-	int[] b = new int[] {1, 3, 4, 5, 6};
-	int[] c = new int[] {2, 3, 4, 5, 5, 5};
-
-	System.out.println(an.toString(an.merge(b, c)));
+	int[] a  = new int[rand.nextInt(20)];
+	for (int i = 0; i<a.length; i++){
+	    a[i] = rand.nextInt(10);
+	}
+	
+	System.out.println(an.toString(a));
+	System.out.println(an.toString(an.mergeSort(a)));
     }
 
 
