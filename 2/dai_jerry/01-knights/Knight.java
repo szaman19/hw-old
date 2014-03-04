@@ -70,6 +70,10 @@ class Knight {
 	k.solve(0,0);
 	Knight p = new Knight(5);
 	p.solve(1,3);
+	Knight w = new Knight(6);
+	w.solve(4,2);
+	Knight r = new Knight(7);
+	r.solve(3,6);
     }
 }
 
