@@ -42,11 +42,12 @@ public class Merge {
 	else {
 	    int[] a = new int[L.length/2];
 	    int[] b = new int[L.length - a.length];
-	    for (int i = 0; i < a.length; i++) {
+	    int i;
+	    for (i = 0; i < a.length; i++) {
 		a[i] = L[i];
 	    }
-	    for (int z = 0; z < b.length; z++) {
-		b[z] = L[z + L.length/2];
+	    for (i = 0; i < b.length; i++) {
+		b[i] = L[i + a.length];
 	    }
 	    int[] f1 = mergesort(a);
 	    int[] f2 = mergesort(b);
