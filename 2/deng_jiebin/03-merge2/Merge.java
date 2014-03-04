@@ -30,23 +30,23 @@ public class Merge{
     }
 
     public int[] mergesort(int[] a){
-	int[] a1 = new int[a.length/2];
-	int[] a2 = new int[a.length-a1.length];
 	if(a.length <= 1){
 	    return a;
 	}
 	else{
+	    int[] a1 = new int[a.length/2];
+	    int[] a2 = new int[a.length-a1.length];
 	    for(int i = 0; i<a1.length; i++){
 		a1[i] = a[i];
 	    }
-	    for(int j = a.length/2; j<a2.length+(a.length/2); j++){
+	    for(int j = a.length/2; j<a.length; j++){
 		a2[j-(a.length/2)] = a[j];
 	    }
+	    a1 = mergesort(a1);
+	    a2 = mergesort(a2);
+	    a = merge(a1,a2);
+	    return a;
 	}
-	a1 = mergesort(a1);
-	a2 = mergesort(a2);
-	a = merge(a1,a2);
-	return a;
     }
     
     public static void main(String[]args){
