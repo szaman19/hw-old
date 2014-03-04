@@ -34,38 +34,39 @@ public class knightboard{
 	    return;
 	}
         else if (board[x][y]==0){
-            if (x+1<l&&y+2<l){
+            if (!done&&x+1<l&&y+2<l){
                 board[x][y]=n;
                 run(x+1,y+2,n+1);
             }
-	    if (x+2<l&&y+1<l) {
+	    if (!done&&x+2<l&&y+1<l) {
                 board[x][y]=n;
 		run(x+2,y+1,n+1);
             }
-	    if (x+2<l&&y-1>=0){
+	    if (!done&&x+2<l&&y-1>=0){
                 board[x][y]=n;
 		run(x+2,y-1,n+1);
             }
-	    if (x+1<l&&y-2>=0){
+	    if (!done&&x+1<l&&y-2>=0){
                 board[x][y]=n;
 		run(x+1,y-2,n+1);
             }
-            if (x-1>=0&&y-2>=0){
+            if (!done&&x-1>=0&&y-2>=0){
                 board[x][y]=n;
                 run(x-1,y-2,n+1);
             }
-            if (x-2>=0&&y-1>=0){
+            if (!done&&x-2>=0&&y-1>=0){
                 board[x][y]=n;
                 run(x-2,y-1,n+1);
             }
-            if (x-2>=0&&y+1<l){
+            if (!done&&x-2>=0&&y+1<l){
                 board[x][y]=n;
                 run(x-2,y+1,n+1);
             }
-            if (x-1>=0&&y+2<l){
+            if (!done&&x-1>=0&&y+2<l){
                 board[x][y]=n;
                 run(x-1,y+2,n+1);
             }
+            //board[x][y]=n;
 	}
     }
 
