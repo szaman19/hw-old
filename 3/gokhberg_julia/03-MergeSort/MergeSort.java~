@@ -1,0 +1,16 @@
+public class MergeSort{
+
+    public int[] A, B;
+
+    public MergeSort(int[] x, int[] y){
+	A = x;
+	B = y;
+    }
+      
+    public int[] merge(int[] A, int[] B){
+	int[] C = new int[A.length + B.length];
+	if (B == null){
+	    return A;
+	}if (A == null){
+	    return B;
+		
