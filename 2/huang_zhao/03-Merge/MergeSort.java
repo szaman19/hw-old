@@ -1,4 +1,56 @@
+import java.util.*;
 public class MergeSort{
+    public void toString(int[] L){
+	String dx= "";
+	for (int d =0;d < L.length;d++){
+	    dx +=String.valueOf(L[d])+",";
+	}
+	System.out.println(dx);
+    }
+    public int[] mSort(int[] L){
+	if (L.length <= 1){
+	    toString(L);
+	    return L;
+	}
+	else {
+	    if (L.length%2 ==0){
+	    int[] listA =new int[L.length/2];
+	    int[] listB =new int[L.length/2];
+	    for(int counter = 0;counter<L.length/2;counter++){
+		listA[counter]= L[counter];
+		listB[counter]= L[counter + (L.length/2)];
+	    }
+	    listA = mSort(listA);
+	    listB = mSort(listB);
+	    L = merge(listA,listB);
+	    toString(L);
+	   
+	    return L;
+	    }
+	    
+	    else {
+		
+		int[] listA =new int[(L.length/2) + 1];
+		int[] listB =new int[L.length/2];
+		listA[0]= L[0];
+		for(int counter = 0;counter<L.length/2;counter++){
+		    listA[counter+1]= L[counter+1];
+		    listB[counter]= L[counter + (L.length/2)+1];
+		    }
+		listA = mSort(listA);
+		listB = mSort(listB);
+		L = merge(listA,listB);
+		toString(L);
+		return L;
+	    }
+	   
+	    
+	    
+	}
+    }
+
+	
+	    
     public int[] merge(int[]d,int[]p){
 	int size = 0;
 	int size1 = 0;
@@ -25,17 +77,17 @@ public class MergeSort{
 	return sorted;
     }
     public static void main (String[] args){
-	int[]test1= new int[5];
+	int[]test1= new int[10];
+	Random rand = new Random();
 	int[]test2 = new int[5];
 	MergeSort p = new MergeSort();
-	for (int d =0;d<5;d++){
-	    test1[d]= d+3;
-	    test2[d]= d+6;
-	}
-	int[]dd = p.merge(test1,test2);
 	for (int d =0;d<10;d++){
-	    System.out.println(dd[d]);
+	    test1[d]= rand.nextInt(20);
 	}
+	
+	p.toString(test1);
+	int[]dd = p.mSort(test1);
+	
     }
 }
 	    

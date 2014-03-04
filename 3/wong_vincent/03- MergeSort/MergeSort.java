@@ -9,6 +9,26 @@ public class MergeSort {
     private int z = 0;
     private int w = 0;
 
+    public MergeSort (int[] L) {
+	if (L.length == 1) {
+	    return L;
+	}
+	else {
+	    for (int i = 0; i < L.length/2; i++) {
+		int[] a = new int[L.length/2];
+		a[i] = L[i];
+	    }
+	    for (int i = L.length/2; i < L.length; i++) {
+		int[] b = new int[L.length-L.length/2];
+		b[i] = L[i];
+	    }
+	}
+    }
+
+    public sort (int a) {
+	
+    }
+
     public int[] merge (int[] a, int[] b) {
 	combined = new int[a.length+b.length];
 

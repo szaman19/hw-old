@@ -8,8 +8,19 @@ public class MergeSort {
             return ary;
 
         int half = ary.length / 2;
-        int[] ary1 = Arrays.copyOfRange(ary, 0, half);
-        int[] ary2 = Arrays.copyOfRange(ary, half, ary.length);
+        // int[] ary1 = Arrays.copyOfRange(ary, 0, half);
+        // int[] ary2 = Arrays.copyOfRange(ary, half, ary.length);
+
+        int[] ary1 = new int[half];
+        for (int i = 0; i < half; i++) {
+            ary1[i] = ary[i];
+        }
+
+        int otherHalf = ary.length - half;
+        int[] ary2 = new int[otherHalf];
+        for (int i = 0; i < otherHalf; i++) {
+            ary2[i] = ary[half + i];
+        }
 
         return merge(mergesort(ary1), mergesort(ary2));
     }
@@ -71,7 +82,7 @@ public class MergeSort {
 
     public static void main(String[] args) {
         Random r = new Random();
-        int length = 1000000;
+        int length = 1000001;
         int maxVal = 2147000000;
         int[] ary = new int[length];
 
