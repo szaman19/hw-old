@@ -1,0 +1,29 @@
+public class split{
+    int[] splitArray1;
+    int[] splitArray2;
+
+
+    private void  splitArray(int[] givenArray){
+
+	int givenArrayLength = givenArray.length;
+	splitArray1 = new int[givenArrayLength/2];
+	splitArray2 = new int[givenArrayLength - splitArray1.length];
+
+
+	int arrayEntityCounter = 0;
+	int splitArray1IndexCounter = 0;
+	int splitArray2IndexCounter = 0;
+
+
+	for (int arrayEntitiy : givenArray){
+	    
+	    if (arrayEntityCounter < splitArray1.length){
+		splitArray1[splitArray1IndexCounter] = arrayEntity;
+		splitArray1IndexCounter++;
+	    }
+	    else{
+		splitArray2[splitArray2IndexCounter] = arrayEntity;
+		splitArray2IndexCounter++;
+	    }
+	}
+
