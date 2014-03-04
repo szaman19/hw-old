@@ -76,13 +76,13 @@ public class MergeSort{
 	final long startTime = System.currentTimeMillis();
 	m.MergeSort(a);	    
 	final long endTime = System.currentTimeMillis();
-	System.out.println("Total execution time for 100: " + (endTime - startTime) );
+	System.out.println("Total execution time for one hundred: " + (endTime - startTime) );
 
 	final long startTime1 = System.currentTimeMillis();
 	m.MergeSort(b);	    
 	final long endTime1 = System.currentTimeMillis();
 	
-	System.out.println("Total execution time for 1000: " + (endTime1 - startTime1) );
+	System.out.println("Total execution time for one thousand: " + (endTime1 - startTime1) );
 
 	final long startTime2 = System.currentTimeMillis();
 	m.MergeSort(c);	    
