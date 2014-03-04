@@ -4,13 +4,15 @@ public class mergeSort{
 	if (arr.length <= 1)
 	    return arr;
 	else{
-	    int[] h1 = new int[arr.length/2], h2 = new int[arr.length/2];
-	    for (int i = 0; i < arr.length; i++){
-		if (i < arr.length/2)
+	    int[] h1 = new int[arr.length/2], h2 = new int[1];
+	    for (int i = 0; i < arr.length/2; i++)
 		    h1[i] = arr[i];
-		else
-		    h2[i - arr.length/2] = arr[i];
-	    }
+	    if (arr.length % 2 == 1)
+		h2 = new int[arr.length/2 + 1];
+	    else if (arr.length % 2 == 0)
+		h2 = new int[arr.length/2];
+	    for (int i = arr.length/2; i < arr.length; i++)
+		h2[i - arr.length/2] = arr[i];
 	    int[] r1 = mergeSort(h1);
 	    int[] r2 = mergeSort(h2);
 	    return merge(r1, r2);
@@ -49,11 +51,10 @@ public class mergeSort{
     }
 
     public static void main(String[] args){
-	int[] a = new int[(int)Math.pow(2,15)];
+	int[] a = new int[15];
 	for (int i = 0; i < a.length; i++){
-	    a[i] = (int)(Math.random() * 10);
+	    a[i] = (int)(Math.random() * 1000);
 	}
 	System.out.println(toString(mergeSort(a)));
     }
-
 }
