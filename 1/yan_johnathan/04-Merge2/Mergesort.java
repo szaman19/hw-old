@@ -1,5 +1,6 @@
 //Johnathan Yan
 //Period 1
+//nlogn
 
 public class Mergesort{
 
