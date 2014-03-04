@@ -13,10 +13,11 @@ public class Sort {
 	    for (int i = 0; i< x.length; i++){
 		x[i] = l[i];
 	    }
+	    int[] y;
 	    if (temp%2 == 0)
-		int[] y = new int[temp/2];
+		y = new int[temp/2];
 	    else 
-		int[] y = new int[temp/2 + 1];
+		y = new int[temp/2 + 1];
 	    int count = 0;
 	    for (int i = temp/2; i<l.length; i++){
 		y[count] = l[i];
