@@ -15,7 +15,7 @@ public class Merge {
 				C[i] = A[a];
 				a = a + 1;
 			}
-			else if (A[a] > B[b]) {
+			else if (A[a] < B[b]) {
 				C[i] = A[a];
 				a = a + 1;
 			}
