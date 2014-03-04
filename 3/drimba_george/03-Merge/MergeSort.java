@@ -48,6 +48,6 @@ public class MergeSort{
 }
     public static void main(String[] args){
 	int[] a = new int[]{2,4,8,16,32,64,128,256,512};
-	int[] b = new int[]{3,9,27,81,243,729,2187,2188,2189,2190};
+	int[] b = new int[]{3,9,27,81,243,729,2187,2188,2189,2191};
 	int[] s = merge(a,b);
 	}
