@@ -108,10 +108,14 @@ public class MergeSort {
     public static void main( String[] args ) {
 	
 	// create array
-	ArrayList a = new ArrayList<Integer>();
-	for ( int i = 0; i < 20; i++ ) {
-	    a.add( new Integer((int) (Math.random() * ((i + 5) * 2)) ) );
-	}
+	ArrayList a = new ArrayList<String>();
+
+	a.add("cat");
+	a.add("dog");
+	a.add("rhino");
+	a.add("giraffe");
+	a.add("apple");
+
 	System.out.println( a );
 	System.out.println( mergeSort( a ) );
     }
