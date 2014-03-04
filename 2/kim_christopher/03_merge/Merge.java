@@ -40,15 +40,8 @@ public class Merge {
 	    return L;
 	}
 	else {
-	    int[] a,b;
-	    if (L.length%2 == 0) {
-		a = new int[L.length/2];
-		b = new int[L.length/2];
-	    }
-	    else {
-		a = new int[L.length/2];
-		b = new int[L.length/2 + 1];
-	    }
+	    int[] a = new int[L.length/2];
+	    int[] b = new int[L.length - a.length];
 	    for (int i = 0; i < a.length; i++) {
 		a[i] = L[i];
 	    }
