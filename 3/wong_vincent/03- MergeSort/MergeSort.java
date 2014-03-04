@@ -4,29 +4,31 @@ import java.util.*;
 public class MergeSort {
     
     private int[] combined;
+    private int[] a;
+    private int[] b;
     private int x = 0;
     private int y = 0;
     private int z = 0;
     private int w = 0;
 
-    public MergeSort (int[] L) {
+    public int[] MSort (int[] L) {
 	if (L.length == 1) {
 	    return L;
 	}
 	else {
 	    for (int i = 0; i < L.length/2; i++) {
-		int[] a = new int[L.length/2];
+		a = new int[L.length/2];
 		a[i] = L[i];
 	    }
 	    for (int i = L.length/2; i < L.length; i++) {
-		int[] b = new int[L.length-L.length/2];
+		b = new int[L.length-L.length/2];
 		b[i] = L[i];
 	    }
+	    int[] o = MSort(a);
+	    int[] p = MSort(b);
+	    L = merge(o,p);
+	    return L;
 	}
-    }
-
-    public sort (int a) {
-	
     }
 
     public int[] merge (int[] a, int[] b) {
