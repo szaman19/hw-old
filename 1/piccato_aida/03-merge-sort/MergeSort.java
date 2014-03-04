@@ -41,11 +41,7 @@ public class MergeSort {
 	    return l;
 	}
 	else {
-	    //System.out.println(l.length);
-	    
 	    int n = l.length/2;
-	    //System.out.println(n);
-	    //System.out.println(l.length - n);
 	    a = new int[n];
 	    b = new int[l.length - n];
 	    for (int i = 0; i < l.length; i++) {
