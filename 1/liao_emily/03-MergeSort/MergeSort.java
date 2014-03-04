@@ -1,4 +1,4 @@
-public class MergeSort{
+public class Merge{
 
     public int[] merge( int[] A, int[] B ) {
 	int[] ans = new int[A.length + B.length];
@@ -19,7 +19,7 @@ public class MergeSort{
 	}
 
     public static void main (String[] args) {
-	MergeSort m = new MergeSort();
+	Merge m = new Merge();
 	int[] A = new int[3];
 	A[0] = 5;
 	A[1] = 9;
