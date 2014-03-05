@@ -1,3 +1,9 @@
+// I have no idea what I'm doing with Comparables here. Quite frankly, I really dont know how to work with comparables at all, I didnt go over that last semester.
+// <E extends Comparable<? super E>> <- I just got this by trying lots of stuff and looking at stack overflow...
+// this version still has bugs that needs to be fixed
+
+
+
 import java.util.*;
 import java.lang.*;
 abstract public class MergeSort2 implements Comparable {
