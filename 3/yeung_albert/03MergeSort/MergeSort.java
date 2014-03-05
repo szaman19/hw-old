@@ -15,6 +15,23 @@ public class MergeSort{
 	    return merge(Sorter(b),Sorter(c));
 	}
     }
+
+    public static int[] Selection(int[]a){
+	int temp,min,place;
+	for (int i = 0;i<a.length;i++){
+	    place=i;
+	    for (int j = i;j<a.length;j++){
+		if (a[j]<a[place]){
+		    place = j;
+		}
+	    }
+	    temp = a[i];
+	    min = a[place];
+	    a[place]=temp;
+	    a[i]=min;
+	}
+	return a;
+    }
     
     private static int[] merge(int[]a,int[]b){
 	int[]c = new int[a.length+b.length];
@@ -39,10 +56,31 @@ public class MergeSort{
     }
 
     public static void main(String[]args){
-	int[]a={190,435,234,1,2,6,10,5,1235,27,109,10000,5,4,2,7,3,4,7,12,2,5,23};
-	int[]b = Sorter(a);
-	for (int i = 0;i<b.length;i++){
-	    System.out.println(b[i]);
+	int[]a= new int[1000000];
+	for (int i = 0;i<a.length;i++){
+	    a[i]=(int)Math.random()*1000;
 	}
+	int[]b;
+	if (args.length==0){
+	    System.out.println(" ");
+	}else{
+	    long startTime=0,endTime=0;
+	    if (args[0]=="0"){
+		startTime = System.currentTimeMillis();
+		b = Sorter(a);
+		endTime = System.currentTimeMillis();
+	    }
+	    if (args[0]=="1"){
+		startTime = System.currentTimeMillis();
+		b = Selection(a);
+		endTime = System.currentTimeMillis();
+	    }
+	    System.out.println(endTime-startTime);
+	}
+	/*
+	for (int i = 0;i < c.length;i++){
+	    System.out.println(" "+c[i]+"\t"+b[i]);
+	}
+	*/
     }
 }

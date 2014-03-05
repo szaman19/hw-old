@@ -1,0 +1,1 @@
+I get an error saying that the there is an out of bounds exception at like 25 in MergeSort.java but I'm not sure what is going out of bounds.
