@@ -1,22 +1,59 @@
 public class MergeSort{
 
+    private int[] x;
+    private int[] y;
+
     public int[] merge( int[] A, int[] B ) {
-	int[] ans = new int[A.length + B.length];
+	int len = A.length + B.length;
+	int[] ans = new int[len];
 	int ctr1 = 0;
 	int ctr2 = 0;
-	for ( int x = 0; x < ans.length; x++ )
+	int count = 0;
+	while ( count < len ) {
 	    if ( A[ctr1] < B[ctr2] ) {
-		ans[x] = A[ctr1];
+		ans[count] = A[ctr1];
 		if ( ctr1 < A.length - 1 )
 		    ctr1++;
 	    }
 	    else if ( A[ctr1] > B[ctr2] ) {
-		ans[x] = B[ctr2];
+		ans[count] = B[ctr2];
 		if ( ctr2 < B.length - 1 )
 		    ctr2++;
 	    }
-	return ans;
+	count++;
 	}
+	return ans;
+    }
+
+    public int[] split( int[] L ) {
+	if ( L.length % 2 == 0 ) {
+	    x = new int[L.length / 2];
+	    y = new int[L.length / 2];
+	}
+	else {
+	    x = new int[L.length / 2];
+	    y = new int[(L.length / 2) + 1];
+	}
+	for (int r = 0; r < L.length; r++) {
+	    if (r < x.length)
+		x[r] = L[r];
+	    else 
+		y[r - x.length] = L[r];
+	}
+	return L;
+    }
+
+    public int[] mergeSort( int[] L ) {
+	if (L.length <= 1 )
+	    return L;
+	else {
+	    split(L);
+	    x = mergeSort(x);
+	    y = mergeSort(y);
+	    L = merge(x, y);
+	    return L;
+	}
+    }
 
     public static void main (String[] args) {
 	MergeSort m = new MergeSort();
@@ -30,6 +67,7 @@ public class MergeSort{
 	B[2] = 13;
 	B[3] = 18;
 	System.out.println(m.merge( A, B));
+	System.out.println(m.mergeSort(B));
     }
 
 }
