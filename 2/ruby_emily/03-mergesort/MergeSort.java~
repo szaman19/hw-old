@@ -1,0 +1,62 @@
+import java.io.*;
+import java.util.*;
+
+public class MergeSort{
+    private int[] h1, h2;
+
+    public int[] mergeSort(int[] a){
+	if (a.length <= 1)
+	    return a;
+	else{
+	    split(a);
+	    //  r1 = new int[h1.length];
+	    h1 = mergeSort(h1);
+	    // r2 = new int[h2.length];
+	    h2 = mergeSort(h2);
+	    a  = merge(h1,h2);
+	    return a;
+	}
+
+    }
+    
+    public void split(int[] a){
+	int half = a.length/2;
+	h1 = new int[half];
+	h2 = new int[half];
+        for (int i=0; i<half; i++){
+	    h1[i]=a[i];
+	    h2[i]=a[i+half];
+	}
+	//	System.out.println(toString(h1));
+	//	System.out.println(toString(h2));
+    }
+
+    public int[] merge(int[] x, int[] y){
+	int[] result = new int[x.length+y.length];
+	for (int i=0; i<x.length; i++){
+	    if (x[i] < y[i]){
+		result[i] = y[i];
+	    }
+	    else
+		result[i] = x[i];
+	}
+	return result;
+    }
+    
+    public String toString(int[] a){
+	return Arrays.toString(a);
+    }
+    
+    public static void main(String[] args){
+	MergeSort m = new MergeSort();
+
+	int[] b = new int[52];
+	Random r = new Random();
+	for (int i=0;i<b.length;i++){
+	    b[i] = r.nextInt(25);
+	}
+	//	m.split(b);
+       	m.mergeSort(b);
+	System.out.println(m.toString(b));
+    }
+}

@@ -1,0 +1,46 @@
+import java.util.Arrays;
+
+public class MergeSort{
+
+    private static int[] merge(int[]a, int[]b) {
+	int[] merged = new int[a.length + b.length];
+	int x = 0;
+	int i = 0;
+	int j = 0;
+	while(i < a.length && j < b.length) {
+	    if(a[i] < b[j]){
+		merged[x] = a[i];
+		i++;
+	    }
+	    else{
+		merged[x] = b[j];
+		j++;
+	    }
+	    x++;
+	}
+	while(i < a.length) {
+	    merged[x] = a[i];
+	    i++;
+	    x++;
+	}
+	while(j < b.length) {
+	    merged[x] = b[j];
+	    j++;
+	    x++;
+	}
+	return merged;
+    }
+
+    private static int[] mergeSort(int[] a) {
+	if(a.length > 1){
+	    int[] new1 = Arrays.copyOfRange(a, 0, a.length/2);
+	    int[] new2 = Arrays.copyOfRange(a, a.length/2, a.length);
+	    return merge(mergeSort(new1), mergeSort(new2));
+	}
+	else {
+	    return a;
+	}
+    }
+    
+}
+	    
