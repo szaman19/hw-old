@@ -59,14 +59,56 @@ public class Merge {
 
     }
 
+    public int[] selectionSort(int[] a) {
+	int[] res = new int[a.length];
+	for (int i=0;i<a.length;i++) {
+	    int low = a[i];
+	    int lowI = i;
+	    for (int j=i;j<a.length;j++) {
+		if (a[j] < low){
+		    low = a[j];
+		    lowI = j;
+		}
+	    }
+	    a[lowI] = a[i];
+	    res[i] = low;
+	}
+	return res;
+    }
+
+    public int[] makeList(int n) {
+	int[] res = new int[n];
+	for (int i=0;i<n;i++) {
+	    res[i] = (int)(Math.random() * 100000);
+	}
+	return res;
+    }
+
+    public String toString(int[] a) {
+	String ans = "";
+	for (int i=0;i<a.length;i++) {
+	    ans = ans + a[i] + ", ";
+	}
+	return ans;
+    }
+
     public static void main(String[] args) {
 
 	Merge m = new Merge();
-	int[] a = {0, 3, 5, 2, 3, 5, 1, 2, 12, 3, 5, 2, 3, 10000, 5, 666, 3, 14, 25, 14, 15, 13, 14, 15, 5, 3, 2, 4, 56, 3, 5, 1, 2, 5, 6};
+	int[] a = m.makeList(100000);
+	long start, end;
+
+	start = System.currentTimeMillis();
 	int[]b = m.mergeSort(a);
-	for (int i=0;i<b.length;i++) {
-	    System.out.println(b[i]);
-	}
+	end = System.currentTimeMillis();
+	System.out.println("Merge Sort: " + (end - start));
+
+	start = System.currentTimeMillis();
+	int[] c = m.selectionSort(a);
+	end = System.currentTimeMillis();
+	System.out.println("Selection Sort: " + (end - start));
+
+
 
     }
 
