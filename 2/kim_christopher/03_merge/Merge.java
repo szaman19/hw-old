@@ -54,7 +54,7 @@ public class Merge {
 	    return Merger(f1,f2);
 	}
     }
-	    
+
     public static void main(String[] args) {
 	int[] bob = new int[3];
 	bob[0] = 0;
@@ -70,4 +70,3 @@ public class Merge {
 	System.out.println(print(mergesort(sally)));
     }
 }
-		
