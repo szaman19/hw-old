@@ -2,8 +2,7 @@ If you are trying to find a specific element in a list that is already sorted, i
 
 -You first find the index of the element in the middle (length / 2) and check to see if that element is the one you're looking for.
 -If it's not, you compare it to the element you're looking for and check to see if it comes after it or before it.
--You then run the algorithm back, this time using the appropiate half of the list (if the one you're looking for is less than the one you find, you look through the
- smaller half of the list, otherwise you look through the larger half of the list) (pseudo-code is below)
+-You then run the algorithm back, this time using the appropiate half of the list (if the one you're looking for is less than the one you find, you look through the smaller half of the list, otherwise you look through the larger half of the list) (pseudo-code is below)
 
 binarySearch(list, element){
    if element == middleElement of list
