@@ -46,6 +46,16 @@ public class MergeSort{
 	}
 	return result;
     }
+    public static String print(int[] a) {
+	String ans = "";
+	for (int l : a) {
+	    ans += l + ",";
+	}
+	ans = ans.substring(0,ans.length()-1);
+	return ans;
+    }
+
+
     public static void main(String[] args){
 	MergeSort m = new MergeSort();
 	int[] a1 = new int[]{1,3,5,7,9,11,13,15,17,19};
