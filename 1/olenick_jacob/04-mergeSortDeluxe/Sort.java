@@ -57,9 +57,9 @@ public class Sort{
 	}
     }
 
-    public ArrayList merge(ArrayList A, ArrayList B){
+    public ArrayList<Comparable> merge(ArrayList<Comparable> A, ArrayList<Comparable> B){
 
-	ArrayList result = new ArrayList<String>();
+	ArrayList<Comparable> result = new ArrayList<Comparable>();
 	int a = 0;
 	int b = 0;
 	for (int i = 0; i < A.size() + B.size(); i++){
@@ -74,7 +74,7 @@ public class Sort{
 	    }
 	    // ---------------------------
 
-	    if (A.get(a).toString().charAt(0) < B.get(b).toString().charAt(0)){
+	    if (A.get(a).compareTo(B.get(b))){
 		result.set(i,A.get(a));
 		a++;
 	    }
@@ -86,14 +86,14 @@ public class Sort{
 	return result;
     }
 
-    public ArrayList mergeSort(ArrayList A){
+    public ArrayList<Comparable> mergeSort(ArrayList<Comparable> A){
 
 	if (A.size() <= 1){
 	    return A;
 	}
 	else{
-	    ArrayList<String> B = (ArrayList)A.subList(0,A.size()/2);
-	    ArrayList<String> C = (ArrayList)A.subList(A.size()/2,A.size());
+	    ArrayList<Comparable> B = (ArrayList<Comparable>)A.subList(0,A.size()/2);
+	    ArrayList<Comparable> C = (ArrayList<Comparable>)A.subList(A.size()/2,A.size());
 	    B = mergeSort(B);
 	    C = mergeSort(C);
 	    A = merge(B,C);
