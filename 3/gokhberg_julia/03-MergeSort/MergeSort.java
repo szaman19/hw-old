@@ -40,7 +40,7 @@ public class MergeSort{
 	return res;
     }
 
-    public int[] msort(int[] L){
+   /* public int[] msort(int[] L){
 	if (L.length <= 1){
 	    return L;
 	}
@@ -53,5 +53,6 @@ public class MergeSort{
 	}
 	for ( ; i < b.length; i++){
 	    
+	    */
 }
 		

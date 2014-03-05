@@ -1,0 +1,2 @@
+
+If the ArrayList is already sorted, you can shorten the search by first checking if the ArrayList is sorted. If it is, you can check if the middle value of the ArrayList is smaller or greater than the value you're looking for. Depending on if the value is smaller or greater, you can split the deck at the middle value and do the sort again on whichever half of the deck the value would be under. You can repeat this until you find where the value lies on the ArrayList. 
