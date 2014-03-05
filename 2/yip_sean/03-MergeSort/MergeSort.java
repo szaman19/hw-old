@@ -1,8 +1,8 @@
+import java.util.Array;
+import java.util.Random;
 import static java.lang.System.arraycopy;
 import static java.lang.System.nanoTime;
 import static java.lang.System.out;
-import java.util.Arrays;
-import java.util.Random;
 
 public class MergeSort {
 	public static double[] sort(double[] array) {
@@ -18,28 +18,13 @@ public class MergeSort {
 		double[] arrayCopy = new double[array.length];
 		arraycopy(array, 0, arrayCopy, 0, array.length);
 		int i = 0, j = 0, k = 0;
-		while ((j != left.length) && (k != right.length)) {
-			if (left[j] < right[k]) {
-				array[i] = left[j];
-				j++;
-			}
-			else {
-				array[i] = right[k];
-				k++;
-			}
-			i++;
+		while ((j < left.length) && (k < right.length)) {
+			if (left[j] < right[k]) {arrayCopy[i++] = left[j++];}
+			else {arrayCopy[i++] = right[k++];}
 		}
-		while (j != left.length) {
-			array[i] = left[j];
-			i++;
-			j++;
-		}
-		while (k != right.length) {
-			array[i] = right[k];
-			i++;
-			k++;
-		}
-		return array;
+		while (j < left.length) {arrayCopy[i++] = left[j++];}
+		while (k < right.length) {arrayCopy[i++] = right[k++];}
+		return arrayCopy;
 	}
 	public static int[] sort(int[] array) {
 		if (array.length <= 1) {return array;}
@@ -54,42 +39,28 @@ public class MergeSort {
 		int[] arrayCopy = new int[array.length];
 		arraycopy(array, 0, arrayCopy, 0, array.length);
 		int i = 0, j = 0, k = 0;
-		while ((j != left.length) && (k != right.length)) {
-			if (left[j] < right[k]) {
-				arrayCopy[i] = left[j];
-				j++;
-			}
-			else {
-				arrayCopy[i] = right[k];
-				k++;
-			}
-			i++;
+		while ((j < left.length) && (k < right.length)) {
+			if (left[j] < right[k]) {arrayCopy[i++] = left[j++];}
+			else {arrayCopy[i++] = right[k++];}
 		}
-		while (j != left.length) {
-			arrayCopy[i] = left[j];
-			i++;
-			j++;
-		}
-		while (k != right.length) {
-			arrayCopy[i] = right[k];
-			i++;
-			k++;
-		}
+		while (j < left.length) {arrayCopy[i++] = left[j++];}
+		while (k < right.length) {arrayCopy[i++] = right[k++];}
 		return arrayCopy;
 	}
 	
 	public static void main(String[] args) {
-		int[] array = new int[101];
+		int[] array = new int[11];
 		Random random = new Random();
-		for (int i = 0; i < array.length; i++) {array[i] = random.nextInt();}
+		for (int i = 0; i < array.length; i++) {array[i] = random.nextInt(100);}
+		out.println(Arrays.toString(array));
 		long t1 = nanoTime();
 		array = sort(array);
 		long t2 = nanoTime();
-		out.println(java.util.Arrays.toString(array));
+		out.println(Arrays.toString(array));
 		out.println("Time: " + times(t2, t1));
 		out.println("\nBenchmark:");
 		out.println("Number of elements: Time");
-		for (int i = 0; i <= 8; i++) {
+		for (int i = 0; i <= 7; i++) {
 			int elements = (int) Math.pow(10, i);
 			array = new int[elements];
 			for (int j = 0; j < elements; j++) {array[i] = random.nextInt();}
@@ -102,3 +73,4 @@ public class MergeSort {
 	
 	public static String times(long t2, long t1) {return (t2 - t1) + " ns / " + ((double) (t2 - t1) / 1000000) + " ms / " + ((double) (t2 - t1) / 1000000000) + " s";}
 }
+
