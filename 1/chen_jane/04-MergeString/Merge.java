@@ -3,16 +3,6 @@ import java.util.*;
 
 public class Merge {
 
-    public static void main(String[] args) {
-	Merge m = new Merge();
-	String[] test1 = { "Alpha","Beta","Gamma","Nu" };
-	String[] test2 = { "Delta","Mu","epsilon" };
-	System.out.println(m.toString(merge(test1,test2)));
-
-	String[] a = { "omega","upsilon","Tau","Phi","chi","Zeta","pi","Mu" };
-	System.out.println(m.toString(mergeSort(a)));
-    }
-
     public static String[] merge(String[] A, String[] B) {
 	String[] sorted = new String[A.length + B.length];
 	int a=0,b=0;
@@ -81,5 +71,14 @@ public class Merge {
 	return s;
     }
 
+    public static void main(String[] args) {
+	Merge m = new Merge();
+	String[] test1 = { "Alpha","Beta","Gamma","Nu" };
+	String[] test2 = { "Delta","Mu","epsilon" };
+	System.out.println(m.toString(merge(test1,test2)));
+
+	String[] a = { "omega","upsilon","Tau","Phi","chi","Zeta","pi","Mu" };
+	System.out.println(m.toString(mergeSort(a)));
+    }
 
 }

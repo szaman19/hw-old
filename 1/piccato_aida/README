@@ -1,0 +1,3 @@
+04 - Divide and Conquer
+You could search for a value in a String ArrayList with a binary search.You begin with the element at the middle of the array. If the value of this element is greater than that of the value you are searching for, you repeat the process for the first half of the ArrayList. If the value of the middle element is smaller, then you look to the middle element of the second half of the ArrayList. 
+This is repeated until you find the value you are looking for. It can be done by recursively dividing the ArrayList into halves, then those halves into halves, and so on. One base case would be if the length of the current array you are looking at is one; if so, you return the single element in that array. 
