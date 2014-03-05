@@ -1,0 +1,4 @@
+A more efficent way of searching would be the binary search. First, divide the array/ArrayList in half. If the int you are searching for is greater that the int found, then divide the second half of the array or arraylist in half and start again.
+  
+Note: I had trouble with writing the mergesort with and arrayList of strings
+      so right now it does not work 
