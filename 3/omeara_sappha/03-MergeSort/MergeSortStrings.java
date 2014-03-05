@@ -27,7 +27,7 @@ public class MergeSortStrings {
         int i, j, x;
         i = j = x = 0;
 
-        // Until one array is exhausted, take the lesser of each half
+        // Until one array is finsihed, take the smaller one
         while (i < a.size() && j < b.size()) {
             if (a.get(i).compareTo(b.get(j)) < 0) {
                 L.add(a.get(i));
@@ -39,7 +39,7 @@ public class MergeSortStrings {
             i++;
         }
 
-        // Fill the rest of the return array
+        //one array is finished --> finish the other one
 
         while (i < a.size()) {
             L.add(a.get(i));
