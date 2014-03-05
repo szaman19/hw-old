@@ -1,10 +1,10 @@
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Random;
 import static java.lang.Math.pow;
 import static java.lang.System.arraycopy;
 import static java.lang.System.nanoTime;
 import static java.lang.System.out;
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.Random;
 
 public class MergeSort {
 	public static double[] mergeSort(double[] array) {
@@ -77,7 +77,7 @@ public class MergeSort {
 	
 	public static void main(String[] args) {
 		int[] array = new int[11];
-		ArrayList<Integer> list = new ArrayList<Integer>();
+		ArrayList<Integer> list = new ArrayList<Integer>(11);
 		Random random = new Random();
 		for (int i = 0; i < array.length; i++) {
 			int integer = random.nextInt(100);
