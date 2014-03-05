@@ -1,0 +1,3 @@
+You could search through it with a binary search. Bascially, split the set into two parts and look in the middle.
+Compare the middle value ot the value you're searching for. If the middle value is greater than your element, keep 
+the first half. If the middle value is less than your element, keep the second half. Repeat. Divide. Conquer. 
