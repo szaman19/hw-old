@@ -1,74 +1,72 @@
-import java.util.ArrayList;
-
 public class Merge {
     
-    public static String print(ArrayList<Comparable> x) {
+    public static String print(int[] x) {
 	String ans = "";
-	for (Comparable y : x) {
-	    ans += y + ", ";
+	for (int y : x) {
+	    ans += y + ",";
 	}
-	ans = ans.substring(0,ans.length()-2);
+	ans = ans.substring(0,ans.length()-1);
 	return ans;
     }
     // parameters are assumed to be sorted
-    private static ArrayList<Comparable> Merger(ArrayList<Comparable> a, ArrayList<Comparable> b)
-    {
-        ArrayList<Comparable> ans = new ArrayList<Comparable>();
-        
-        while ( (a.size() > 0) && (b.size() > 0) ) {
-            if ( a.get(0).compareTo( b.get(0) ) <= 0 )
-            {
-                ans.add( a.get(0) );
-                a.remove(0);
-            }
-            else
-            {
-                ans.add( b.get(0) );
-                b.remove(0);
-            }
-        }
-        
-        while (a.size() > 0)
-        {
-            ans.add( a.get(0) );
-            a.remove(0);
-        }
-        while (b.size() > 0)
-        {
-            ans.add( b.get(0) );
-            b.remove(0);
-        }
-        
-        return ans;
+    public static int[] Merger(int[] a, int[] b) {
+	int m = 0;
+	int n = 0;
+	int[] c = new int[a.length + b.length];
+	for (int i = 0; i < c.length; i++) {
+	    if (m == a.length || n == b.length) {
+		if (m == a.length) {
+		    c[i] = b[n];
+		    n += 1;
+		}
+		else {
+		    c[i] = a[m];
+		    m += 1;
+		}
+	    }
+	    else if (a[m] < b[n]) {
+		c[i] = a[m];
+		m += 1;
+	    }
+	    else {
+		c[i] = b[n];
+		n += 1;
+	    }
+	}
+	return c;
     }
-    public static ArrayList<Comparable> mergesort(ArrayList<Comparable> L) {
-	if (L.size() <= 1) {
+    public static int[] mergesort(int[]L) {
+	if (L.length <= 1) {
 	    return L;
 	}
 	else {
-	    int length = L.size() / 2;
-	    ArrayList<Comparable> a = new ArrayList<Comparable>();
-	    ArrayList<Comparable> b = new ArrayList<Comparable>();
+	    int[] a = new int[L.length/2];
+	    int[] b = new int[L.length - a.length];
 	    int i;
-	    for (i = 0; i < length; i++) {
-		a.add(L.get(i));
+	    for (i = 0; i < a.length; i++) {
+		a[i] = L[i];
 	    }
-	    for (; i < L.size(); i++) {
-		b.add(L.get(i));
+	    for (i = 0; i < b.length; i++) {
+		b[i] = L[i + a.length];
 	    }
-	    ArrayList<Comparable> f1 = mergesort(a);
-	    ArrayList<Comparable> f2 = mergesort(b);
+	    int[] f1 = mergesort(a);
+	    int[] f2 = mergesort(b);
 	    return Merger(f1,f2);
 	}
     }
-	    
+
     public static void main(String[] args) {
-	ArrayList<Comparable> bob = new ArrayList<Comparable>();
-	bob.add("hi");
-	bob.add("ay");
-	bob.add("babe");
-	bob.add("zboss");
-	System.out.println(print(mergesort(bob)));
+	int[] bob = new int[3];
+	bob[0] = 0;
+	bob[1] = 3;
+	bob[2] = 4;
+	int[] sally = new int[6];
+	sally[0] = 4;
+	sally[1] = 1;
+	sally[2] = 3;
+	sally[3] = 88;
+	sally[4] = 2;
+	sally[5] = 9;
+	System.out.println(print(mergesort(sally)));
     }
 }
-		
