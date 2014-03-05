@@ -55,5 +55,9 @@ public class MergeSortStrings {
         
         return L;
     }
+        
+    public static void main(String args){
+        
+    }
     
 }
