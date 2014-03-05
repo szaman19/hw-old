@@ -1,4 +1,4 @@
-	If you wanted to search more efficiently through a sorted array you could do it by always checking the middle value first. 
+	If you wanted to search more efficiently through a sorted array you could do it by using binary search. THis is a system in which you always checking the middle value first
 	Let's say you're searching for x
 
 	Find the middle index of the array
