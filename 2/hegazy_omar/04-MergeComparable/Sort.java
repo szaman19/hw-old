@@ -3,6 +3,7 @@ public class Sort {
     public static void main(String[] args) {   
         SortDriver.main(args);
     }
+
     public static <T extends Comparable<? super T>> ArrayList<T> merge(ArrayList<T> array) {
     	//break it! 
     	if (array.size() == 1) 
@@ -16,7 +17,8 @@ public class Sort {
     		right.add(array.get(k));
     	left = merge(left);
     	right = merge(right);
-    	return putItBack(left,right);
+        array = putItBack(left,right);
+        return array;
     }
    
     private static <T extends Comparable<? super T>> ArrayList<T> putItBack(ArrayList<T> left, ArrayList<T> right) {
