@@ -1,9 +1,10 @@
-public class Merge{
-    public static int[] mergeSort(int[] A){
+public class DivideConquer{
+    public static String[] mergeSort(String[] A){
 	if (A.length <= 1) return A;
 	else {
-	    int[] B = new int[A.length / 2];
-	    int[] C = new int[A.length - B.length];
+	    String[] B = new String[A.length / 2];
+	    String[] C = new String[A.length - B.length];
+	    
 	    for (int x = 0; x < B.length; x++){
 		B[x] = A[x];
 	    }
@@ -18,8 +19,8 @@ public class Merge{
 	}
     }
 
-    public static int[] merge(int[] A, int[] B){
-	int[] C = new int[A.length + B.length];
+    public static String[] merge(String[] A, String[] B){
+	String[] C = new String[A.length + B.length];
 	
 	int apos = 0;
 	int bpos = 0;
@@ -31,7 +32,7 @@ public class Merge{
 			C[x] = A[apos];
 			apos++;
 	    } else {
-			if (B[bpos] < A[apos]) {
+			if (B[bpos].compareTo(A[apos]) <= 0) {
 			    C[x] = B[bpos];
 			    bpos++;
 			} else {
@@ -43,20 +44,20 @@ public class Merge{
 	return C;
     }
 	
-    public static void printArray (int[] a){
-	for (int x : a){
+    public static void printArray (String[] a){
+	for (String x : a){
 	    System.out.print(x + ", ");
 	}
 	System.out.println();
     }
 
     public static void main(String[]args){
-	int[] l = new int[1000];
-	int max = 1000;
-	for (int x = 0; x < l.length; x++){
-	    l[x] = (int)(Math.random() * max); 
-	}
-	l = mergeSort(l);
-	printArray(l);
+	
+	String [] c = {"abcba", "efgfe", "aceca", "ecaca"};
+	String [] d = {"nifty", "cat", "hello", "inconceivable"};
+	c = mergeSort(c);
+	printArray(c);
+	d = mergeSort(d);
+	printArray(d);
     }
 }
