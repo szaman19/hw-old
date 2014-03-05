@@ -9,7 +9,7 @@ public class Merge {
 	return ans;
     }
     // parameters are assumed to be sorted
-    public static String Merger(int[] a, int[] b) {
+    public static int[] Merger(int[] a, int[] b) {
 	int m = 0;
 	int n = 0;
 	int[] c = new int[a.length + b.length];
@@ -33,23 +33,41 @@ public class Merge {
 		n += 1;
 	    }
 	}
-	String ans = print(c);
-	return ans;
+	return c;
     }
+    public static int[] mergesort(int[]L) {
+	if (L.length <= 1) {
+	    return L;
+	}
+	else {
+	    int[] a = new int[L.length/2];
+	    int[] b = new int[L.length - a.length];
+	    int i;
+	    for (i = 0; i < a.length; i++) {
+		a[i] = L[i];
+	    }
+	    for (i = 0; i < b.length; i++) {
+		b[i] = L[i + a.length];
+	    }
+	    int[] f1 = mergesort(a);
+	    int[] f2 = mergesort(b);
+	    return Merger(f1,f2);
+	}
+    }
+	    
     public static void main(String[] args) {
 	int[] bob = new int[3];
 	bob[0] = 0;
 	bob[1] = 3;
 	bob[2] = 4;
-	int[] sally = new int[5];
-	sally[0] = 2;
-	sally[1] = 2;
-	sally[2] = 5;
-	sally[3] = 6;
-	sally[4] = 6;
-	System.out.println(print(bob));
-	System.out.println(print(sally));
-	System.out.println(Merger(bob, sally));
+	int[] sally = new int[6];
+	sally[0] = 4;
+	sally[1] = 1;
+	sally[2] = 3;
+	sally[3] = 88;
+	sally[4] = 2;
+	sally[5] = 9;
+	System.out.println(print(mergesort(sally)));
     }
 }
 		
