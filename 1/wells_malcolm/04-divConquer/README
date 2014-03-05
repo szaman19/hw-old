@@ -1,0 +1,1 @@
+The linear search algorithm was fairly simple: for any given sorted array and target value, I compared the target value to the halfway value of that array. The array was then split in two, and search repeated on whichever half was demonstrated to (potentially) contain the target value. This continued until an array with length 1 was yielded.

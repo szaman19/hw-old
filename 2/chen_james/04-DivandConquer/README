@@ -1,0 +1,1 @@
+We can search more efficently by already having a sorted array. Thus we can just begin in the middle of the array by dividing the original array into two subarrays. If the search element is greater than the middle element, than we can use the 2nd half of the original array, if not, we can use the 1st half of the original array.
