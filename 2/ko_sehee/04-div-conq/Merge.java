@@ -4,8 +4,8 @@ public class Merge{
     public ArrayList<String>  merge(ArrayList<String> a, ArrayList<String> b){
 	int s1 = 0;
 	int s2= 0;
-	ArrayList<String> sorted = new ArrayList();
-	while(s1<a.size()|| s2<b.size()){
+	ArrayList<String> sorted = new ArrayList <String>();
+	for (int i=0; i < a.size() + b.size(); i++){
 	    if(s1 >= a.size() ){
 		sorted.add(b.get(s2));
 		s2++;
@@ -14,7 +14,7 @@ public class Merge{
 		sorted.add(a.get(s1));
 		s1++;
 	    }
-	    else if (a.get[s1].compareTo(b.get(s2))<0){
+	    else if (a.get(s1).compareTo(b.get(s2))<=0){
 		    sorted.add(a.get(s1));
 		    s1++;
 	    }
@@ -33,8 +33,8 @@ public class Merge{
 	}
 	else{
 	    nlen1 = (int)L.size()/2;
-	    ArrayList <String> p1 = L.subList(0, nlen1);
-	    ArrayList<String> p2 = L.subList(nlen1, L.size()-1);
+	    ArrayList <String> p1 = new ArrayList<String>(L.subList(0, nlen1));
+	    ArrayList<String> p2 = new ArrayList<String>(L.subList(nlen1, L.size()));
 	    p1 = this.mSort(p1);
 	    p2 = this.mSort(p2);
 	    L = merge(p1, p2);
@@ -49,8 +49,9 @@ public class Merge{
 	Random r = new Random();
 	ArrayList <String> ex = new ArrayList<String>();
 	for (int i = 0; i < 20; i ++){
-	    ex.add("" + r.nextInt(100));
+	    ex.add("" + String.format("%2d", r.nextInt(100)));
 	}
-	System.out.println(ArrayLists.toString(me.mSort(ex)));
+	System.out.println(ex);
+	System.out.println(me.mSort(ex));
     }
 }
