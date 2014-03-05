@@ -7,6 +7,26 @@ import static java.lang.System.nanoTime;
 import static java.lang.System.out;
 
 public class MergeSort {
+	public static ArrayList<String> mergeSort(ArrayList<String> list) {
+                if (list.size() <= 1) {return list;}
+                ArrayList<String> left = new ArrayList<String>(list.size() / 2), right = new ArrayList<String>(list.size() - (list.size() / 2));
+                for (int i = 0; i < list.size() / 2; i++) {
+                        left.add(list.get(i));
+                        right.add(list.get((list.size() / 2) + i));
+                }
+                if (list.size() % 2 == 1) {right.add(list.get(list.size() - 1));}
+                left = mergeSort(left);
+                right = mergeSort(right);
+                ArrayList<String> listSorted = new ArrayList<String>(list.size());
+                while ((left.size() > 0) && (right.size() > 0)) {
+                        if (left.get(0).compareTo(right.get(0)) < 0) {listSorted.add(left.remove(0));}
+                        else {listSorted.add(right.remove(0));}
+                }
+                while (left.size() > 0) {listSorted.add(left.remove(0));}
+                while (right.size() > 0) {listSorted.add(right.remove(0));}
+                return listSorted;
+        }
+        
         public static double[] mergeSort(double[] array) {
                 if (array.length <= 1) {return array;}
                 double[] left, right;
@@ -45,26 +65,6 @@ public class MergeSort {
                 while (j < left.length) {arraySorted[i++] = left[j++];}
                 while (k < right.length) {arraySorted[i++] = right[k++];}
                 return arraySorted;
-        }
-
-        public static ArrayList<String> mergeSort(ArrayList<String> list) {
-                if (list.size() <= 1) {return list;}
-                ArrayList<String> left = new ArrayList<String>(list.size() / 2), right = new ArrayList<String>(list.size() - (list.size() / 2));
-                for (int i = 0; i < list.size() / 2; i++) {
-                        left.add(list.get(i));
-                        right.add(list.get((list.size() / 2) + i));
-                }
-                if (list.size() % 2 == 1) {right.add(list.get(list.size() - 1));}
-                left = mergeSort(left);
-                right = mergeSort(right);
-                ArrayList<String> listSorted = new ArrayList<String>(list.size());
-                while ((left.size() > 0) && (right.size() > 0)) {
-                        if (left.get(0).compareTo(right.get(0)) < 0) {listSorted.add(left.remove(0));}
-                        else {listSorted.add(right.remove(0));}
-                }
-                while (left.size() > 0) {listSorted.add(left.remove(0));}
-                while (right.size() > 0) {listSorted.add(right.remove(0));}
-                return listSorted;
         }
 
         public static void main(String[] args) {
