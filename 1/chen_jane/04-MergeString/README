@@ -1,0 +1,3 @@
+If an array or ArrayList is already sorted, it is a lot easier to locate an item because the elements are already in order from lowest to highest. Rather than searching for an element from the very beginning and looping through it (linear search), you can start in the middle to "divide and conquer". 
+
+Compare the middle element to the one you're trying to find. If the element you're trying to find is lower than the middle element, go to the left half, and otherwise, go to the right half. Continue going through these steps of finding the middle element of each half until you are left with one element, the one you are trying to find. 
