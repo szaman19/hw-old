@@ -3,11 +3,10 @@ import java.util.*;
 
 public class Merge{
     public int[] merge(int[]a,int[]b){
-	int total = a.length+b.length;
-	int[] ans = new int[total];
+	int[] ans = new int[a.length+b.length];
 	int counta = 0;
 	int countb = 0;
-	for (int i=0;i<total;i++){
+	for (int i=0;i<ans.length;i++){
 	    if (a.length <= counta){
 		ans[i] = b[countb];
 		countb = countb + 1;
@@ -31,10 +30,27 @@ public class Merge{
 	return ans;
     }
 
-    public static void main(String[] args){
-	Merge m = new Merge();
-	int[] a = {1,3,5,7};
-	int[] b = {2,3,4,8};
-	System.out.println(Arrays.toString(m.merge(a,b)));
+    public int[] msort(int[] l){
+	if (l.length <= 1){
+	    return l;
+	}
+	else {
+	    int half = l.length/2;
+	    int other = l.length-half;
+	    int[] a = new int[half];
+	    int[] b = new int[other];
+	    for (int i=0;i<l.length;i++){
+		if (i<half){
+		    a[i] = l[i];
+		}
+		else {
+		    b[i-half] = l[i];
+		}
+	    }
+	    a = msort(a);
+	    b = msort(b);
+	    l = merge(a,b);
+	}
+	return l;
     }
 }

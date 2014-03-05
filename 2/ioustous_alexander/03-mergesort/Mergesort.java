@@ -1,5 +1,45 @@
 public class Mergesort {
 
+    public static int [] mergeSort (int [] input){
+	int [] returnarray = new int[input.length];
+	if (input.length <= 1){
+	    return input;
+	}else {
+	    if ((input.length % 2) ==1 ){
+		int[]b = new int[(input.length -1)/2 +1];
+		int[]a = new int[(input.length-1)/2];
+		for (int i = 0; i < (input.length -1)/2 +1; i++){
+		    b[i] = input[i];
+		}
+		for (int i = (input.length-1)/2 +1; i < input.length; i++){
+		    a[i-((input.length-1)/2 +1)] = input[i];
+		}
+		mergeSort (a);
+		mergeSort (b);
+		returnarray = merge(a,b);
+	    }else {
+		int[]b = new int[(input.length)/2];
+		int[]a = new int[(input.length)/2];
+		for (int i = 0; i < (input.length)/2; i++){
+		    b[i] = input[i];
+		}
+		for (int i = (input.length)/2; i < input.length; i++){
+		    a[i-(input.length)/2 ] = input[i];
+		}
+		mergeSort (a);
+		mergeSort (b);
+		returnarray = merge(a,b);
+	    
+	    }
+	}
+
+
+
+	return returnarray;
+    }
+	    
+	    
+
     public static int [] merge (int [] a, int [] b){
 	int tempa = 0;
 	int tempb = 0;
@@ -41,9 +81,13 @@ public class Mergesort {
     }
 
     public static void main (String [] args){
-	int[]c = {2, 3, 5, 9};
-	int []d = {1, 2, 6, 8};
+	/*int[]c = {2, 3, 5, 7};
+	  int []d = {2, 4, 6, 8};
 	
-	System.out.println  (toString(merge (c,d)));
+	  System.out.println  (toString(merge (c,d)));
+	*/
+	int[] c = {1, 2, 4, 9, 4, 7, 6};
+	System.out.println (toString (mergeSort(c)));
+
     }
 }
