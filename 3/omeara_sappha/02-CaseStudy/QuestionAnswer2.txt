@@ -1,0 +1,24 @@
+Set 2:
+1. What is the role of the instance variable sideLength?
+--It is the length of the side of the square that the BoxBug travels.
+2. What is the role of the instance variable steps?
+--It counts the number of steps taken on the current side of the square path.
+3. Why is the turn method called twice when steps becomes equal to sideLength?
+--The turn method only turns the Bug 45˚ and since the BoxBug must turn 90˚, it must turn twice.
+4. Why can the move method be called in the BoxBug class when there is no move method in the BoxBug code?
+--The move method is defined in the Bug class and BoxBug extends the Bug class, so when the move
+--method is called in BoxBug it takes the move method defined in Bug.
+5. After a BoxBug is constructed, will the size of its square pattern always be the same? Why or why not?
+--Yes, a BoxBug’s sideLength is defined in the constructor and there is no method to change that length,
+--meaning that the sideLength of a BoxBug, and therefore the size of its square pattern, will always remain the same.
+6. Can the path a BoxBug travels ever change? Why or why not?
+--Yes; if the BoxBug is moved to another cell on the grid, its path will then start at that new cell.
+7. When will the value of steps be zero?
+--Whenever the BoxBug initially starts moving, or whenever it turns a corner of its square path.
+
+Exercise:
+5. Study the code for the BoxBugRunner class. Summarize the steps you would use to add another BoxBug actor to the grid.
+--In the main method, create a new BoxBug by stating: BoxBug a = new BoxBug(n); where a is the name of the
+--new BoxBug you wish to create and n is the sideLength of the new BoxBug you wish to create. You can then
+--add the new BoxBug you made to the grid by stating: world.add(new Location(x, y), a); where x and y are the
+--coordinates where you would like to place the new BoxBug and a is the name you gave your BoxBug in the previous step.
