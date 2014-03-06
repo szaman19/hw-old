@@ -4,17 +4,17 @@ import java.util.*;
 public class MergeSort{
     public int[] merge (int[] A, int[] B){
 	int len = A.length + B.length;
-	int[] C = new int[n];
+	int[] C = new int[len];
 	int countC = 0;
 	int countA = 0;
 	int countB = 0;
 	while (countC < len){
 	    if (countA == A.length){
-		C[count] = B[countB];
+		C[countC] = B[countB];
 		countB++;
 	    }
 	    else if (countB == B.length){
-		C[count] = A[countA];
+		C[countC] = A[countA];
 		countA++;
 	    }
 	    else if (A[countA] <= B[countB]){
