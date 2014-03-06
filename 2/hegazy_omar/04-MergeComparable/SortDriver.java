@@ -7,6 +7,7 @@ public class SortDriver {
 	    SortDriver.mergeDoubleTest();
     }
     public static ArrayList<String> genStrings(int arraySize, int stringSize) {
+    	//randomly generated strings. enough of these and you get shakespeare
     	ArrayList<String> array = new ArrayList<String>();
     	for (int i = 0; i < arraySize; i++) {
     		String newString = new String();
@@ -17,11 +18,11 @@ public class SortDriver {
 		}
 		return array;
     }
-	public static ArrayList<Double> genDouble(int size) {
-    	ArrayList<Double> array = new ArrayList<Double>();
+	public static ArrayList<Integer> genInt(int size) {
+    	ArrayList<Integer> array = new ArrayList<Integer>();
     	for (int i = 0; i < size; i++) {
-	    	double isNegative = (Math.round(Math.random()) * -1.0);
-	    	array.add((2 * isNegative + 1) * Math.random() * 100.0);
+	    	int isNegative = (int)(Math.round(Math.random()) * -10);
+	    	array.add((int) ((2 * isNegative + 1) * Math.random() * 1000));
 		}
 		return array;
     }    
@@ -30,20 +31,27 @@ public class SortDriver {
 	public static void mergeStringTest() {
 		ArrayList<String> array = new ArrayList<String>();
 		System.out.println("Merge Test (String):");
-		array = genStrings(10,10);
+		array = genStrings(100,100);
 		System.out.println(array);
+		double time = System.currentTimeMillis();
 		array = Sort.merge(array);
+		double elapsedTime = (System.currentTimeMillis() - time) / 1000.0;
 		System.out.println("Sorted:");
 		System.out.println(array);
+		System.out.println(String.format("That took %f seconds",elapsedTime));	
 	}
 
 	public static void mergeDoubleTest() {
-		ArrayList<Double> array = new ArrayList<Double>();
+		ArrayList<Integer> array = new ArrayList<Integer>();
 		System.out.println("Merge Test:");
-		array = genDouble(30);
+		array = genInt(3000);
 		System.out.println(array);
+		double time = System.currentTimeMillis();
 		array = Sort.merge(array);
+		double elapsedTime = (System.currentTimeMillis() - time) / 1000.0;
 		System.out.println("Sorted:");
 		System.out.println(array);
+		System.out.println(String.format("That took %f seconds",elapsedTime));	
+
 	}
 }
