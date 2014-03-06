@@ -1,0 +1,2 @@
+If the array/arraylist is sorted, you can split the array in half and test to see if the array is less than the halfway point, 
+or more than the halfway point. Return the array with your number in it,abd split it in half again. Repeat the process. 

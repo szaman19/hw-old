@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class MergeSort{
 
     private int[] x;
@@ -26,7 +28,7 @@ public class MergeSort{
     }
 
     public int[] split( int[] L ) {
-	if ( L.length % 2 == 0 ) {
+	/*	if ( L.length % 2 == 0 ) {
 	    x = new int[L.length / 2];
 	    y = new int[L.length / 2];
 	}
@@ -34,11 +36,16 @@ public class MergeSort{
 	    x = new int[L.length / 2];
 	    y = new int[(L.length / 2) + 1];
 	}
-	for (int r = 0; r < L.length; r++) {
+	*/ 
+	x = new int[L.length / 2];
+	y = new int[L.length - x.length];
+	int r;
+	for (r = 0; r < L.length/2; r++) {
 	    if (r < x.length)
 		x[r] = L[r];
-	    else 
-		y[r - x.length] = L[r];
+	}
+	for (;r < L.length; r++) {
+	    y[L.length - r - 1] = L[r];
 	}
 	return L;
     }
@@ -50,8 +57,8 @@ public class MergeSort{
 	    split(L);
 	    x = mergeSort(x);
 	    y = mergeSort(y);
-	    L = merge(x, y);
-	    return L;
+	    int[] finale = merge(x, y);
+	    return finale;
 	}
     }
 
@@ -65,9 +72,8 @@ public class MergeSort{
 	B[0] = 3;
 	B[1] = 10;
 	B[2] = 13;
-	B[3] = 18;
-	System.out.println(m.merge( A, B));
-	System.out.println(m.mergeSort(B));
+       	B[3] = 18;
+	System.out.println(Arrays.toString(m.merge(A, B)));
     }
 
 }

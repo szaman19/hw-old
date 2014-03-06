@@ -14,8 +14,8 @@ public class Mergesort {
 		for (int i = (input.length-1)/2 +1; i < input.length; i++){
 		    a[i-((input.length-1)/2 +1)] = input[i];
 		}
-		mergeSort (a);
-		mergeSort (b);
+		a =mergeSort (a);
+		b =mergeSort (b);
 		returnarray = merge(a,b);
 	    }else {
 		int[]b = new int[(input.length)/2];
@@ -26,10 +26,10 @@ public class Mergesort {
 		for (int i = (input.length)/2; i < input.length; i++){
 		    a[i-(input.length)/2 ] = input[i];
 		}
-		mergeSort (a);
-		mergeSort (b);
+		a =mergeSort (a);
+		b =mergeSort (b);
 		returnarray = merge(a,b);
-	    
+		
 	    }
 	}
 
@@ -87,7 +87,9 @@ public class Mergesort {
 	  System.out.println  (toString(merge (c,d)));
 	*/
 	int[] c = {1, 2, 4, 9, 4, 7, 6};
+	int[]d = {9,8,7,6,5,4,3,2,1};
 	System.out.println (toString (mergeSort(c)));
+	System.out.println (toString (mergeSort(d)));
 
     }
 }

@@ -1,0 +1,1 @@
+2. To search for a value in a sorted list, keep on splitting the list into half (or approximate halves) and see which half the value is in. Then, take that half and split that, until you find the value.
