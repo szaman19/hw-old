@@ -71,7 +71,7 @@ public class MergeSort {
                 int[] array = new int[11];
                 ArrayList<String> list = new ArrayList<String>();
                 Random random = new Random();
-                final String[] ALPHABET = new String[] {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+                final String[] ALPHABET = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
                 for (int i = 0; i < array.length; i++) {
                         array[i] = random.nextInt(100);
                         list.add(ALPHABET[random.nextInt(26)]);
