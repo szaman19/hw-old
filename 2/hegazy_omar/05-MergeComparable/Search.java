@@ -38,6 +38,21 @@ public class Search {
 			return middle;
 		
 	}
-
+	//the genie in my lamp predicted you'd ask us to do this but im not going to make an 06 folder before it was even assigned 
+	public static <T extends Comparable<? super T>> int binarySearch(T item, ArrayList<T> array, int lowest, int highest) { 
+		int middle = (int) ((lowest + highest) / 2);
+		if (lowest > highest) 
+			return -1;
+		if (item.compareTo(array.get(middle)) > 0)
+			return binarySearch(item, array, middle + 1, highest);
+		if (item.compareTo(array.get(middle)) < 0)
+			return binarySearch(item, array, lowest, middle - 1);
+		else
+			return middle;
+	}
+	public static <T extends Comparable<? super T>> int binarySearch(T item, ArrayList<T> array) { 
+		array = Sort.merge(array); //holy shite bro my own merge sort being used! no more baby std library! 
+		return binarySearch(item, array, 0, array.size() - 1);
+	}
 
 }
