@@ -1,6 +1,9 @@
 /* Only tests Strings and ints */
 import java.io.*;
 import java.util.*;
+
+//HW 4's code was ugly cause it was boring cause I already did a more general solution 
+//HW 5's code is ugly cause I'm just sick of merge sort 
 public class SortDriver {
     public static void main(String[] args) {
 	    SortDriver.mergeStringTest();
