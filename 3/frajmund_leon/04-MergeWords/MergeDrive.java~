@@ -1,0 +1,24 @@
+import java.util.*;
+import java.lang.*;
+public class MergeDrive{
+
+    public static void main(String[]args){
+	MergeWords a = new MergeWords();
+	ArrayList<String> b = new ArrayList<String>();
+	b.add("aardvark");
+	b.add("nope");
+	b.add("yelling");
+	b.add("zebra");
+
+	ArrayList<String> c = new ArrayList<String>();
+	c.add("hellfire");
+	c.add("mine");
+	c.add("never");
+	c.add("texas");
+	c.add("xylphone");
+
+	a.print(a.merge(b,c));
+
+    }
+
+}
