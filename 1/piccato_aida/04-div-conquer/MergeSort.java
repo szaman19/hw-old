@@ -2,9 +2,11 @@ import java.util.*;
 
 public class MergeSort {
     public String printArray(int[] a) {
-	return Arrays.toString(a);
+return Arrays.toString(a);
     }
 
+<<<<<<< HEAD:1/piccato_aida/04-div-conquer/MergeSort.java
+=======
     public String printArrayList(ArrayList<String> a) {
         String s = "";
 	for (int i = 0; i < a.size(); i++) {
@@ -14,6 +16,7 @@ public class MergeSort {
     }
 	
 	
+>>>>>>> 7c936b5e2227be1085b49a9f5146fb841f1829ac:1/piccato_aida/03-merge-sort/MergeSort.java
     
     public int[] merge(int[] a, int[] b) {
 	int[] result = new int[a.length + b.length];
@@ -23,7 +26,7 @@ public class MergeSort {
         while (count < (a.length + b.length)) {
             if (countA == a.length) {
                 result[count] = b[countB];
-	        countB++;
+		countB++;
             }
             else if (countB == b.length) {
                 result[count] = a[countA];
@@ -32,7 +35,7 @@ public class MergeSort {
             else if (a[countA] > b[countB]) {
 
 		result[count] = b[countB];
-	        countB++;
+		countB++;
             }
             else {
                 result[count] = a[countA];
@@ -63,7 +66,7 @@ public class MergeSort {
                     b[i - n] = l[i];
                 }
             }
-	}
+}
         a = mergeSort(a);
         b = mergeSort(b);
         l = merge(a, b);
@@ -125,3 +128,4 @@ public class MergeSort {
     }
     
 }
+
