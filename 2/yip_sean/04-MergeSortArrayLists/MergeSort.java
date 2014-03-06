@@ -18,12 +18,13 @@ public class MergeSort {
                 left = mergeSort(left);
                 right = mergeSort(right);
                 ArrayList<String> listSorted = new ArrayList<String>(list.size());
-                while ((left.size() > 0) && (right.size() > 0)) {
-                        if (left.get(0).compareTo(right.get(0)) < 0) {listSorted.add(left.remove(0));}
-                        else {listSorted.add(right.remove(0));}
-                }
-                while (left.size() > 0) {listSorted.add(left.remove(0));}
-                while (right.size() > 0) {listSorted.add(right.remove(0));}
+                int i = 0, j = 0;
+		while ((i < left.size()) && (j < right.size())) {
+			if (left.get(i).compareTo(right.get(j)) < 0) {listSorted.add(left.get(i++));}
+			else {listSorted.add(right.get(j++));}
+		}
+		while (i < left.size()) {listSorted.add(left.get(i++));}
+		while (j < right.size()) {listSorted.add(right.get(j++));}
                 return listSorted;
         }
         
