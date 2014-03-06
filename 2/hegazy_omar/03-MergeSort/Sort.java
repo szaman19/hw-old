@@ -1,5 +1,7 @@
 import java.util.*;
 //primitives are not objects fuck you java
+
+//if i were to redo this now i'd just use comparables ... but im too lazy to touch this hideous monster
 public class Sort {    
     public static void main(String[] args) {   
         SortDriver.main(args);
