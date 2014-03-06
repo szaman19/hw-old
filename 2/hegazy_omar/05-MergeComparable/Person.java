@@ -24,7 +24,7 @@ public class Person implements Comparable<Person> {
 		return this.age - person.getAge();
 	}
 	/*public String compareTo(Person person) {
-		return this.name.compareTo(Person.getAge());
+		return this.name.compareTo(Person.getName());
 	}*/
 	
 	public String toString() {
