@@ -1,0 +1,5 @@
+linear search:
+
+for a sorted array, we can use something like the phone book method, in which we look at the midde first, and if our desired item is less than the midle item, then we disregard the greater than section, halving the size of the array that we look through each time.
+
+it can be written recursively, calling itself, looking only at the desired half of the input array, and with a bse case of "is the desired item, the middle item i am looking at"
