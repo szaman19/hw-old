@@ -95,7 +95,7 @@ public class Merge {
     public static void main(String[] args) {
 
 	Merge m = new Merge();
-	int[] a = m.makeList(100000);
+	int[] a = m.makeList(1000000);
 	long start, end;
 
 	start = System.currentTimeMillis();
