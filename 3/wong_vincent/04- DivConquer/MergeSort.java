@@ -7,7 +7,7 @@ public class MergeSort {
 	int ia=0,ib=0;
 	int i=0;
 	while (ia<a.length&&ib<b.length) {
-	    if (a[ia]<b[ib]) {
+	    if ((a[ia].compareTo(b[ib])) < 0) {
 		result[i]=a[ia];ia++;
 	    }  else {
 		result[i]=b[ib];ib++;
