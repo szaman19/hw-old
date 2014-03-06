@@ -3,9 +3,9 @@ import java.io.*;
 
 public class MergeSort{
 
-    public ArrayList merge(ArrayList a, ArrayList b){
+    public ArrayList<Comparable> merge(ArrayList<Comparable> a, ArrayList<Comparable> b){
 
-	ArrayList ans = new ArrayList();
+	ArrayList ans = new ArrayList<Comparable>();
 	int apos = 0;
 	int bpos = 0;
 
@@ -30,13 +30,13 @@ public class MergeSort{
 	return ans;
     }
 
-    public ArrayList mergeSort(ArrayList arrayList){
+    public ArrayList<Comparable> mergeSort(ArrayList<Comparable> arrayList){
 	if(arrayList.size() <= 1){
 	    return arrayList;
 	}
 
-	ArrayList a = new ArrayList();
-	ArrayList b = new ArrayList();
+	ArrayList a = new ArrayList<Comparable>();
+	ArrayList b = new ArrayList<Comparable>();
 
 	int i = 0;
 	
