@@ -1,0 +1,1 @@
+Using a sorted array or array list, you can start from the middle of the array or array list, and depening on whether or not the middle number is less than or greater than the number you want to find, you can eliminate the other half of the array or arraylist accordingly. 

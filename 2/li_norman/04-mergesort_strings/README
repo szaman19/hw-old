@@ -1,0 +1,18 @@
+Li, Norman
+MKS22X, Period II
+Mr. Zamansky
+HW #4
+2014-03-05
+
+Searching Through a Sorted Array/ArrayList
+There is an algorithm known as Binary Search. This algorithm works as follows:
+1. Begin in the middle of the list. Your bounds are currently 0 and the end of the list.
+2. Check the value at the current index (the middle). Check for the following:
+    -If the index value is equal to your target, return the index.
+    -If the index value is greater than your target, set the lowest bound to the current lowest bound
+     and index-1 to your highest bound. Run it again with the same target but with these bounds.
+    -If the index value is smaller than your target, set the lowest bound to index+1 and set the highest
+     bound to the current highest bound. Run it again with the same target but with these bounds.
+
+This works because in the first run-through, it begins in the middle (the average). If it's two high, then it searches through
+the bottom half and runs it again while changing the bounds. If it's too low, it searches through the upper half and runs it again.
