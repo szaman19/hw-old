@@ -4,7 +4,7 @@ public class BinSearch
     public static int binSearch ( Comparable[] a, Comparable target )
     {
         //return binSearchIter( a, target, 0, a.length-1 );
-		return binSearchRec( a, target, 0, a.length-1 );
+        return binSearchRec( a, target, 0, a.length-1 );
 	}
     
     // Binary Search Recursive Method
