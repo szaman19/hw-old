@@ -4,6 +4,7 @@ public class MergeSort{
     public static ArrayList<Comparable> merge( ArrayList<Comparable> a,  ArrayList<Comparable> b){
 	int topA=0;
 	int topB=0;
+	//int tret=0;
 	ArrayList<Comparable> ret=new ArrayList();
 	while(topA<a.size() &&topB<b.size()){
 	    if (a.get(topA).compareTo(b.get(topB))< 0){
@@ -14,15 +15,18 @@ public class MergeSort{
 		ret.add(b.get(topB));
 		topB++;
 	    }
+	    //tret++;
 	}
 	if (topA==a.size()){
 	    for(int x=topB;x<b.size();x++){
 		ret.add(b.get(x));
+		//tret++;
 	    }
 	}
 	else if(topB==b.size()){
 	    for(int x=topA;x<a.size();x++){
 		ret.add(a.get(x));
+		//tret++;
 	    }
 	}
 	return ret;
