@@ -9,64 +9,55 @@ public class mSortStrings{
 	    ArrayList<String> h1 = new ArrayList<String>();
 	    ArrayList<String> h2 = new ArrayList<String>();
 	    int i;
-	    for (i = 0; i< h1.size(); i++){
-		h1.set(i, A.get(i));
+	    for (i = 0; i< A.size()/2; i++){
+		h1.add(A.get(i));
 	    }
-	    for (;i< A.size(); i++){
-		h2.set(i-h1.size(), A.get(i));
+	    for (int j = A.size()/2;j< A.size(); j++){
+		h2.add(A.get(j));
 	    }
 	    h1 = mergeSort(h1);
 	    h2 = mergeSort(h2);
 	    return merge(h1, h2);
 	}
     }
-    //I started to change this, but I don't understand how we are supposed to sort the Strings!
-    //Do we sort by length of String, or do we sort alphabetically?
     public ArrayList<String> merge(ArrayList<String> A, ArrayList<String> B){
-	ArrayList<String> result = new ArrayList<String>();
-	int i = 0, j = 0, k = 0;
-	while (i < A.size() && j < B.size()){
-	    if (A.get(i) < B.get(j)){
-		result.set(k, A.get(i));
-		i++;
-	    }
-	    else{
-		result.set(k, B.get(j));
-		j++;
-	    }
-	    k++;
-	}
-
-	while (i < A.size()){
-	    result.set(k, A.get(i));
-	    i++;
-	    k++;
-	}
-
-	while (j < B.size()){
-	    result.set(k,B.get(j));
-	    j++;
-	    k++;
-	}
+	ArrayList<String> result = new ArrayList<String>(A.size() + B.size());
+	int i = 0, j = 0;
+        for (int k =0;k < A.size()+B.size();k++){
+            if (i == A.size()){
+                result.add(k,B.get(j));
+                j++;
+            }
+            else if (j == B.size() ){
+                result.add(k,A.get(i));
+                i++;
+            }
+            
+            else if(A.get(i).compareTo(B.get(j)) <= 0){
+                result.add(k,A.get(i));
+                i++;
+            }
+            else{
+                result.add(k,B.get(j));
+                j++;
+            }
+        }
 	return result;
     }
 
     public static void main(String[] args){
-	MergeSort m = new MergeSort();
-	ArrayList<String> a1 = new ArrayList<String>();
+	mSortStrings m = new mSortStrings();
+	ArrayList<String> a = new ArrayList<String>();
+	a.add("aardvark");
+	a.add("cat");
+	a.add("elephant");
+	a.add("bear");
+	a.add("duck");
+	a.add("flamingo");
 	    //aardvark, cat, elephant, giraffe, iguana, kangaroo, monkey, ostrich, quail, seal, unagi, whale, yak
-	ArrayList<String> a2 = new ArrayList<String>();
-	ArrayList<String> f = m.merge(a1,a2);
-	for (int i= 0; i< f.size(); i++){
-	    System.out.print(f[i] + ", ");
-	}
-	System.out.println("\n");
-	ArrayList<String> a3 = new ArrayList<String>{10,1,9,2,8,3,7,4,6,5};
-	ArrayList<String> g = m.mergeSort(a3);
+	ArrayList<String> g = m.mergeSort(a);
 	for (int i = 0; i< g.size(); i++){
-	    System.out.print(g[i] + ", ");
+	    System.out.print(g.get(i) + ", ");
 	}
     }
-
-
 }

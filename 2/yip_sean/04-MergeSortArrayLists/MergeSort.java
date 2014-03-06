@@ -18,12 +18,13 @@ public class MergeSort {
                 left = mergeSort(left);
                 right = mergeSort(right);
                 ArrayList<String> listSorted = new ArrayList<String>(list.size());
-                while ((left.size() > 0) && (right.size() > 0)) {
-                        if (left.get(0).compareTo(right.get(0)) < 0) {listSorted.add(left.remove(0));}
-                        else {listSorted.add(right.remove(0));}
-                }
-                while (left.size() > 0) {listSorted.add(left.remove(0));}
-                while (right.size() > 0) {listSorted.add(right.remove(0));}
+                int i = 0, j = 0;
+		while ((i < left.size()) && (j < right.size())) {
+			if (left.get(i).compareTo(right.get(j)) < 0) {listSorted.add(left.get(i++));}
+			else {listSorted.add(right.get(j++));}
+		}
+		while (i < left.size()) {listSorted.add(left.get(i++));}
+		while (j < right.size()) {listSorted.add(right.get(j++));}
                 return listSorted;
         }
         
@@ -71,7 +72,7 @@ public class MergeSort {
                 int[] array = new int[11];
                 ArrayList<String> list = new ArrayList<String>();
                 Random random = new Random();
-                final String[] ALPHABET = new String[] {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+                final String[] ALPHABET = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
                 for (int i = 0; i < array.length; i++) {
                         array[i] = random.nextInt(100);
                         list.add(ALPHABET[random.nextInt(26)]);
