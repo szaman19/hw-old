@@ -1,19 +1,22 @@
+import java.util.*;
+import java.io.*:
+
 public class MergeSort{
 
-    public int[] split(int[] L){
-	if(L.length <= 1){
+    public ArrayList<String> split(ArrayList<String> L){
+	if(L.size() <= 1){
 	    return L;
 	}else{
-	    int half = L.length / 2;
-	    int[] A = new int[half];
-	    int[] B = new int[L.length - half];
+	    int half = L.size() / 2;
+	    ArrayList<String> A = new ArrayList<String>();
+	    ArrayList<String> B = new ArrayList<String>();
 	    int index = 0;
-	    for(int x = 0; x < A.length;x++){
-		A[x] = L[index];
+	    for(int x = 0; x < A.size();x++){
+		//A[x] = L[index];
 		index++; 
 	    }
-	    for(int x = 0; x < B.length; x++){
-		B[x] = L[index];
+	    for(int x = 0; x < B.size(); x++){
+		//B[x] = L[index];
 		index++;
 	    }
 	    
@@ -24,7 +27,7 @@ public class MergeSort{
 	}
     }
 
-    public int[] merge(int[] A,int[] B){
+    public ArrayList<String> merge(ArrayList<String> A,ArrayList<String> B){
 	int indexA = 0;
 	int indexB = 0;
 	int[] result = new int[A.length + B.length];
