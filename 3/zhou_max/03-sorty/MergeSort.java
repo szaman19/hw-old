@@ -71,12 +71,17 @@ public class MergeSort{
 	for(int i = 0; i < 200; i++){
 	    a[i] = r.nextInt(100);
 	}
-	
+	long startTime = System.currentTimeMillis();	
 	int[] answer = mergeSort(a);
 	for (int i = 0; i < answer.length; i++){
 	    System.out.print(answer[i] + ", ");
 	}
+	System.out.println();
+	
 
+	long stopTime = System.currentTimeMillis();
+	long elapsedTime = stopTime - startTime;
+	System.out.println("Time elapsed: " + elapsedTime / 1000.0);
 
     }
 
