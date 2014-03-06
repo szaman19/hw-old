@@ -1,15 +1,24 @@
 public class Sorts{
-    public static int[] mergeSort(int[] a){
+    public static ArrayList<String> mergeSort(ArrayList<String> a){
     if(a.length<=1){
       return a;
     }else{
-	int[]h1=new int[a.length/2];
-	int[]h2=new int[a.length-a.length/2];
 	System.out.println(toString(a));
+	ArrayList<String>h1=new ArrayList<String>;
+
+	for(int x=0;x<a.length/2;x++){
+	    h1[x]=a[x];
+	}
+	System.out.println(toString(h1));
+	ArrayList<String>h2=new ArrayList<String>;
+	for(int x=0;x<(a.length-a.length/2);x++){
+	    h2[x]=a[h1.length+x];
+	}
+	System.out.println(toString(h2));
 	return merge(mergeSort(h1),mergeSort(h2));
     	}
     }
-    public static int[] merge(int[] a, int[] b){
+    public static ArrayList<String> merge(ArrayList<String> a, ArrayList<String> b){
 	int n;
 	int[] ans=new int[a.length+b.length];
 	int asmallest=0;
