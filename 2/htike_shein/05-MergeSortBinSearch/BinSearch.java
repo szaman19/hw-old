@@ -33,6 +33,8 @@ public class BinSearch{
 		return h;
 	}
 	public static void main(String[] args){
+		// Input one int to search, then a sorted list of ints to search from.
+		// For example: java BinSearch 1 1 2 3 4 5 would search for 1 in {1,2,3,4,5}
 		int[] args2 = new int[args.length - 1];
 		int f = Integer.parseInt(args[0]);
 		for(int i = 1;i < args.length;i++){

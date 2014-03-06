@@ -31,6 +31,7 @@ public class MergeSortStrings{
 		return merge(mergeSort(new ArrayList<String>(x.subList(0,x.size() / 2))),mergeSort(new ArrayList<String>(x.subList(x.size() / 2,x.size()))));
 	}
 	public static void main(String[] args){
+		// Sorts your args and prints it.
 		ArrayList<String> argsc = new ArrayList<String>(Arrays.asList(args));
 		System.out.println(mergeSort(argsc));
 	}
