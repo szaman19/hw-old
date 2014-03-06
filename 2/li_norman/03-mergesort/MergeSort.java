@@ -11,19 +11,17 @@ public class MergeSort
         {
             ArrayList<Integer> left = new ArrayList<Integer>();
             ArrayList<Integer> right = new ArrayList<Integer>();
-            ArrayList<Integer> L = new ArrayList<Integer>();
-            ArrayList<Integer> R = new ArrayList<Integer>();
             int divider = input.size() / 2;
             
             for (int i = 0; i < divider; i++)
                 left.add( input.get(i) );
             for (int j = divider; j < input.size(); j++)
                 right.add( input.get(j) );
-                
-            L = sort( left );
-            R = sort( right);
             
-            input = merge( L, R );
+            left = sort(left);
+            right = sort(right);
+            
+            input = merge( left, right );
             
             return input;
         }
@@ -36,24 +34,30 @@ public class MergeSort
     {
         ArrayList<Integer> result = new ArrayList<Integer>();
         
-        while ( (a1.size() != 0) &&
-                (a2.size() != 0) )
+        while ( (a1.size() > 0) &&
+                (a2.size() > 0) )
         {
-            if ( a1.get(0) >= a2.get(0) )
+            if ( a1.get(0) <= a2.get(0) )
+            {
                 result.add( a1.get(0) );
+                a1.remove(0);
+            }
             else
+            {
                 result.add( a2.get(0) );
+                a2.remove(0);
+            }
         }
         
-        if ( a1.size() == 0 )
+        while (a1.size() > 0)
         {
-            for (Integer i : a2)
-                result.add(i);
+            result.add( a1.get(0) );
+            a1.remove(0);
         }
-        else
+        while (a2.size() > 0)
         {
-            for (Integer i : a1)
-                result.add(i);
+            result.add( a2.get(0) );
+            a2.remove(0);
         }
         
         return result;
