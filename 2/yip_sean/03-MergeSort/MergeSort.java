@@ -73,4 +73,3 @@ public class MergeSort {
 	
 	public static String times(long t2, long t1) {return (t2 - t1) + " ns / " + ((double) (t2 - t1) / 1000000) + " ms / " + ((double) (t2 - t1) / 1000000000) + " s";}
 }
-
