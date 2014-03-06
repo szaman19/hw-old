@@ -1,30 +1,32 @@
+import java.util.*;
+
 public class DivConquer {
 
-    public static String [] mergeSort (String [] input){
-	String [] returnarray = new String[input.length];
-	if (input.length <= 1){
+    public static ArrayList<String> mergeSort (ArrayList<String> input){
+	ArrayList<String> returnarray = new ArrayList<String>(input.size());
+	if (input.size() <= 1){
 	    return input;
 	}else {
-	    if ((input.length % 2) ==1 ){
-		String[]b = new String[(input.length -1)/2 +1];
-		String[]a = new String[(input.length-1)/2];
-		for (int i = 0; i < (input.length -1)/2 +1; i++){
-		    b[i] = input[i];
+	    if ((input.size() % 2) ==1 ){
+		ArrayList<String> b = new ArrayList<String>((input.size() -1)/2 +1);
+		ArrayList<String> a = new ArrayList<String>((input.size()-1)/2);
+		for (int i = 0; i < (input.size()-1)/2 +1; i++){
+		    b.add(input.get(i));
 		}
-		for (int i = (input.length-1)/2 +1; i < input.length; i++){
-		    a[i-((input.length-1)/2 +1)] = input[i];
+		for (int i = (input.size()-1)/2 +1; i < input.size(); i++){
+		    a.add(input.get(i));
 		}
 		a =mergeSort (a);
 		b =mergeSort (b);
 		returnarray = merge(a,b);
 	    }else {
-		String[]b = new String[(input.length)/2];
-		String[]a = new String[(input.length)/2];
-		for (int i = 0; i < (input.length)/2; i++){
-		    b[i] = input[i];
+		ArrayList<String> b = new ArrayList<String>((input.size())/2);
+		ArrayList<String> a = new ArrayList<String>((input.size())/2);
+		for (int i = 0; i < (input.size())/2; i++){
+		    b.add(input.get(i));
 		}
-		for (int i = (input.length)/2; i < input.length; i++){
-		    a[i-(input.length)/2 ] = input[i];
+		for (int i = (input.size())/2; i < input.size(); i++){
+		    a.add( input.get(i));
 		}
 		a =mergeSort (a);
 		b =mergeSort (b);
@@ -36,28 +38,28 @@ public class DivConquer {
     }
 	    
 	    
-    public static String [] merge (String [] a, String [] b){
+    public static ArrayList<String> merge (ArrayList<String> a, ArrayList<String> b){
 	int tempa = 0;
 	int tempb = 0;
-	String[] returnarray = new String[a.length + b.length];
-	for (int i =0; i < returnarray.length; i++){
+	ArrayList<String> returnarray = new ArrayList<String>(a.size() + b.size());
+	for (int i =0; i < (a.size()+b.size()); i++){
 	    int tempa2 = tempa;
 	    int tempb2 = tempb;
-	    if (tempa  < a.length){
-		if (tempb >= b.length){
-		    returnarray[i] = a[tempa];
+	    if (tempa  < a.size()){
+		if (tempb >= b.size()){
+		    returnarray.add(a.get(tempa));
 		    tempa2 = tempa +1;
-		} else if (isABeforeB(a[tempa],b[tempb])){
-		    returnarray [i] = a[tempa];
+		} else if ((a.get(tempa).compareToIgnoreCase(b.get(tempb))) <= 0){
+		    returnarray.add(a.get(tempa));
 		    tempa2 = tempa +1;
 		}
 	    }
-	    if ((tempb  < b.length) && (tempa == tempa2)){
-		if (tempa >= a.length){
-		    returnarray[i] = b[tempb];
+	    if ((tempb  < b.size()) && (tempa == tempa2)){
+		if (tempa >= a.size()){
+		    returnarray.add( b.get(tempb));
 		    tempb2 = tempb +1;
-		}else if (isABeforeB(b[tempb],a[tempa])){
-		    returnarray [i] = b[tempb];
+		}else if ((b.get(tempb).compareToIgnoreCase(a.get(tempa))) <=0){
+		    returnarray.add(b.get(tempb));
 		    tempb2 = tempb + 1;
 		}
 	    }
@@ -68,31 +70,14 @@ public class DivConquer {
 	return returnarray;
     }
 
-    public static boolean isABeforeB (String a, String b){
-	if (a.length() > b.length()){
-	    for (int i =0; i <b.length(); i++){
-		if (a.charAt(i) > b.charAt(i)){
-		    return false;
-		}
-	    }
-	}else {
-	    for (int i =0; i < a.length(); i++){
-		if (a.charAt(i) > b.charAt(i)){
-		    return false;
-		}
-	    }
-	}
-	return true;
-    }
-    
-
-	
-    public static String toString (String[] array){
+ 	
+    public static String toString (ArrayList<String> array){
 	String returnstring = "";
-	for (int i = 0; i < array.length; i++){
-	    returnstring = returnstring + array[i] + ", ";
+	for (int i = 0; i < array.size(); i++){
+	    returnstring = returnstring + array.get(i) + ", ";
 	}
 	return returnstring;
+	
     }
 
 
@@ -102,9 +87,15 @@ public class DivConquer {
 	
 	  System.out.println  (toString(merge (c,d)));
 	*/
-	String[] c = {"g","f","e","d", "c", "b", "a"};
-	String[]d = {"hi","stufg", "more", "stuff"};
-	System.out.println (toString (mergeSort(c)));
+
+	ArrayList<String> d = new ArrayList<String> ();
+	d.add("hi");
+	d.add("stuff");
+	d.add("more");
+	d.add("sort");
+	d.add("stufg");
+	   
+	//	System.out.println (toString (d));
 	System.out.println (toString (mergeSort(d)));
 
     }
