@@ -28,4 +28,27 @@ public class Merge{
 	}
 	return sorted;
     }
+    
+    
+   public int[] msort(int[] L) {
+
+	if (L.length<=1){
+	    return L;
+	}
+
+	int[] a = new int[L.length/2];
+	int[] b = new int[L.length - a.length];
+
+	int i;
+	for (i=0;i<a.length;i++){
+	    a[i]=L[i];
+	}
+	for ( ; i<L.length;i++){
+	    b[ i-a.length ] = L[i];
+	}
+	a = msort(a);
+	b = msort(b);
+	int[] result = merge(a,b);
+	return result;
+    }
 }

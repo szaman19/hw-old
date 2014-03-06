@@ -41,22 +41,59 @@ public class Sort{
 	return result;
     }
 
-    public int[] copyRange(int[] L, int start, int end){
-	int[] result = new int[end-start];
-	for (int i = start; i < end; i++){
-	    result[i - start] = L[i];	    
-	}
-	return result;
-    }
-
     public int[] mergeSort(int[] A){
 
 	if (A.length <= 1){
 	    return A;
 	}
 	else{
-	    int[] B = copyRange(A,0,A.length/2);
-	    int[] C = copyRange(A,A.length/2,A.length);
+	    int[] B = Arrays.copyOfRange(A,0,A.length/2);
+	    int[] C = Arrays.copyOfRange(A,A.length/2,A.length);
+	    B = mergeSort(B);
+	    C = mergeSort(C);
+	    A = merge(B,C);
+	    return A;
+	    
+	}
+    }
+
+    public ArrayList<Comparable> merge(ArrayList<Comparable> A, ArrayList<Comparable> B){
+
+	ArrayList<Comparable> result = new ArrayList<Comparable>();
+	int a = 0;
+	int b = 0;
+	for (int i = 0; i < A.size() + B.size(); i++){
+	    // from jonathan's work-------
+	    if (a == A.size()){
+		result.set(i,B.get(b));
+		b++;
+	    }
+	    if (b == B.size()){
+		result.set(i,A.get(a));
+		a++;
+	    }
+	    // ---------------------------
+
+	    if (A.get(a).compareTo(B.get(b))){
+		result.set(i,A.get(a));
+		a++;
+	    }
+	    else{
+		result.set(i,B.get(b));
+		b++;
+	    }
+	}
+	return result;
+    }
+
+    public ArrayList<Comparable> mergeSort(ArrayList<Comparable> A){
+
+	if (A.size() <= 1){
+	    return A;
+	}
+	else{
+	    ArrayList<Comparable> B = (ArrayList<Comparable>)A.subList(0,A.size()/2);
+	    ArrayList<Comparable> C = (ArrayList<Comparable>)A.subList(A.size()/2,A.size());
 	    B = mergeSort(B);
 	    C = mergeSort(C);
 	    A = merge(B,C);
