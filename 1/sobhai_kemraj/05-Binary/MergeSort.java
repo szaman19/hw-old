@@ -60,7 +60,30 @@ public class MergeSort{
 	
     }
     */
-   
+    public ArrayList <Comparable> mergeSortAll (ArrayList <Comparable> a, ArrayList <Comparable> b){
+		ArrayList <Comparable> answer = new ArrayList <Comparable>;
+		int aPlace = 0;
+		int bPlace = 0;
+		while ((aPlace + bPlace) < (a.size() + b.size())){
+			if (aPlace == a.size()){
+				answer.add(b.get(bPlace));
+				bPlace++;
+			}
+			else if (bPlace == b.size()){
+				answer.add(a.get(aPlace));
+				aPlace++;
+			}
+			else if ((a[aPlace].compareTo(b[bPlace]))<0){
+				answer.add(a.get(aPlace));
+				aPlace++;
+			}
+			else {
+				answer.add(b.get(bPlace));
+				bPlace++;
+			}
+		}
+		return answer;
+	}
     public int[] mergeSort (int[] a, int[]b){
 		int[] answer = new int[a.length + b.length];
 		int aPlace = 0;
