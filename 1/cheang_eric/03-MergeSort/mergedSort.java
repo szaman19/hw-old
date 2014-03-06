@@ -5,6 +5,15 @@ public class mergedSort{
 
 	int[] unsortedArray;
 	int[] sortedArray;
+	int[] splitArray1;
+    int[] splitArray2;
+
+    public int[] getSplitArray1(){
+    	return splitArray1;
+    }
+    public int[] getSplitArray2(){
+    	return splitArray2;
+    }
 
 	public mergedSort(int[] givenArray){
 		unsortedArray = givenArray;
@@ -46,10 +55,6 @@ public class mergedSort{
 		}
 		return returnArray;
 	}
-
-	int[] splitArray1;
-    int[] splitArray2;
-
 
     private void splitArray(int[] givenArray){
 
@@ -93,44 +98,38 @@ public class mergedSort{
 
 	public void printMyArray(int[] printArray){
 		for (int x : printArray) {
-			System.out.println(x);			
+			System.out.print("[" + x + "] , ");	
 		}
+		System.out.println("");
 	}
 
 	public int[] mergeSort(int[] sortMe){
-		int[] returnArray = new int[sortMe.length];
-		if (sortMe.length != 1){
-			splitArray(sortMe);
-			mergeSort(splitArray1);
-			mergeSort(splitArray2);
+		if (sortMe.length <=  1){
+			return sortMe;
 		}
-		else{
-			int[] splitArrayMerged = merge(splitArray1,splitArray2);
-			returnArray = merge(splitArrayMerged,sortedArray);
-		}
-		return returnArray;
+		int[] mergedSplitArray1;
+		int[] mergedSplitArray2;
+		splitArray(sortMe);
+		mergedSplitArray1 = mergeSort(splitArray1);
+		mergedSplitArray2 = mergeSort(splitArray2);
+		sortedArray = merge(mergedSplitArray1, mergedSplitArray2);
+		return sortedArray;
 	}
 
 	public static void main(String[] args){
 
 		mergedSort testMS = new mergedSort();
-		int[] a = new int[7];
+		int[] a = new int[4];
 		a[0] = 5;
-		a[1] = 6;
+		a[1] = 20;
 		a[2] = 10;
-		//testMS.printMyArray(a);
-		//int[] b = new int[3];
-		//b[0] = 10;
-		//b[1] = 50;
-		//b[2] = 100;
-		//System.out.println("\n\n\n\n\n\n");
-		//testMS.printMyArray(testMS.merge(a,b));
-		a[3] = 2;
-		a[4] = 3;
-		a[5] = 9;
-		a[6] = 6;
+		a[3] = 1;
 
-		testMS.printMyArray(testMS.mergeSort(a));
+		testMS.printMyArray(a);
+		System.out.println("\n");
+		a = testMS.mergeSort(a);
+		System.out.println("\n");
+		testMS.printMyArray(a);
 	}
 }
 
