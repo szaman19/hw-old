@@ -5,8 +5,11 @@ class Person implements Comparable<Person>{
     private String name;
     public Person(int age1,String name1){age = age1;name = name1;}
     public int compareTo(Person other){
-	return this.name.compareTo(other.name);
+	return this.age - other.age;
     }
+//    public int compareTo(Person other){
+//    	return this.name.compareTo(other.name);
+//    }//for part b, uncomment these 3 lines and comment out the three above.
     public String toString(){
 	return age + "!" +name;
     }
