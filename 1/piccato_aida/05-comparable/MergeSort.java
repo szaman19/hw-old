@@ -2,7 +2,7 @@ import java.util.*;
 
 public class MergeSort {
     public String printArray(int[] a) {
-	return Arrays.toString(a);
+return Arrays.toString(a);
     }
 
     public String printArrayList(ArrayList<String> a) {
@@ -23,7 +23,7 @@ public class MergeSort {
         while (count < (a.length + b.length)) {
             if (countA == a.length) {
                 result[count] = b[countB];
-	        countB++;
+		countB++;
             }
             else if (countB == b.length) {
                 result[count] = a[countA];
@@ -32,7 +32,7 @@ public class MergeSort {
             else if (a[countA] > b[countB]) {
 
 		result[count] = b[countB];
-	        countB++;
+		countB++;
             }
             else {
                 result[count] = a[countA];
@@ -63,7 +63,7 @@ public class MergeSort {
                     b[i - n] = l[i];
                 }
             }
-	}
+}
         a = mergeSort(a);
         b = mergeSort(b);
         l = merge(a, b);
@@ -123,5 +123,61 @@ public class MergeSort {
         }
         return result;
     }
+    //Comparable
+    public static <T extends Comparable <? super T>> ArrayList<T> mergeComparable(ArrayList<T> a, ArrayList<T> b) {
+        ArrayList<T> result = new ArrayList<T>();
+        int countA = 0;
+        int countB = 0;
+	int count = 0;
+        while (count < (a.size() + b.size())) {
+            if (countA == a.size()) {
+                result.add(b.get(countB));
+	        countB++;
+            }
+            else if (countB == b.size()) {
+                result.add(a.get(countA));
+                countA++;
+            }
+            else if (a.get(countA).compareTo(b.get(countB)) > 0) {
+
+		result.add(b.get(countB));
+	        countB++;
+            }
+            else {
+                result.add(a.get(countA));
+                countA++;
+            }
+            count++;
+        }
+        return result;
+    }
+
+    public static <T extends Comparable<? super T>> ArrayList<T> mergeSortComparable(ArrayList<T> l) {
+        ArrayList<T> a;
+        ArrayList<T> b;
+        if (l.size() <= 1) {
+            return l;
+        }
+        else {
+            int n = l.size()/2;
+            a = new ArrayList<T>();
+            b = new ArrayList<T>();
+            for (int i = 0; i < l.size(); i++) {
+                if (i < n) {
+                    a.add(l.get(i));
+                }
+                else {
+                    b.add(i-n, l.get(i));
+                }
+            }
+	}
+        a = mergeSortComparable(a);
+        b = mergeSortComparable(b);
+        l = mergeComparable(a, b);
+	
+        return l;
+       
+    }
     
 }
+
