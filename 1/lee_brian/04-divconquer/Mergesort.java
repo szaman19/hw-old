@@ -10,7 +10,25 @@
   	a = 0;
   	b = 0;
   	i = 0;
-  	while (a+b <= total){
+
+	for (int i = 0; i < total; i++){
+	    if (a >= x.size()){
+		list.get(i) = y.get(b);
+	    }
+	    else if (b >= y.size()){
+		list.get(i) = x.get(a);
+	    }
+	    else if (x.get(a) <= y.get(b) && a < x.size()){
+		list.get(i) = x.get(a);
+		a++;
+	    }
+	    else if (x[a] > y[b] && b < y.length){
+		list.get(i) = y.get(b);
+		b++;
+	    }
+	}
+  
+	/*	while (a+b <= total){
   	    if (x.get(a).length() <= y.get(b).length()){
   		list.add(x.get(a));
   		a = a + 1;
@@ -25,6 +43,7 @@
   	    }
   	    
   	}
+	*/
   	return list;
       }
   
