@@ -8,7 +8,7 @@ public class BinSearch
     }
     
     // Binary Search Recursive Method
-    public static int binSearchRec( Comparable[] a, Comparable target, int lo, int hi )
+    private static int binSearchRec( Comparable[] a, Comparable target, int lo, int hi )
     {
         int index = ( hi + lo) / 2;
         
@@ -23,7 +23,7 @@ public class BinSearch
     }
     
     // Binary Search Iterative Method
-    public static int binSearchIter( Comparable[] a, Comparable target, int lo, int hi )
+    private static int binSearchIter( Comparable[] a, Comparable target, int lo, int hi )
     {
         int index = ( hi + lo ) / 2;
         
