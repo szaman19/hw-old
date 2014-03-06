@@ -1,6 +1,9 @@
 import java.util.*;
 public class Search {
 	public static void main(String[] args) {	
+		int[] test = {1,2,3,4,5,6,7,8,9};
+		System.out.println("ib " + ibsearch(4,test));
+		System.out.println("rb " + rbsearch(4, test));
 	}
 	public static int rbsearch(int item, int[] sortedArray) {
 		Arrays.sort(sortedArray); //sorting all arrays w/ quicksort takes less time than check if its already sorted, then sort it accordingly
