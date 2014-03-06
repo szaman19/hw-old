@@ -38,27 +38,15 @@ public class MergeSort
                 (a2.size() > 0) )
         {
             if ( a1.get(0).compareTo( a2.get(0) ) <= 0 )
-            {
-                result.add( a1.get(0) );
-                a1.remove(0);
-            }
+                result.add( a1.remove(0) );
             else
-            {
-                result.add( a2.get(0) );
-                a2.remove(0);
-            }
+                result.add( a2.remove(0) );
         }
         
         while (a1.size() > 0)
-        {
-            result.add( a1.get(0) );
-            a1.remove(0);
-        }
+            result.add( a1.remove(0) );
         while (a2.size() > 0)
-        {
-            result.add( a2.get(0) );
-            a2.remove(0);
-        }
+            result.add( a2.remove(0) );
         
         return result;
     }
