@@ -30,3 +30,7 @@ Set 6
 6) The bug removes itself from the grid.
 7) loc is needed because it remember's the bug's location before it moves, so it can put a flower where the bug used to be.
 8) It will help identify which bug dropped which flower.
+9) It will only place a flower if it's called in the Bug move method, but not the Actor class.
+10) Flower f = new Flower(getColor());
+    f.putSelfInGrid(gr, loc);
+11) Four times
