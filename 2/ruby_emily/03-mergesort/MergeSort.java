@@ -2,34 +2,28 @@ import java.io.*;
 import java.util.*;
 
 public class MergeSort{
-    private int[] h1, h2,r1,r2;
+    private int[] h1, h2;
 
     public int[] mergeSort(int[] a){
 	if (a.length <= 1)
 	    return a;
 	else{
-	    r1 = new int[a.length/2];
-	    r2 = new int[a.length/2];
-	    split(a);
-	    r1 = mergeSort(h1);
-	    r2 = mergeSort(h2);
-	    a  = merge(r1,r2);
+	    int half = a.length/2;
+	    h1 = new int[half];
+	    h2 = new int[half];
+	    for (int i=0; i<half; i++){
+		h1[i]=a[i];
+		h2[i]=a[i+half];
+	    }
+	    h1 = mergeSort(h1);
+	    h2 = mergeSort(h2);
+	    a  = merge(h1,h2);
 	    return a;
 	}
 
     }
     
-    public void split(int[] a){
-	int half = a.length/2;
-	h1 = new int[half];
-	h2 = new int[half];
-        for (int i=0; i<half; i++){
-	    h1[i]=a[i];
-	    h2[i]=a[i+half];
-	}
-	//	System.out.println(toString(h1));
-	//	System.out.println(toString(h2));
-    }
+  
 
     public int[] merge(int[] x, int[] y){
 	int ycount=0;
