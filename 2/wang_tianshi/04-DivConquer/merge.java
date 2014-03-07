@@ -3,10 +3,10 @@ import java.util.*;
 
 public class merge{
 
-    public ArrayList<Integer> merge (ArrayList<Integer> A, ArrayList<Integer> B){
+    public ArrayList<String> merge (ArrayList<String> A, ArrayList<String> B){
 
 	int L = A.size() + B.size ();
-	ArrayList<Integer> ans = new ArrayList<Integer>();
+	ArrayList<String> ans = new ArrayList<String>();
 	int a=0;
 	int b=0;
 	int i=0;
@@ -17,7 +17,7 @@ public class merge{
 	    }else if (b==B.size() && a!=A.size ()){
 		ans.add(A.get(a));
 		a++;
-	    }else if (A.get(a)<B.get(b)){
+	    }else if (A.get(a).compareTo(B.get(b)) <= 0){
 		ans.add(A.get(a));
 		a++;
 	    }else{
@@ -29,13 +29,13 @@ public class merge{
 	return ans;
     }
 
-    public ArrayList<Integer> mergeSort(ArrayList<Integer> a){
+    public ArrayList<String> mergeSort(ArrayList<String> a){
 	int size = a.size();
 	if (size<=1)
 	    return a;
 	else{
-	    ArrayList<Integer> a1 = new ArrayList<Integer>();
-	    ArrayList<Integer> a2 = new ArrayList<Integer>();
+	    ArrayList<String> a1 = new ArrayList<String>();
+	    ArrayList<String> a2 = new ArrayList<String>();
 	    for (int i=0; i<size/2; i++)
 		a1.add(a.get(i));
 	    
@@ -51,22 +51,17 @@ public class merge{
     public static void main (String[] args){
 	merge m = new merge(); //testing out merge
 
-	ArrayList<Integer> list1 = new ArrayList<Integer>();
-	ArrayList<Integer> list2 = new ArrayList<Integer>();
-	ArrayList<Integer> list3 = new ArrayList<Integer>();
+	ArrayList<String> list1 = new ArrayList<String>();
 
-	for (int i=0; i<20;i++){
-	    list1.add((int)(Math.random()*100));
-	    list2.add((int)(Math.random()*100));
-	    list3.add((int)(Math.random()*100));
-	}
+	list1.add("hello");
+	list1.add("apple");
+	list1.add("1357");
+	list1.add("Tyler");
+	list1.add("lady's man");
+	list1.add(":(");
 
 	System.out.println(list1);
-	System.out.println(list2);
-	System.out.println(m.merge(list1, list2));
-
-	System.out.println(list3);
-	System.out.println(m.mergeSort(list3));
+	System.out.println(m.mergeSort(list1));
 	
     }
 }
