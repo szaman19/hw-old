@@ -2,27 +2,28 @@ import java.io.*;
 import java.util.*;
 
 public class MergeSort{
-    public String[] merge(String[] a, String[] b){
-	String[] res = new String[a.length+b.length];
+    public ArrayList<String> merge(ArrayList<String> a,ArrayList<String> b){
+	ArrayList<String> res = new ArrayList<String>();
 	int counta = 0;
 	int countb = 0;
-	for (int i = 0;i<res.length;i++){
-	    if (a.length <= counta){
-		res[i] = b[countb];
+	int total = a.size() + b.size();
+	for (int i = 0;i<total;i++){
+	    if (a.size() <= counta){
+		res.add(b.get(countb));
 		countb = countb + 1;
 	    }
-	    else if (b.length <= countb){
-		res[i] = a[counta];
+	    else if (b.size() <= countb){
+		res.add(a.get(counta));
 		counta = counta + 1;
 	    }
 	    else {
-		String temp = a[counta];
-		if (temp.compareTo(b[countb]) < 0){
-		    res[i] = a[counta];
+		String temp = a.get(counta);
+		if (temp.compareTo(b.get(countb)) < 0){
+		    res.add(a.get(counta));
 		    counta = counta + 1;
 		}
 		else {
-		    res[i] = b[countb];
+		    res.add(b.get(countb));
 		    countb = countb + 1;
 		}
 	    }
@@ -30,21 +31,20 @@ public class MergeSort{
 	return res;
     }
 
-    public String[] msort(String[] L){
-	if (L.length <= 1){
+    public ArrayList<String> msort(ArrayList<String> L){
+	if (L.size() <= 1){
 	    return L;
 	}
 	else {
-	    int half = L.length/2;
-	    int other = L.length - half;
-	    String[] a = new String[half];
-	    String[] b = new String[other];
-	    for (int i = 0;i<L.length;i++){
+	    int half = L.size()/2;
+	    ArrayList<String> a = new ArrayList<String>();
+	    ArrayList<String> b = new ArrayList<String>();
+	    for (int i = 0;i<L.size();i++){
 		if (i < half){
-		    a[i] = L[i];
+		    a.add(L.get(i));
 		}
 		else {
-		    b[i-half] = L[i];
+		    b.add(L.get(i));
 		}
 	    }
 	    a = msort(a);
