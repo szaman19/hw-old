@@ -6,6 +6,7 @@ public class Driver {
 
 	Merge m = new Merge();
 
+	/*
 	ArrayList<Comparable> l = new ArrayList<Comparable>();
 	Person p1 = new Person("Bob", 44);
 	Person p2 = new Person("Jose", 14);
@@ -26,9 +27,17 @@ public class Driver {
 
 	ArrayList<Comparable> r = m.mergeSort(l);
 	System.out.println(r);
+	*/
 
-	//BinarySearch b = new BinarySearch();
-	//int[] y = b.makeList(10);
+	BinarySearch b = new BinarySearch();
+	ArrayList<Comparable> y = b.makeList(10);
+	y.add(10233);
+	y.add(10245);
+	System.out.println(y);
+	ArrayList<Comparable> x = m.mergeSort(y);
+	System.out.println(x);
+	//System.out.println(b.rbsearch(10233, x));
+	System.out.println(b.ibsearch(10245, x));
 
 
     }
