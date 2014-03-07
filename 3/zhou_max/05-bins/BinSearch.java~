@@ -1,0 +1,30 @@
+public class BinSearch{
+    public int rbsearch(int n, int[] L){
+	int current = L.length / 2;
+	if (L[current] == n){
+	    return current;
+	}
+	else if (L[current] < n){
+	    int[] newAry = new int[L.length-current];
+	    for (int i = 0; i < newAry.length; i++){
+		newAry[i] = L[current];
+		current++;
+	    }
+	    return rbsearch(n, newAry);
+	}
+	else{
+	    int[] newAry = new int[current];
+	    for (int i = 0; i < newAry.length; i++){
+		newAry[i] = L[i];
+	    }
+	    return rbsearch(n, newAry);
+		
+	}
+		    
+    }
+}
+
+public int ibsearch(int n, int[] L){
+	
+}
+}
