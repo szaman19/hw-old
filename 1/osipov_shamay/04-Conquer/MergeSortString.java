@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*:
 
-public class MergeSort{
+public class MergeSortString{
 
     public ArrayList<String> split(ArrayList<String> L){
 	if(L.size() <= 1){
