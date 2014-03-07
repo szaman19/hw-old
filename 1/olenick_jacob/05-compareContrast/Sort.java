@@ -120,6 +120,32 @@ public class Sort{
 	}
 	return result;
     }
+    
+    public ArrayList split(ArrayList A, boolean firstHalf){ //cuts in half
+	ListIterator I = A.listIterator();
+	ArrayList B = new ArrayList();
+	int i = 0;
+	if (A.size() != 0){
+	    if (firstHalf){
+		while (I.hasNext()){
+		    B.set(i,I.next());
+			i++;
+		}
+	    }
+	    else {
+		int j = A.size()/2;
+		while (j < A.size()){
+		    B.set(i,A.get(j));
+		    j++;
+		    i++;
+		}
+	    }	
+	}	
+	else {
+	    B = A;
+	}
+	return B;
+    }
 
     public ArrayList mergeSort(ArrayList A){
 
@@ -127,8 +153,11 @@ public class Sort{
 	    return A;
 	}
 	else{
-	    ArrayList<Comparable> B = (ArrayList<Comparable>)A.subList(0,A.size()/2);
-	    ArrayList<Comparable> C = (ArrayList<Comparable>)A.subList(A.size()/2,A.size());
+	    if (A.size() > 1) 
+		ArrayList<Comparable> B = split(A,true);
+	    else
+		ArrayList<Comparable> B = new ArrayList<Comparable>();
+	    ArrayList<Comparable> C = split(A,false);
 	    B = mergeSort(B);
 	    C = mergeSort(C);
 	    A = merge(B,C);
