@@ -1,5 +1,13 @@
 public class BinarySearch {
 
+    public int[] makeList(int n) {
+	int[] res = new int[n];
+	for (int i=0;i<n;i++) {
+	    res[i] = (int)(Math.random() * 100000);
+	}
+	return res;
+    }
+
     public int rbsearch(int n, int[] L) {
 	int middle = L.length/2;
 
