@@ -124,7 +124,8 @@ public class Driver {
 	public void testIterative(BinarySearch b, int[] a, int numValid, int numInvalid) {
 		// tries searching for numbers in the array
 		for (int v = 0; v < numValid; v++) {
-			int target = a[(int) Math.random() * a.length];
+			int random = (int) (Math.random() * a.length);
+			int target = a[random];
 			int index = b.iterativeBinarySearch(target, a);
 			System.out.println("Target: " + target + " - Index: " + index);
 		}
@@ -132,6 +133,23 @@ public class Driver {
 		for (int i = 0; i < numInvalid; i++) {
 			int target = a.length + a[(int) (Math.random() * a.length)];
 			int index = b.iterativeBinarySearch(target, a);
+			System.out.println("Target: " + target + " - Index: " + index);
+		}
+	}
+
+	// helper method for testing the recursive binary search method
+	public void testRecursive(BinarySearch b, int[] a, int numValid, int numInvalid) {
+		// tries searching for numbers in the array
+		for (int v = 0; v < numValid; v++) {
+			int random = (int) (Math.random() * a.length);
+			int target = a[random];
+			int index = b.recursiveBinarySearch(target, a);
+			System.out.println("Target: " + target + " - Index: " + index);
+		}
+		// tries searching for numbers not in the array
+		for (int i = 0; i < numInvalid; i++) {
+			int target = a.length + a[(int) (Math.random() * a.length)];
+			int index = b.recursiveBinarySearch(target, a);
 			System.out.println("Target: " + target + " - Index: " + index);
 		}
 	}
@@ -186,17 +204,15 @@ public class Driver {
 		int[] testIterative = randomIntArray(10, 1, 30);
 		Arrays.sort(testIterative);
 		driver.printIntArray(testIterative);
-		driver.testIterative(binSearch, testIterative, 3, 2);
-		
-		
+		driver.testIterative(binSearch, testIterative, 4, 2);
 
+		// Recursively
+		System.out.println("\nTesting Recursive Binary Search");
+		int[] testRecursive = randomIntArray(10, 1, 30);
+		Arrays.sort(testRecursive);
+		driver.printIntArray(testRecursive);
+		driver.testRecursive(binSearch, testRecursive, 4, 2);
 
-
-
-
-
-
-
-
+		System.out.println();
 	}
 }
