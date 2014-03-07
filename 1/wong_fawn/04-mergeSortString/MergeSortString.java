@@ -2,46 +2,47 @@ import java.io.*;
 import java.util.*;
 
 public class MergeSortString {
-	public String[] merge(String[] A, String[] B) {
+	public ArrayList<String> merge(ArrayList<String> A, ArrayList<String> B) {
 		int ia = 0, ib = 0;
-		int len = A.length + B.length;
-		String[] C = new String[len];
+		int len = A.size() + B.size();
+		ArrayList<String> C = new ArrayList<String>(len);
 		for (int i = 0; i < len; i++) {
-			if (ia == A.length) {
-				C[i] = B[ib];
+			if (ia == A.size()) {
+				C.add(B.get(ib));
 				ib = ib + 1;
 			}
-			else if (ib == B.length) {
-				C[i] = A[ia];
+			else if (ib == B.size()) {
+				C.add(A.get(ia));
 				ia = ia + 1;
 			}
-			else if (A[ia].compareTo(B[ib]) < 0) {
-				C[i] = A[ia];
+			else if (A.get(ia).compareTo(B.get(ib)) < 0) {
+				C.add(A.get(ia));
 				ia = ia + 1;
 			}
 			else {
-				C[i] = B[ib];
+				C.add(B.get(ib));
 				ib = ib + 1;
 			}
 		}
 		return C;
 	}
 
-	public String[] sort(String[] L) {
-		if (L.length <= 1) 
+	public ArrayList<String> sort(ArrayList<String> L) {
+		//System.out.println(L.size());
+		if (L.size() <= 1) 
 			return L;
 		else {
-			int l = L.length;
+			int l = L.size();
 			int a = l / 2, ia = 0;
 			int b = l - a, ib = 0;
-			String[] A = new String[a], B = new String[b];
+			ArrayList<String> A = new ArrayList<String>(a), B = new ArrayList<String>(b);
 			for (int i = 0; i < l; i++) {
 				if (i < a) {
-					A[ia] = L[i];
+					A.add(L.get(i));
 					ia = ia + 1;
 				}
 				else {
-					B[ib] = L[i];
+					B.add(L.get(i));
 					ib = ib + 1;
 				}
 			}
@@ -54,9 +55,19 @@ public class MergeSortString {
 
 	public static void main(String[] args) {
 		MergeSortString m = new MergeSortString();
-		String[] a = {"i", "d", "e", "h", "e", "a", "y", "i", "r", "g", "q"};
+		ArrayList<String> a = new ArrayList<String>();
+		a.add("hi");
+		a.add("my");
+		a.add("name");
+		a.add("is");
+		a.add("fawn");
+		System.out.println(a.size());
 		a = m.sort(a);
-		System.out.println(Arrays.toString(a));
+		String print = "";
+		for (int i = 0; i < a.size(); i ++) {
+			print = print + " " + a.get(i);
+		}
+		System.out.println(print);
 		
 	}
 }      
