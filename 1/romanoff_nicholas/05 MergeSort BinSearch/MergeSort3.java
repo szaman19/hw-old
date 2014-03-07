@@ -3,14 +3,6 @@
 // Homework #05 MergeSort: Comparables
 // 2014-03-05
 
-/*
-For some reason that I have not been able to identify, I've been unable to get MergeSort 
-to function properly with Strings using the CompareTo method and treating the Strings
-like I would any object. For the homework last night, I simply accessed the length of the 
-Strings as a work-around. The code works for Integer and Person, but not for Strings, which I really don't understand. At first I thought it was just the rather unique way I appear to have written my merge code, but after adapting the class mergesort file to this assignment, I found that the problem did not dissapear.
-*/
-
-
 import java.util.*;
 
 class MergeSort3 {
@@ -64,38 +56,5 @@ class MergeSort3 {
 			}
 		}
 		return merged;
-	}
-
-
-	// helper function for print arrays
-	public void printArray(ArrayList<Comparable> a) { 
-		String printStr = "[";
-        	for (Comparable n : a) {
-			printStr += " " + n;
-		}
-		System.out.println(printStr += " ]");
-	}
-
-	// driver for testing
-	public static void main(String[] args) {
-
-		MergeSort3 merger = new MergeSort3();
-		/*
-		String[] array = {"cat", "horse", "dolphin","penguin",
-				  "dog", "ostrich", "dinosaur", "iguana",
-				  "bee", "lizard", "whale", "zebra","hippopatamus",
-				  "bumblebee", "koala", "tiger", "gnat"};
-*/
-
-		Integer[] array = {5, 2, 6, 8, 4, 6, 9};
-		ArrayList<Comparable> arraylist = new ArrayList<Comparable>();
-
-		for (Comparable s : array) {
-			arraylist.add(s);
-		}
-
-		merger.printArray(mergeSort(arraylist));
-
-		
 	}
 }

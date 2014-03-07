@@ -4,9 +4,20 @@ import java.util.*;
 public class Driver{
     public static void main(String[] args){
 	MergeSort m = new MergeSort();
-	String[] L = {"a","g","y","w","k"};
-	System.out.println(Arrays.toString(m.msort(L)));
-	String[] l = {"e","q","u","k","v","z"};
-	System.out.println(Arrays.toString(m.msort(l)));
+	ArrayList<String> L = new ArrayList<String>();
+	L.add("a");
+	L.add("g");
+	L.add("y");
+	L.add("w");
+	L.add("k");
+	System.out.println(m.msort(L));
+	ArrayList<String> l = new ArrayList<String>();
+	l.add("e");
+	l.add("q");
+	l.add("u");
+	l.add("k");
+	l.add("v");
+	l.add("z");
+	System.out.println(m.msort(l));
     }
 }
