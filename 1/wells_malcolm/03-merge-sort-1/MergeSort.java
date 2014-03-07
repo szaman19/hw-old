@@ -1,5 +1,22 @@
 import java.util.*;
 public class MergeSort{
+    public static int[] mergeSort(int[] A){
+	if(A.length > 1){
+	    int[] x = new int[A.length/2];
+	    int[] y = new int[A.length-A.length/2];
+	    for(int z = 0;z<A.length;z++){
+		if(z<x.length){
+		    x[z] = A[z];
+		} else {
+		    y[z-x.length] = A[z];
+		}
+	    }
+	    x = mergeSort(x);
+	    y = mergeSort(y);
+	    A = merge(x,y);
+	}
+	return A;
+    }
     private static int[] merge(int[] A, int[] B){
 	int[] ans = new int[A.length + B.length];
 	int currentA = 0;
@@ -30,10 +47,10 @@ public class MergeSort{
 	return ans;
     }
     public static void main(String[] args){
-	int[] A = {0, 4, 8, 100};
+	int[] A = {0, 40, 400, 8, 1};
 	int[] B = {3, 5, 15, 20};
-	int[] C = merge(A, B);
-	for(int x : C){
+	A = mergeSort(A);
+	for(int x : A){
 	    System.out.print(x+" ");
 	}
     }
