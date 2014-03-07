@@ -5,8 +5,9 @@ public class MergeArrayList{
     public static ArrayList merge(ArrayList<String> a, ArrayList<String> b){
 	int acount = 0;
 	int bcount = 0;
+	int length = a.size()+b.size();
 	ArrayList answer = new ArrayList<String>();
-	for(int count = 0 ; count < a.size()+b.size();){
+	for(int count = 0 ; count < length;){
 	    if(acount>=a.size()){
 		answer.add(b.get(bcount));
 		bcount++;
@@ -20,19 +21,15 @@ public class MergeArrayList{
 		String second = b.get(bcount);
 		if(first.compareTo(second)>0){
 		    answer.add(second);
-		    answer.add(first);
-		    acount++;
 		    bcount++;
-		    count += 2;
+		    count += 1;
 		}else if(first.compareTo(second)<0){
 		    answer.add(first);
-		    answer.add(second);
-		    acount++;
-		    bcount++;
-		    count += 2;
+		    acount++;	
+		    count += 1;
 		}else{
 		    answer.add(first);
-		    answer.add(first);
+		    answer.add(second);
 		    acount++;
 		    bcount++;
 		    count += 2;
@@ -59,8 +56,8 @@ public class MergeArrayList{
 	}else{
 	    split = L.size() / 2 ;
 	}
-	ArrayList a = new ArrayList<String>();
-	ArrayList b = new ArrayList<String>();
+	ArrayList a = new ArrayList<String>(split);
+	ArrayList b = new ArrayList<String>(L.size()-split);
 	for(int x = 0; x < split  ; x++){
 	    a.add(L.get(x)) ;
 	}
@@ -77,12 +74,19 @@ public class MergeArrayList{
 	ArrayList a = new ArrayList<String>();
 	ArrayList b = new ArrayList<String>();
 	ArrayList c = new ArrayList<String>();
+
 	a.add("apple");
 	a.add("orange");
+	a.add("pear");
 	a.add("pineapple");
+
 	b.add("banana");
+	b.add("blueberry");
 	b.add("kiwi");
-	b.add("watermelon");	
+	b.add("orange");
+	b.add("raspberry");
+	b.add("watermelon");
+	
 	c.add("calculus");
 	c.add("history");
 	c.add("comsci");
