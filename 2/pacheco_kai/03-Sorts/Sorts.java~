@@ -3,8 +3,17 @@ public class Sorts{
     if(a.length<=1){
       return a;
     }else{
+	System.out.println(toString(a));
 	int[]h1=new int[a.length/2];
+	for(int x=0;x<h1.length;x++){
+	    h1[x]=a[x];
+	}
+	System.out.println(toString(h1));
 	int[]h2=new int[a.length-a.length/2];
+	for(int x=0;x<h2.length;x++){
+	    h2[x]=a[h1.length+x];
+	}
+	System.out.println(toString(h2));
 	return merge(mergeSort(h1),mergeSort(h2));
     	}
     }

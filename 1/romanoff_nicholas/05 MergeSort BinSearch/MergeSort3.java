@@ -3,7 +3,6 @@
 // Homework #05 MergeSort: Comparables
 // 2014-03-05
 
-
 import java.util.*;
 
 class MergeSort3 {
@@ -57,43 +56,5 @@ class MergeSort3 {
 			}
 		}
 		return merged;
-	}
-
-
-	// helper function for print arrays
-	public void printArray(ArrayList<Comparable> a) { 
-		String printStr = "[";
-        	for (Comparable n : a) {
-			printStr += " " + n;
-		}
-		System.out.println(printStr += " ]");
-	}
-
-	// driver for testing
-	public static void main(String[] args) {
-
-		MergeSort3 merger = new MergeSort3();
-		
-		String[] array1 = {"cat", "horse", "dolphin","penguin",
-				  "dog", "ostrich", "dinosaur", "iguana",
-				  "bee", "lizard", "whale", "zebra","hippopatamus",
-				  "bumblebee", "koala", "tiger", "gnat"};
-		Integer[] array2 = {5, 2, 6, 8, 4, 6, 9};
-		
-		ArrayList<Comparable> arraylist1 = new ArrayList<Comparable>();
-		ArrayList<Comparable> arraylist2 = new ArrayList<Comparable>();
-
-		for (Comparable s : array1) {
-			arraylist1.add(s);
-		}
-		for (Comparable s : array2) {
-			arraylist2.add(s);
-		}
-		
-		System.out.println("\nTesting MergeSort on a String array");
-		merger.printArray(mergeSort(arraylist1));
-		System.out.println("\nTesting MergeSort on an Integer array");		
-		merger.printArray(mergeSort(arraylist2));
-		
 	}
 }
