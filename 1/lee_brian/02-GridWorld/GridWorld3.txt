@@ -1,0 +1,36 @@
+Part 3
+
+Set 3
+1) loc1.getRow()
+2) false
+3) (4,4)
+4) south-east
+5) It returns the closest adjacent location in the same direction as the one given in the parameter.
+
+Set 4
+1) getOccupiedLocations().size() gets the number of occupied locations on the grid
+   Subracting the number of occupied locations from the total area of the grid will get the number of empty locations.
+2) isValid(new Location(10,10)) will return true if (10,10) is a valid location
+3) Since Grid is an interface, it can be used by all other class files that implements the Grid interface
+4) You don't have to type as much for arrays, but ArrayLists don't need to be sized. Arrays need to be given a certain size.
+
+Set 5
+1) color, direction, location
+2) blue, north
+3) Actors have state and behavior. If it were an interface, it wouldn't be able to have instance variables or methods.
+
+Set 6
+1) if (!gr.isValid(next))
+    return false;
+2) Actor n = gr.get(next);
+   return (n == null) || (n instanceof Flower);
+3) isValid and get. This will let us know if the next spot is valid, and to get the location of that spot
+4) getAdjacentLocation, which finds the next location to move to
+5) getLocation, getDirection, getGrid
+6) The bug removes itself from the grid.
+7) loc is needed because it remember's the bug's location before it moves, so it can put a flower where the bug used to be.
+8) It will help identify which bug dropped which flower.
+9) It will only place a flower if it's called in the Bug move method, but not the Actor class.
+10) Flower f = new Flower(getColor());
+    f.putSelfInGrid(gr, loc);
+11) Four times
