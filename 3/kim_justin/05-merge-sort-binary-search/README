@@ -1,0 +1,4 @@
+You can search for a value in an unsorted list using a linear search: You can just loop through the array or ArrayList one item at a time until you either find the item or run out of elements.
+If the array or ArrayList is sorted, you can search more efficiently. Come up with an algorithm to do so (and put a description of how you would do this in a README file in this homework folder.
+
+Look at the (n/2)th element, x. If x is less than target, look at the (n/2)th element of n-naught to n-n/2. If x is greater than target, look at the (n/2)th element of n-n/2 to n-n.

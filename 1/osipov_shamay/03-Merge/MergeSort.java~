@@ -1,24 +1,26 @@
 public class MergeSort{
 
-    public void split(int[] L){
-	if(L.length == 1){
-	    return;
+    public int[] split(int[] L){
+	if(L.length <= 1){
+	    return L;
 	}else{
 	    int half = L.length / 2;
 	    int[] A = new int[half];
 	    int[] B = new int[L.length - half];
-	    for(int x = 0; x < half;x++){
-		A[x] = L[x]; 
+	    int index = 0;
+	    for(int x = 0; x < A.length;x++){
+		A[x] = L[index];
+		index++; 
 	    }
-	    for(int x = half; x < L.length; x++){
-		B[x] = L[x];
+	    for(int x = 0; x < B.length; x++){
+		B[x] = L[index];
+		index++;
 	    }
 	    
-	    split(A);
-	    split(B);
-	    
-	    merge(A,B);
-	  
+	    A = split(A);
+	    B = split(B);
+	    L = merge(A,B);
+	    return L;
 	}
     }
 
@@ -26,14 +28,22 @@ public class MergeSort{
 	int indexA = 0;
 	int indexB = 0;
 	int[] result = new int[A.length + B.length];
-	while(indexA + indexB < (A.length + B.length) - 2){
-		if(A[indexA] >= B[indexB]){	
-		    result[indexA+indexB] = A[indexA];	
+	for(int index = 0; index < (A.length + B.length); index++){
+		if(indexA == A.length){
+		     result[index] = B[indexB];
+		     indexB++;
+		}else if(indexB == B.length){
+		     result[index] = A[indexA];
+                     indexA++;	
+		}else if(A[indexA] >= B[indexB]){	
+		    result[index] = A[indexA];	
 		    indexA++;
 		}else{
-		    result[indexA+indexB] = B[indexB];
+		    result[index] = B[indexB];
 		    indexB++;
 		}
+
+		
 	}
 
 	return result;
