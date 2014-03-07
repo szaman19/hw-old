@@ -1,0 +1,19 @@
+import java.io.*;
+import java.util.*;
+
+public class Person implements Comparable{
+    public String name;
+    public String age;
+    Random r = new Random();
+    public Person(){
+	name = "Fred";
+	age = r.nextInt(30);
+    }
+    public Person(String n,int a){
+	name = n;
+	age = a;
+    }
+
+
+
+}
