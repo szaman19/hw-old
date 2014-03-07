@@ -5,20 +5,21 @@
 
 import java.util.*;
 
-public class Person implements Comparable {
+// compareTo compares names
+public class PersonA implements Comparable {
 
   	// instance variables
    	private String _name;
    	private int _age;
 
 	// default constructor 
-	public Person() {
+	public PersonA() {
 		setName("Nick");
 		setAge(16);
 	}
 
 	// overloaded constructor 
-	public Person(String name, int age) {
+	public PersonA(String name, int age) {
 		setName(name);
 		setAge(age);
 	}
@@ -29,7 +30,6 @@ public class Person implements Comparable {
 		_name = name;
 		return oldName;
 	}
-
 	public int setAge(int age) {
 		int oldAge = _age;
 		_age = age;
@@ -40,37 +40,21 @@ public class Person implements Comparable {
 	public String getName() {
 		return _name;
 	}
-
 	public int getAge() {
 		return _age;
 	}
-
-	// overwrites of compareTo abstract method: must comment on out
-	// for comparing names
 	
+	// compareTo abstract method overwritten to compare names
     	public int compareTo(Object other) {
-       		if (!(other instanceof Person)) {
+       		if (!(other instanceof PersonA)) {
             		throw new ClassCastException("\nError message!"
                                                      + " compareTo() input not a Person");
 		}
- 
-        	String thisName, otherName;
-        	thisName = this.getName();
-		otherName = other.getName();
-		return thisName.length() - otherName.length();
+ 		return (this.getName()).compareTo(((PersonA)other).getName());
 	}
-	
 
-	// for comparing ages
-    	public int compareTo(Object other) {
-       		if (!(other instanceof Person)) {
-            		throw new ClassCastException("\nError message!"
-                                                     + " compareTo() input not a Person");
-		}
-        	int thisAge, otherAge;
-        	thisAge = this.getAge();
-		otherAge = other.getAge();
-		return thisAge - otherAge;
-
+	// toString method overwritten
+	public String toString() {
+		return _name + " " + _age;
 	}
 }
