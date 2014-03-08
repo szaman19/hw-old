@@ -1,26 +1,28 @@
+import java.util.Arrays;
+
 public class BinSearch{
     
-    public static int rbSearch(int n, int[] L){
+    public static int rbSearch(int n, int[] L, int i){
+	
 	if(L.length == 0)
 	    return -1;
 	else if(L[L.length/2] == n){
 	    return L.length/2;
 	}
-	else if(L[L.length/2] > n){
-	    int[] A = new int[L.length/2];
-	    for(int i = 0; i< L.length/2;i++){
-		A[i] = L[i];
-	    }
+	else if(L[L.length/2] < n){
 	    
-	    return rbSearch(n, A);
+	    return rbSearch(n, Arrays.copyOfRange(L, L.length/2 + 1, L.length));
 	}
 	
 	else{
-	    int[] A = new int[L-L.length/2];
-	    for(int i = L.length/2 + 1; i < L.length; i++){
-		A[i-L.length/2-1] = L[i];
-	    }
-	    return rbSearch(n, L);
+	    return rbSearch(n, Arrays.copyOfRange(L, 0, L.length/2));
 	}
+    }
+    
+    
+    public static void main(String[] args){
+	
+	int[] A = {1,2,3,5,7,9,12,16,122};
+	System.out.println(rbSearch(5, A));
     }
 }
