@@ -1,6 +1,8 @@
 import java.io.*;
 import java.util.*;
 
+
+//CODE NEEDS DEBUGGING: CLASSES WERE NOT COMPATIBLE
 public class Person implements Comparable<Person>{
     
     private String name;
@@ -25,7 +27,12 @@ public class Person implements Comparable<Person>{
     }
 
     public int compareTo(Person p){
-	return (p.getAge() - this.getAge());
+	if (this.getAge() < p.getAge())
+	    return -1;
+	if (this.getAge() > p.getAge())
+	    return 1;
+	else
+	    return 0;
     }
 
     public static void main(String[] args){
@@ -46,8 +53,18 @@ public class Person implements Comparable<Person>{
 	list.add(p5);
 	list.add(new Person("Newbie",45));
 	
-	System.out.println(list);
-	System.out.println(m.mergeSort(list));
+	for (int i = 0; i < list.size(); i++){
+	    System.out.println(list.get(i).getName()+ " :");
+	    System.out.print(list.get(i).getAge()+"\n");
+	}
+	
+	System.out.println();
+	m.mergeSort(list);
+	for (int i = 0; i < list.size(); i++){
+	    System.out.println((list.get(i)).getName()+ " :");
+	    System.out.print(list.get(i).getAge()+"\n");
+	}
+
     }
 	  
 }
