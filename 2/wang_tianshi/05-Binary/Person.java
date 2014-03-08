@@ -13,7 +13,7 @@ public class Person implements Comparable<Person>{
 
     public Person(){
 	name = "John";
-	age = 16;
+	age = 25;
     }
 
     public String getName(){
@@ -31,8 +31,23 @@ public class Person implements Comparable<Person>{
     public static void main(String[] args){
 	Person p1 = new Person("Leo",30);
 	Person p2 = new Person();
+	Person p3 = new Person("Tyler", 16);
+	Person p4 = new Person("Bob", 2);
+	Person p5 = new Person("Phil",76);
 
-	System.out.println(p1.compareTo(p2));
+	merge m = new merge();
+
+	ArrayList<Person> list = new ArrayList<Person>();
+	
+	list.add(p1);
+	list.add(p2);
+	list.add(p3);
+	list.add(p4);
+	list.add(p5);
+	list.add(new Person("Newbie",45));
+	
+	System.out.println(list);
+	System.out.println(m.mergeSort(list));
     }
 	  
 }
