@@ -36,4 +36,4 @@ public class BinarySearch{
     	int[] a={1,2,3,4,5,6,7,8,9,10,11};
     	System.out.print(ibSearch(a, 4, 0, a.length-1));
     }
-}
+}//Does not work perfectly
