@@ -26,28 +26,7 @@ public class Sort{
 	return result;
     }
     
-    public ArrayList randArrayList(int size, int range, int indicator){
-	Random r = new Random();
-	ArrayList<Integer> result = new ArrayList<Integer>(size);
-	for (int i = 0; i < size; i++){
-	    result.add(r.nextInt(range));
-	}
-	return result;
-    }
 
-    public ArrayList randArrayList(int size, int wordLength, String indicator){
-	Random r = new Random();
-	ArrayList<String> result = new ArrayList<String>(size);
-	String word = "";
-	for (int i = 0; i < size; i++){
-	    for (int j = 0; j < wordLength; j++){
-		word = word + (char)(r.nextInt(26) + 97);
-	    }
-	    result.add(word);
-	    word = "";
-	}
-	return result;
-    }
     
     public int[] merge(int[] A, int[] B){
 
@@ -94,6 +73,29 @@ public class Sort{
 	}
     }
 
+    public ArrayList<Integer> randArrayList(int size, int range, int indicator){
+	Random r = new Random();
+	ArrayList<Integer> result = new ArrayList<Integer>(size);
+	for (int i = 0; i < size; i++){
+	    result.add(r.nextInt(range));
+	}
+	return result;
+    }
+
+    public ArrayList<String> randArrayList(int size, int wordLength, String indicator){
+	Random r = new Random();
+	ArrayList<String> result = new ArrayList<String>(size);
+	String word = "";
+	for (int i = 0; i < size; i++){
+	    for (int j = 0; j < wordLength; j++){
+		word = word + (char)(r.nextInt(26) + 97);
+	    }
+	    result.add(word);
+	    word = "";
+	}
+	return result;
+    }
+
     public ArrayList merge(ArrayList<Comparable> A, ArrayList<Comparable> B){
 
 	ArrayList<Comparable> result = new ArrayList<Comparable>();
@@ -101,20 +103,20 @@ public class Sort{
 	int b = 0;
 	for (int i = 0; i < A.size() + B.size(); i++){
 	    if (a == A.size()){
-		result.set(i,B.get(b));
+		result.add(B.get(b));
 		b++;
 	    }
 	    else if (b == B.size()){
-		result.set(i,A.get(a));
+		result.add(A.get(a));
 		a++;
 	    }
 
-	    else if (A.get(a).compareTo(B.get(b)) > 0){
-		result.set(i,A.get(a));
+	    else if (A.get(a).compareTo(B.get(b)) < 0){
+		result.add(A.get(a));
 		a++;
 	    }
 	    else{
-		result.set(i,B.get(b));
+		result.add(B.get(b));
 		b++;
 	    }
 	}
@@ -127,16 +129,15 @@ public class Sort{
 	int i = 0;
 	if (A.size() != 0){
 	    if (firstHalf){
-		while (I.hasNext()){
-		    B.set(i,I.next());
-			i++;
+		while (I.hasNext() && i < A.size()/2){
+		    B.add(I.next());
+		    i++;
 		}
 	    }
 	    else {
-		int j = A.size()/2;
-		while (j < A.size()){
-		    B.set(i,A.get(j));
-		    j++;
+		i = A.size()/2;
+		while (i < A.size()){
+		    B.add(A.get(i));
 		    i++;
 		}
 	    }	
@@ -148,23 +149,20 @@ public class Sort{
     }
 
     public ArrayList mergeSort(ArrayList A){
+	//note: for ArrayLists of Strings, returns a sorted version of A, but does not appear to redefine A
 
 	if (A.size() <= 1){
 	    return A;
 	}
-	else{
-	    if (A.size() > 1) 
-		ArrayList<Comparable> B = split(A,true);
-	    else
-		ArrayList<Comparable> B = new ArrayList<Comparable>();
-	    ArrayList<Comparable> C = split(A,false);
-	    B = mergeSort(B);
-	    C = mergeSort(C);
-	    A = merge(B,C);
-	    return A;
-	    
-	}
+	ArrayList B = split(A,true);
+	ArrayList C = split(A,false);
+	B = mergeSort(B);
+	C = mergeSort(C);
+	A = merge(B,C);
+	return A;
+	
     }
+
 
 
 
