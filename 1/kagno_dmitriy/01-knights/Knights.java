@@ -4,8 +4,12 @@ import java.util.*;
 <<<<<<< HEAD
 public class Maze{
 =======
+<<<<<<< HEAD
+public class Maze{
+=======
 public class Knights{
 >>>>>>> ab38575d5c0fae84586636c3f1f6395986f076f1
+>>>>>>> FETCH_HEAD
     public String[][] board;
     public int xcor,ycor;
     public boolean solved = false;
@@ -58,8 +62,14 @@ public class Knights{
 	    return;
 	
 =======
+<<<<<<< HEAD
+	    
+	    return;
+	
+=======
 	    return;
 >>>>>>> ab38575d5c0fae84586636c3f1f6395986f076f1
+>>>>>>> FETCH_HEAD
 	if(counter == (xcor * ycor) + 1){
 	    System.out.println(this);
 	    solved = true;
