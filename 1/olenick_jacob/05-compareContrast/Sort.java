@@ -3,33 +3,7 @@ import java.util.*;
 
 public class Sort{
     
-    public int[] randArray(int size, int range, int indicator){
-	Random r = new Random();
-	int[] result = new int[size];
-	for (int i = 0; i < size; i++){
-	    result[i] = r.nextInt(range);
-	}
-	return result;
-    }
-    
-    public String[] randArray(int size, int wordLength, String indicator){
-	Random r = new Random();
-	String[] result = new String[size];
-	String word = "";
-	for (int i = 0; i < size; i++){
-	    for (int j = 0; j < wordLength; j++){
-		word = word + (char)(r.nextInt(26) + 97);
-	    }
-	    result[i] = word;
-	    word = "";
-	}
-	return result;
-    }
-    
-
-    
     public int[] merge(int[] A, int[] B){
-
 	int[] result = new int[A.length + B.length];
 	int a = 0;
 	int b = 0;
@@ -44,7 +18,6 @@ public class Sort{
 		a++;
 	    }
 	    // ---------------------------
-
 	    if (A[a] < B[b]){
 		result[i] = A[a];
 		a++;
@@ -58,7 +31,6 @@ public class Sort{
     }
 
     public int[] mergeSort(int[] A){
-
 	if (A.length <= 1){
 	    return A;
 	}
@@ -68,36 +40,11 @@ public class Sort{
 	    B = mergeSort(B);
 	    C = mergeSort(C);
 	    A = merge(B,C);
-	    return A;
-	    
+	    return A;	  
 	}
-    }
-
-    public ArrayList<Integer> randArrayList(int size, int range, int indicator){
-	Random r = new Random();
-	ArrayList<Integer> result = new ArrayList<Integer>(size);
-	for (int i = 0; i < size; i++){
-	    result.add(r.nextInt(range));
-	}
-	return result;
-    }
-
-    public ArrayList<String> randArrayList(int size, int wordLength, String indicator){
-	Random r = new Random();
-	ArrayList<String> result = new ArrayList<String>(size);
-	String word = "";
-	for (int i = 0; i < size; i++){
-	    for (int j = 0; j < wordLength; j++){
-		word = word + (char)(r.nextInt(26) + 97);
-	    }
-	    result.add(word);
-	    word = "";
-	}
-	return result;
     }
 
     public ArrayList merge(ArrayList<Comparable> A, ArrayList<Comparable> B){
-
 	ArrayList<Comparable> result = new ArrayList<Comparable>();
 	int a = 0;
 	int b = 0;
