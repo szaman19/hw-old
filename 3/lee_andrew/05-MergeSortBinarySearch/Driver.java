@@ -20,5 +20,11 @@ public class Driver{
 	Person p = new Person();
 	Person q = new Person(9,"Joe");
 	System.out.println(p.compareTo(q));
+
+	BinarySearch b = new BinarySearch();
+	int[] a = {1,2,3,4,5,6,7};
+	System.out.println(b.rbsearch(1,a));
+	System.out.println(b.ibsearch(7,a));
+	
     }
 }
