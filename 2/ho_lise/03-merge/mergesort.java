@@ -39,12 +39,23 @@ public class mergesort{
 	}
 	else{
 	    int[] a = new int[L.length/2];
-	    a = Arrays.copyOfRange(L,0, L.length/2);
+	    
 	    int[] b = new int[L.length - L.length/2];
+	    // OR int[]b = new int[L.length - a.length];
+	    a = Arrays.copyOfRange(L,0, L.length/2);
 	    b = Arrays.copyOfRange(L,L.length/2, L.length);
-	    	    
+	    /* OR, the maybe more traditional way
+	       int i;
+	       for (i=0; i<a.length;i++){
+	          a[i]=L[i];
+		  }
+	       for (; i<L.length; i++){
+	           b[L.length-i-1] = L[i];
+	           b[i-a.length] = L[i];
+               }
+.	     */
 	    int[] A = msort(a);
-	    int[] B = msort (b);
+	    int[] B = msort(b);
 	    L= merge(A,B);
 	    return L;
 	}
@@ -61,17 +72,14 @@ public class mergesort{
 	A[1] = 37;
 	A[2] = 6;
 	A[3] = 32;
-
 	A[4] = 12;
 	A[5] = 35;
 	A[6] = 22;
 	A[7] = 9;
+
 	System.out.print("\n"+"[");
 	int[] C = L.msort(A);
-	for (int i = 0;i<C.length; i++){
-	    System.out.print(C[i] + ",");
-	}
-	System.out.println("]"+ "\n");
+	System.out.println(Arrays.toString(C));
 
 	
 
