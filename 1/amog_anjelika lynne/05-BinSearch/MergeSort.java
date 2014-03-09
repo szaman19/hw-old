@@ -2,9 +2,9 @@ import java.io.*;
 import java.util.*;
 
 public class MergeSort{
-    public ArrayList<String> merge (ArrayList<String> A, ArrayList<String> B){
+    public ArrayList<Comparable> merge (ArrayList<Comparable> A, ArrayList<Comparable> B){
 	int len = A.size() + B.size();
-	ArrayList<String> C = new ArrayList();
+	ArrayList<Comparable> C = new ArrayList();
 	int count = 0;
 	int countA = 0;
 	int countB = 0;
@@ -30,7 +30,7 @@ public class MergeSort{
 	return C;
     }
 
-    public ArrayList<String> mergeSort(ArrayList<String> L){
+    public ArrayList<Comparable> mergeSort(ArrayList<Comparable> L){
 	int len = L.size();
 	int i = 0;
 	if (len <= 1)
@@ -38,8 +38,8 @@ public class MergeSort{
 	else{
 	    int lenA = len / 2;
 	    int lenB = len - lenA;
-	    ArrayList<String> A = new ArrayList();
-	    ArrayList<String> B = new ArrayList();
+	    ArrayList<Comparable> A = new ArrayList();
+	    ArrayList<Comparable> B = new ArrayList();
 	    for (int iA = 0; iA < lenA; iA++){
 		A.set(iA, L.get(i));
 		i++;
