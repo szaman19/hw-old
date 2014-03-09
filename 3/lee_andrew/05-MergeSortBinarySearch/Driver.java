@@ -16,5 +16,9 @@ public class Driver{
 	l.add(3);
 	l.add(2);
 	System.out.println(m.msort(l));
+	
+	Person p = new Person();
+	Person q = new Person(9,"Joe");
+	System.out.println(p.compareTo(q));
     }
 }
