@@ -1,7 +1,6 @@
 
 import java.util.*;
 
-
 public class Mergesort {
 	
 	public static void mergeSort(Comparable[] a){
@@ -24,7 +23,7 @@ public class Mergesort {
 		int k = left;
 		int num = rEnd - left + 1;
 		
-		while (left <= lEnd && right < rEnd)
+		while (left <= lEnd && right <= rEnd)
 			if(a[left].compareTo(a[right]) <= 0)
 				stor[k++] = a[left++];
 			else
@@ -42,8 +41,12 @@ public class Mergesort {
 	
 	
 	public static void main(String[]args){
-		Integer[] B = {31, 34, 47, 22, 15, 94, 86, 53};
+		Integer[] B = {2, 18, 6,65, 3, 44, 5, 48, 1,95};
+		String[] F = {"Daniel" , "Aaron", "Fred", "Zibui", "Inter", "Greg", "Manson"};
+		mergeSort(F);
 		mergeSort(B);
 		System.out.println(Arrays.toString(B));
+
+		System.out.println(Arrays.toString(F));
 	}
 }
