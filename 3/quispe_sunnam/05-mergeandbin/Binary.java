@@ -1,4 +1,4 @@
-public class BinarySearch{
+public class Binary {
 
     public static int recSearch( int[] a, int target, int low, int high ) {
         int position = -1; 
