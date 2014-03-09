@@ -1,6 +1,8 @@
 import java.util.*;
 import java.io.*;
 
+//I don't understand how to use the person interface
+
 public class MergeSortAll{
     public ArrayList<Comparable> mergeSort(ArrayList<Comparable> A){
 	if (A.size() <= 1){
