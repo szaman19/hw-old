@@ -1,9 +1,9 @@
 import java.io.*;
 import java.util.*;
 
-public class MergeSort implements Comparable<MergeSort>{
-    public ArrayList<Object> merge(ArrayList<Object> a,ArrayList<Object> b){
-	ArrayList<Object> res = new ArrayList<Object>();
+public class MergeSort{
+    public ArrayList<Comparable> merge(ArrayList<Comparable> a,ArrayList<Comparable> b){
+	ArrayList<Comparable> res = new ArrayList<Comparable>();
 	int counta = 0;
 	int countb = 0;
 	int total = a.size() + b.size();
@@ -17,7 +17,7 @@ public class MergeSort implements Comparable<MergeSort>{
 		counta = counta + 1;
 	    }
 	    else {
-		Object temp = a.get(counta);
+		Comparable temp = a.get(counta);
 		if (temp.compareTo(b.get(countb)) < 0){
 		    res.add(a.get(counta));
 		    counta = counta + 1;
@@ -31,14 +31,14 @@ public class MergeSort implements Comparable<MergeSort>{
 	return res;
     }
 
-    public ArrayList<Object> msort(ArrayList<Object> L){
+    public ArrayList<Comparable> msort(ArrayList<Comparable> L){
 	if (L.size() <= 1){
 	    return L;
 	}
 	else {
 	    int half = L.size()/2;
-	    ArrayList<Object> a = new ArrayList<Object>();
-	    ArrayList<Object> b = new ArrayList<Object>();
+	    ArrayList<Comparable> a = new ArrayList<Comparable>();
+	    ArrayList<Comparable> b = new ArrayList<Comparable>();
 	    for (int i = 0;i<L.size();i++){
 		if (i < half){
 		    a.add(L.get(i));
