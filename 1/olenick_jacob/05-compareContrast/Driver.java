@@ -6,8 +6,8 @@ public class Driver{
 
     public static void main(String[] args){
 	Sort S = new Sort();
-	ArrayList<Integer> test1 = S.randArrayList(20,1000,0);
-	ArrayList<String> test2 = S.randArrayList(20,5,"");
+	ArrayList<Integer> test1 = randArrayList(20,1000,0);
+	ArrayList<String> test2 = randArrayList(20,5,"");
 	ArrayList<Person> test3 = randArrayList(10);
 	System.out.println(test1);
 	System.out.println(test2);
