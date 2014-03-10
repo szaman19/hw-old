@@ -10,7 +10,24 @@
   	a = 0;
   	b = 0;
   	i = 0;
-  	while (a+b < total){
+	for (int i = 0; i < total; i++){
+	    if (a >= x.length){
+		list[i] = y[b];
+	    }
+	    else if (b >= y.length){
+		list[i] = x[a];
+	    }
+	    else if (x[a] <= y[b] && a < x.length){
+		list[i] = x[a];
+		a++;
+	    }
+	    else if (x[a] > y[b] && b < y.length){
+		list[i] = y[b];
+		b++;
+	    }
+	}
+
+	/*	while (a+b < total){
   	    if (x[a] <= y[b]){
   		list[a+b] = x[a];
   		a = a + 1;
@@ -25,17 +42,28 @@
   	    }
   
   	}
+	*/
   	return list;
       }
-  
+      
       public static void main(String[] args){
   	Mergesort n = new Mergesort();
   	int[]e = {0,2,4,6,8,10,12,14,16};
   	int[]f = {1,4,7,10,13,16};
+
+	for (int i = 0; i < e.length; i++){
+	    System.out.print(e[i] + " ");
+	}
+	System.out.println();
+	for (int i = 0; i < f.length; i++){
+	    System.out.print(f[i] + " ");
+	}
+	System.out.println();
   	int[]answer = n.Mergesort(e,f);
   	
   	for (int i = 0; i < answer.length; i++){
   	    System.out.print(answer[i] + " ");
   	}   
+	System.out.println();
       } 
   }

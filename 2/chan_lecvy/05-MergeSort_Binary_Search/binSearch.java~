@@ -1,0 +1,28 @@
+public class binSearch {
+
+
+    public int rbsearch (int n, int[] L, int lo, int hi) {
+
+	int ans = -1;
+	int m = (lo + hi) / 2;
+	if (m < lo || m > hi) 
+	    return -1;
+	if (lo > hi)
+	    return -1;
+	if (L[m] == n)
+	    return m;
+	else if (L[m] > n)
+	    return rbsearch (n, L, lo, m);
+	else if (L[m] < n) 
+	    return rbsearch (n, L, m+1, hi);
+	
+	return ans;
+    }
+
+    public static void main (String [] args) {
+	binSearch test = new binSearch();
+	int [] foo = {1,2,3,4,5,6,7,8,9,10,11,15,78,180, 900};
+
+	System.out.println ("Index:" + test.rbsearch(12, foo,0, foo.length-1));
+    }
+}
