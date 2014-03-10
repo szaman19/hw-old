@@ -118,5 +118,13 @@ public class MergeSort {
 
 	System.out.println( a );
 	System.out.println( mergeSort( a ) );
+	
+	// create array
+	ArrayList b = new ArrayList<Integer>();
+	for ( int i = 0; i < 20; i++ ) {
+	    b.add( new Integer((int) (Math.random() * ((i + 5) * 2)) ) );
+	}
+	System.out.println( b );
+	System.out.println( mergeSort( b ) );
     }
 }
