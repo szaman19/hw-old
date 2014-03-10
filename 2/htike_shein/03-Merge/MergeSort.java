@@ -1,5 +1,16 @@
 import java.util.Arrays;
 public class MergeSort{
+	public static int[] mergeSort(int[] x){
+		if(x.length == 1){
+			return x;
+		}
+		else{
+			return merge( //Basically, merge these two
+						mergeSort(Arrays.copyOfRange(x, 0,          x.length/2)),
+				        mergeSort(Arrays.copyOfRange(x, x.length/2, x.length))
+				        );
+		}
+	}
 	private static int[] merge(int[] a,int[] b){
 		int[] c = new int[a.length + b.length];
 		int ai = 0;
@@ -27,14 +38,6 @@ public class MergeSort{
 			ci++;
 		}
 		return c;
-	}
-	public static int[] mergeSort(int[] x){
-		if(x.length == 1){
-			return x;
-		}
-		else{
-			return merge(mergeSort(Arrays.copyOfRange(x,0,x.length/2)),mergeSort(Arrays.copyOfRange(x,x.length/2,x.length)));
-		}
 	}
 	public static void main(String[] args){
 		int[] a = new int[20];
