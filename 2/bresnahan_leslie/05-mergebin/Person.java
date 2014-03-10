@@ -17,6 +17,11 @@ public class Person implements Comparable {
     }
 
     public int compareTo( Object other ) {
-	return age - ((Person)other).age;
+	//	return age - ((Person)other).age;
+	return name.compareTo( ((Person)other).name );
+    }
+
+    public String toString() {
+	return name + "-" + age;
     }
 }
