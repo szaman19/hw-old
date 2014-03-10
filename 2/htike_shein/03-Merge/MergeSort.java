@@ -6,7 +6,7 @@ public class MergeSort{
 		}
 		else{
 			return merge( //Basically, merge these two
-						mergeSort(Arrays.copyOfRange(x, 0,          x.length/2)),
+					mergeSort(Arrays.copyOfRange(x, 0,          x.length/2)),
 				        mergeSort(Arrays.copyOfRange(x, x.length/2, x.length))
 				        );
 		}
