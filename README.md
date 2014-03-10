@@ -1,4 +1,0 @@
-hw
-==
-
-homework

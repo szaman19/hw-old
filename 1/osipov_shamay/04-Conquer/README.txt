@@ -1,1 +1,0 @@
-I would use binary search, which halves the problem at every stage, therefore giving it an efficiency of log(n) as opposed to n. It is also the most intuitive way to search.

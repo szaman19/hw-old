@@ -1,1 +1,0 @@
-Will finish later once I look up some more stuff, this comparable part is confusing and I asked omar hegazy for some help
