@@ -18,6 +18,12 @@ public class Driver{
 	System.out.println(test3);
 	test3 = S.mergeSort(test3);
 	System.out.println(test3);
+
+
+	Seeker search = new Seeker();
+	int[] test4 = {1,2,3,4,4,5,6,9,11};
+	System.out.println(search.rbsearch(5,test4,0,0));
+	System.out.println(search.ibsearch(5,test4,0,0));
     }
 
     public static ArrayList<Person> randArrayList(int size){
