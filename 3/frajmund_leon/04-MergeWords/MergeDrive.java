@@ -4,16 +4,18 @@ public class MergeDrive{
 
     public static void main(String[]args){
 	MergeWords a = new MergeWords();
+	Random rand = new Random();
 	ArrayList<String> b = new ArrayList<String>();
-	b.add("nope");
-	b.add("yelling");
-	b.add("zebra");
-	b.add("xylphone");
-	b.add("hellfire");
-	b.add("texas");
-	b.add("aardvark");
-	b.add("mine");
-	b.add("never");
+	int[] array = new int[100];
+	int[] array2 = new int[4];
+	String word = "";
+	for(int c : array){
+	    for(int d : array2){
+		word += a.alpha[rand.nextInt(26)];
+	    }
+	    b.add(word);
+	    word = "";
+	}
 
 
 	a.print(a.MergeSort(b));

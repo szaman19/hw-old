@@ -27,25 +27,27 @@ public class BinarySearch {
      * Returns the index of value n in array L
      */
     public static int ibsearch(int n, int[] L) {
-        boolean found = false;
-        int index = L.length / 2;
+        int lowerBound = 0;
+        int upperBound = L.length;
 
-        while (!found) {
+        // Check until our bounds converge to include 1 element in the list
+        while (lowerBound <= upperBound) {
+            int index = (lowerBound + upperBound) / 2;
             if (L[index] == n) {
-                found = true;
+                return index;
             } else if (L[index] > n) {
-                index /= 2;
+                upperBound = index;
             } else {
-                index += (L.length - index) / 2;
+                lowerBound = index;
             }
         }
 
-        return index;
+        return -1;
     }
 
     public static void main(String[] args) {
         Random r = new Random();
-        int length = 1000000;
+        int length = 1000001;
         int maxVal = 2147000000;
         int[] ary = new int[length];
 
@@ -55,7 +57,7 @@ public class BinarySearch {
 
         ary = MergeSortInt.mergesort(ary);
 
-        int index = 50000;
+        int index = 123;
         if (ary[index] == ary[ibsearch(ary[index], ary)]) {
             System.out.println("Success");
         } else {

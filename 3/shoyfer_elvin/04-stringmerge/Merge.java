@@ -1,6 +1,10 @@
 import java.util.*;
 
 public class Merge {
+	// Code now works; it was correct before, but I made a hilariously bad mistake (and spent way too long finding it)
+	// The mistake was simply this: in my main method, I printed the original array instead of the sorted one. *facepalm*
+	// I was wondering why none of my changes did anything...
+	
 	// Given two sorted arrays a and b, merge them into one sorted array.
 
 	public static ArrayList<String> merge(ArrayList<String> a, ArrayList<String> b) {
@@ -39,7 +43,7 @@ public class Merge {
 				positionResult++;
 			}
 
-			else if (thisA.compareTo(thisB) > 0) {
+			else if (thisA.compareTo(thisB) <= 0) {
 				result.set(positionResult, thisA);
 				positionA++;
 				positionResult++;
@@ -48,7 +52,7 @@ public class Merge {
 
 			}
 
-			else if (thisA.compareTo(thisB) <= 0) {
+			else if (thisA.compareTo(thisB) > 0) {
 				result.set(positionResult, thisB);
 				positionB++;
 				positionResult++;
@@ -120,7 +124,7 @@ public class Merge {
 		ArrayList<String> a1 = msort(t1);
 		String array = "{";
 		for (int i = 0; i < 6; i++) {
-			array = array + t1.get(i) + ", "; 
+			array = array + a1.get(i) + ", "; 
 		}
 		array += "}";
 		System.out.println(array);
