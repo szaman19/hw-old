@@ -10,7 +10,7 @@ public class MergeSort{
             return a;
         }else{
             for(int i = 0; i < a.size(); i++){
-                if(i < one.size()){
+                if(i < a.size()/2){
                     one.add(a.get(i));
                 }
                 else{
