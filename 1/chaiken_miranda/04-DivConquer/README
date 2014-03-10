@@ -1,0 +1,14 @@
+	If you wanted to search more efficiently through a sorted array you could do it by using binary search. THis is a system in which you always checking the middle value first
+	Let's say you're searching for x
+
+	Find the middle index of the array
+	if x > the value at the middle index
+	     find the middle index in the top half of the array and search there
+
+	else if x < the value at the middle index
+	     find the middle index value in the bottom half of the array and search there
+
+	else if x== value at middle index 
+	     return index 
+
+Repeat this with the selected half of the array. until the section through which you are searching is empty, in which case return -1.

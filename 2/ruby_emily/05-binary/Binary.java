@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import java.io.*;
 import java.util.*;
 
@@ -52,3 +53,6 @@ public class Binary{
 	System.out.println(b);
     }
 }
+=======
+/* So I was actually working on finishing my other hws from last night and the previous night, because I had not been able to finish them and thus could not really complete this assignment without first finishing them. So I promise that after tomorrow, I will finish all of my work from this week, and be on point for next weeks class.
+>>>>>>> parent of f249657... hw5

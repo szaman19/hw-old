@@ -50,6 +50,7 @@ public abstract class MergeSort{
     }
     
     public static void main(String[] args) {
+<<<<<<< HEAD
         ArrayList<Comparable> l = new ArrayList<Comparable>();
 	l.add("fish");
 	l.add("dog");
@@ -88,6 +89,25 @@ public abstract class MergeSort{
 
 	System.out.println(p);
 	System.out.println(mergeSort(p));
+=======
+        ArrayList<Comparable> a = new ArrayList<Comparable>();
+	a.add("fish");
+	a.add("dog");
+	a.add("cat");
+	a.add("apple");
+	a.add("cheese");
+	a.add("zebra");
+	a.add("aardwolf");
+	System.out.println(mergeSort(a));
+
+	ArrayList<Comparable> b = new ArrayList<Comparable>();
+	for(int x = 0; x < 15; x++){
+	    b.add((int)(Math.random()*10));
+	}
+
+	System.out.println(b);
+	System.out.println(mergeSort(b));
+>>>>>>> parent of f249657... hw5
     }
 
 }

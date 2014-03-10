@@ -1,0 +1,17 @@
+Responses
+1.	Degrees	    : Compass Direction
+    0°		    : North
+    45°		    : Northwest
+    90°		    : East
+    135°		: Southeast
+    180°		: South
+    225°		: Southwest
+    270°		: West
+    315°		: Northwest
+    360°		: North
+2.	The moveTo() method operates by setting the Location of an Actor or one of its descendants to the specified Location. 
+Thus, it can technically move in any direction, barring if its Location is at a boundary. 
+If one attempts to set an Actor's or one of its descendants' Location to one outside of the boundaries of the Grid, the GridWorld program will issue an IllegalArgument Exception.
+3.	In order to change the color of a Bug, Flower, and Rock (which are all descendants from the Actor class), their setColor() method must be invoked.
+4.	When placing a Rock on the same location as a Bug. the Bug is replaced by the Rock. This is true for almost all of the descendants of the Actor class. 
+However, a Bug cannot be replaced by a Flower. The Flower will be deconstructed.
