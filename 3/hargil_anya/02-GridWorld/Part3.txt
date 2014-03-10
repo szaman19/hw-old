@@ -1,0 +1,14 @@
+1.
+	a. Turn
+	b. Turn
+	c. Turn
+	d. Turn
+	e. Turn
+	f. Can it jump over objects that are not rocks or flowers?
+2.
+	a. Jumper should extend Actor because Jumper "is-a" Actor
+	b. The Bug class is similar to Jumper
+	c. There can be, but there doesn't need to be one
+	d. act should be overwritten because Actor and Jumper act differently
+	e. jump and canJump should be added
+	f. Put the Jumper in all possible situations (e.g. facing the edge, with a rock two spaces in front, etc.)
