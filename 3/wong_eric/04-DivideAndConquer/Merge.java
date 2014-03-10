@@ -2,30 +2,30 @@ import java.util.*;
 
 public class Merge {
 
-    private String[] A;
+    private ArrayList<String> A;
 
-    public String[] mergeList(String[] a, String[] b) {
+    public ArrayList<String> mergeList(ArrayList<String> a, ArrayList<String> b) {
 
 	int ai = 0;
 	int bi = 0;
-	int l = a.length + b.length;
-	A = new String[l];
+	int l = a.size() + b.size();
+	A = new ArrayList<String>();
 
 	for (int i=0;i<l;i++) {
-	    if (ai == a.length) {
-		A[i] = b[bi];
+	    if (ai == a.size()) {
+		A.add(b.get(bi));
 		bi++;
 	    }
-	    else if (bi == b.length) {
-		A[i] = a[ai];
+	    else if (bi == b.size()) {
+		A.add(a.get(ai));
 		ai++;
 	    }
-	    else if (a[ai].compareTo(b[bi]) < 0) {
-		A[i] = a[ai];
+	    else if (a.get(ai).compareTo(b.get(bi)) < 0) {
+		A.add(a.get(ai));
 		ai++;
 	    }
 	    else {
-		A[i] = b[bi];
+		A.add(b.get(bi));
 		bi++;
 	    }
 	}
@@ -33,20 +33,21 @@ public class Merge {
 	return A;
     }
 
-    public String[] mergeSort(String[] A) {
+    public ArrayList<String> mergeSort(ArrayList<String> A) {
 
-	if (A.length <= 1)
+	if (A.size() <= 1)
 	    return A;
 	else {
-	    String[] r1 = new String[A.length/2];
-	    String[] r2 = new String[A.length - r1.length];
+	    ArrayList<String> r1 = new ArrayList<String>();
+	    ArrayList<String> r2 = new ArrayList<String>();
 
-	    for (int i=0;i<r1.length;i++) {
-		r1[i] = A[i];
+	    int i;
+	    for (i=0;i<A.size()/2;i++) {
+		r1.add(A.get(i));
 	    }
 
-	    for (int i=0;i<r2.length;i++) {
-		r2[i] = A[r1.length+i];
+	    for ( ;i<A.size();i++) {
+		r2.add(A.get(i));
 	    }
 
 	    r1 = mergeSort(r1);
@@ -63,10 +64,20 @@ public class Merge {
     public static void main(String[] args) {
 
 	Merge m = new Merge();
-	String[] l = {"e", "a", "h", "s", "d", "w"};
-	System.out.println(Arrays.toString(l));
-	String[] r = m.mergeSort(l);
-	System.out.println(Arrays.toString(r));
+	ArrayList<String> l = new ArrayList<String>();
+	l.add("e");
+	l.add("r");
+	l.add("f");
+	l.add("s");
+	l.add("b");
+	l.add("i");
+	l.add("g");
+	l.add("l");
+	l.add("q");
+	l.add("z");
+	System.out.println(l);
+	ArrayList<String> r = m.mergeSort(l);
+	System.out.println(r);
 
     }
 

@@ -1,42 +1,41 @@
+import java.util.*;
 public class DivideConquer{
-    public static String[] mergeSort(String[] A){
-	if (A.length <= 1) return A;
+    public static ArrayList<String> mergeSort(ArrayList<String> A){
+	if (A.size() == 1) return A;
 	else {
-	    String[] B = new String[A.length / 2];
-	    String[] C = new String[A.length - B.length];
+	    ArrayList<String> B = new ArrayList<String>();
+	    ArrayList<String> C = new ArrayList<String>();
 	    
-	    for (int x = 0; x < B.length; x++){
-		B[x] = A[x];
+	    for (int x = 0; x < A.size() / 2; x++){
+		B.add(A.get(x));
 	    }
-	    for (int x = B.length; x < A.length; x++){
-		C[x - B.length] = A[x];
+	    for (int x = B.size(); x < A.size(); x++){
+		C.add(A.get(x));
 	    }
-	    
-	    B = mergeSort(B);
-	    C = mergeSort(C);
-	    A = merge(B,C);
+	
+	    A = merge(mergeSort(B),mergeSort(C));
 	    return A;
 	}
     }
 
-    public static String[] merge(String[] A, String[] B){
-	String[] C = new String[A.length + B.length];
+    public static ArrayList<String> merge(ArrayList<String> A, ArrayList<String> B){
+	ArrayList<String> C = new ArrayList<String>();
 	
 	int apos = 0;
 	int bpos = 0;
-	for (int x = 0; x < C.length; x++){
-	    if (apos >= A.length){
-			C[x] = B[bpos];
+	for (int x = 0; x < A.size() + B.size(); x++){
+	    if (apos >= A.size()){
+			C.add(B.get(bpos));
 			bpos++;
-	    } else if (bpos >= B.length){
-			C[x] = A[apos];
+	    } else if (bpos >= B.size()){
+			C.add(A.get(apos));
 			apos++;
 	    } else {
-			if (B[bpos].compareTo(A[apos]) <= 0) {
-			    C[x] = B[bpos];
+			if (B.get(bpos).compareTo(A.get(apos)) <= 0) {
+			    C.add(B.get(bpos));
 			    bpos++;
 			} else {
-			    C[x] = A[apos];
+			    C.add(A.get(apos));
 			    apos++;				
 			}
 	    }
@@ -44,20 +43,26 @@ public class DivideConquer{
 	return C;
     }
 	
-    public static void printArray (String[] a){
+    public static void printArray (ArrayList<String> a){
 	for (String x : a){
 	    System.out.print(x + ", ");
 	}
 	System.out.println();
     }
 
-    public static void main(String[]args){
+    public static void main(String[] args){
 	
-	String [] c = {"abcba", "efgfe", "aceca", "ecaca"};
-	String [] d = {"nifty", "cat", "hello", "inconceivable"};
+	ArrayList<String> c = new ArrayList<String>();
+	c.add("abcba");
+	c.add("efgfe");
+	c.add("aceca");
+	c.add("ecaca");
+	c.add("nifty");
+	c.add("cat");
+	c.add("hello");
+	c.add("inconceivable");
+	printArray(c);
 	c = mergeSort(c);
 	printArray(c);
-	d = mergeSort(d);
-	printArray(d);
     }
 }
