@@ -3,10 +3,10 @@ import java.util.*;
 
 public class merge{
 
-    public ArrayList<Comparable> merge (ArrayList<Comparable> A, ArrayList<Comparable> B){
+    public ArrayList<String> merge (ArrayList<String> A, ArrayList<String> B){
 
 	int L = A.size() + B.size ();
-	ArrayList<Comparable> ans = new ArrayList<Comparable>();
+	ArrayList<String> ans = new ArrayList<String>();
 	int a=0;
 	int b=0;
 	int i=0;
@@ -29,13 +29,13 @@ public class merge{
 	return ans;
     }
 
-    public ArrayList<Comparable> mergeSort(ArrayList<Comparable> a){
+    public ArrayList<String> mergeSort(ArrayList<String> a){
 	int size = a.size();
 	if (size<=1)
 	    return a;
 	else{
-	    ArrayList<Comparable> a1 = new ArrayList<Comparable>();
-	    ArrayList<Comparable> a2 = new ArrayList<Comparable>();
+	    ArrayList<String> a1 = new ArrayList<String>();
+	    ArrayList<String> a2 = new ArrayList<String>();
 	    for (int i=0; i<size/2; i++)
 		a1.add(a.get(i));
 	    
@@ -51,7 +51,7 @@ public class merge{
     public static void main (String[] args){
 	merge m = new merge(); //testing out merge
 
-	ArrayList<Comparable> list1 = new ArrayList<Comparable>();
+	ArrayList<String> list1 = new ArrayList<String>();
 
 	list1.add("hello");
 	list1.add("apple");
