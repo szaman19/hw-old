@@ -11,14 +11,18 @@ public class Merge{
 	for (int i=0; i<length; i++){
 	    if (A[a] <= B[b]){
 		answer[i] = A[a];
-		a++;
+		if (a < A.length-1){
+		    a++;
+		}
 	    }
 	    else if (B[b] < A[a]){
 		answer[i] = B[b];
-		b++;
+		if (b < B.length-1){
+		    b++;
+		}
 	    }
 	}
-	reuturn answer;
+	return answer;
     }
 }
 		

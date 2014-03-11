@@ -1,0 +1,14 @@
+1a. Turn right 45 degrees.
+1b. Turn right 45 degrees.
+1c. Turn right 45 degrees.
+1d. Turn right 45 degrees. It will not replace the other one.
+1e. Jump over it.
+1f. No.
+
+
+2a. Actor Class.
+2b. Bug, but Jumper moves two rather than one.
+2c. Yes, location should be provided as a parameter.
+2d. the "move" and "canMove" methods must be ovewritten
+2e. no new methods needed
+2f. testing it in the gridworld environment.
