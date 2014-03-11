@@ -1,7 +1,7 @@
 import java.util.*;
-import java.io.*:
+import java.io.*;
 
-public class MergeSort{
+public class MergeSortString{
 
     public ArrayList<String> split(ArrayList<String> L){
 	if(L.size() <= 1){
@@ -12,11 +12,11 @@ public class MergeSort{
 	    ArrayList<String> B = new ArrayList<String>();
 	    int index = 0;
 	    for(int x = 0; x < A.size();x++){
-		A.get(x).set(L.get(index));
+		A.add(L.get(index));
 		index++; 
 	    }
 	    for(int x = 0; x < B.size(); x++){
-		B.get(x).set(L.get(index));
+		B.add(L.get(index));
 		index++;
 	    }
 	    
@@ -33,16 +33,16 @@ public class MergeSort{
 	ArrayList<String> result = new ArrayList<String>();
 	for(int index = 0; index < (A.size() + B.size()); index++){
 		if(indexA == A.size()){
-		     result.get(index).set(B.get(indexB));
-		     indexB++;
+		    result.add(B.get(indexB));
+		    indexB++;
 		}else if(indexB == B.size()){
-		     result.get(index).set(A.get(indexA));
-                     indexA++;	
+		    result.add(A.get(indexA));
+		    indexA++;	
 		}else if(A.get(indexA).compareTo(B.get(indexB)) >= 0){	
-		    result.get(index).set(A.get(indexA));	
+		    result.add(A.get(indexA));	
 		    indexA++;
 		}else{
-		    result.get(index).set(B.get(indexB));
+		    result.add(B.get(indexB));
 		    indexB++;
 		}
 
@@ -53,3 +53,4 @@ public class MergeSort{
     }
 
 }
+

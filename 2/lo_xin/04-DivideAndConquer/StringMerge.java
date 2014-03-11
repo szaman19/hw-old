@@ -52,7 +52,14 @@ public class StringMerge{
         }
         return sorted;
     }
-     
+
+    /*
+    public int compareTo(StringMerge other){
+	int compared = 1;
+	if(this.){
+	}
+    }
+    */
      
     public static void main(String[] args){
 	StringMerge sortp = new StringMerge();

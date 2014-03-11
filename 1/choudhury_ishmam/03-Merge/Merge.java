@@ -12,19 +12,19 @@ public class Merge {
 	    for (int i = 0; i < l; i++) {
 		if (aPos == A.length) {
 		    fin[i] = B[bPos];
-		    bPos = bPos++;
+		    bPos++;
 		}
 		else if (bPos == B.length) {
 		    fin[i] = A[aPos];
-		    aPos = aPos++;
+		    aPos++;
 		}
 		else if (A[aPos] > B[bPos]) {
 		    fin[i] = A[aPos];
-		    aPos = aPos++;
+		    aPos++;
 		}
 		else {
 		    fin[i] = B[bPos];
-		    bPos = bPos++;
+		    bPos++;
 		}
 		count++;
 	    }
