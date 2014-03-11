@@ -1,10 +1,10 @@
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Random;
 import static java.lang.Math.pow;
 import static java.lang.System.arraycopy;
 import static java.lang.System.nanoTime;
 import static java.lang.System.out;
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.Random;
 
 public class MergeSort {
 	public static <E extends Comparable<E>> ArrayList<E> mergeSort(ArrayList<E> list) {
@@ -70,7 +70,7 @@ public class MergeSort {
 	
 	public static void main(String[] args) {
 		int[] array = new int[11];
-		ArrayList<String> list = new ArrayList<String>();
+		ArrayList<String> list = new ArrayList<String>(11);
 		Random random = new Random();
 		final String[] ALPHABET = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
 		for (int i = 0; i < array.length; i++) {
@@ -85,12 +85,32 @@ public class MergeSort {
 		t2 = nanoTime();
 		out.println(Arrays.toString(array));
 		out.println("Time: " + times(t2, t1));
-		out.println("\nArrayList:");
+		out.println("\nArrayList<String>:");
 		out.println(list);
 		t1 = nanoTime();
 		list = mergeSort(list);
 		t2 = nanoTime();
 		out.println(list);
+		out.println("Time: " + times(t2, t1));
+		out.println("\nArrayList<Person>:");
+		ArrayList<Person> listPersons = new ArrayList<Person>(11);
+		listPersons.add(new Person("Alban", random.nextInt(99) + 1));
+		listPersons.add(new Person("Lievin", random.nextInt(99) + 1));
+		listPersons.add(new Person("Aesop", random.nextInt(99) + 1));
+		listPersons.add(new Person("Vasil", random.nextInt(99) + 1));
+		listPersons.add(new Person("Babajide", random.nextInt(99) + 1));
+		listPersons.add(new Person("Maria", random.nextInt(99) + 1));
+		listPersons.add(new Person("Kliment", random.nextInt(99) + 1));
+		listPersons.add(new Person("Lamprecht", random.nextInt(99) + 1));
+		listPersons.add(new Person("Tancred", random.nextInt(99) + 1));
+		listPersons.add(new Person("Methuselah", random.nextInt(99) + 1));
+		listPersons.add(new Person("Otakar", random.nextInt(99) + 1));
+		listPersons.add(new Person("Cosmas", random.nextInt(99) + 1));
+		out.println(listPersons);
+		t1 = nanoTime();
+		listPersons = mergeSort(listPersons);
+		t2 = nanoTime();
+		out.println(listPersons);
 		out.println("Time: " + times(t2, t1));
 		out.println("\nBenchmark:");
 		out.println("Number of elements: Time");
@@ -104,7 +124,7 @@ public class MergeSort {
 			out.println(10 + "^" + i + ": " + times(t2, t1));
 		}
 		array = null; //Don't need it any more; save some memory.
-		out.println("\nArrayLists:");
+		out.println("\nArrayList<String>:");
 		for (int i = 0; i <= 7; i++) {
 			int elements = (int) pow(10, i);
 			list = new ArrayList<String>(elements);

@@ -4,45 +4,45 @@ import java.util.*;
 public class MergeSort{
     
     public int[] merge(int[] a, int[] b){
-	int[] answer = new int[a.length + b.length];
-	int aPlace = 0;
-	int bPlace = 0;
-	//perhaps not the best way to do this!
-	while (aPlace < a.length && bPlace < b.length){
-	    if (aPlace==a.length){
-		answer [aPlace + bPlace] = b[bPlace];
-		bPlace++;
-	    }
-	    if (bPlace==b.length){
-		answer [aPlace + bPlace] = a[aPlace];
-		aPlace++;
-	    }
-	    if (a[aPlace] > b[bPlace]){
-		answer[aPlace + bPlace] = a[aPlace];
-		aPlace++;
-	    }
-	    else{
-		answer[aPlace + bPlace] = b[bPlace];
-		bPlace++;
-	    }
-	}
-	return answer;
+		int[] answer = new int[a.length + b.length];
+		int aPlace = 0;
+		int bPlace = 0;
+		//perhaps not the best way to do this!
+		while (aPlace < a.length && bPlace < b.length){
+			if (aPlace==a.length){
+				answer [aPlace + bPlace] = b[bPlace];
+				bPlace++;
+			}
+			if (bPlace==b.length){
+				answer [aPlace + bPlace] = a[aPlace];
+				aPlace++;
+			}
+			if (a[aPlace] > b[bPlace]){
+				answer[aPlace + bPlace] = a[aPlace];
+				aPlace++;
+			}
+			else{
+				answer[aPlace + bPlace] = b[bPlace];
+				bPlace++;
+			}
+		}
+		return answer;
     }
     
     private int[] splitArray (int[] arr, int part){
-	int newSize = arr.length/2;
-	int[] answer = new int[newSize];
-	if (part == 0){
-	    for (int i = 0; i < newSize; i ++){
-		answer[i] = arr[i];
-	    }
-	}
-	else{
-	    for (int i = 0; i < newSize;i ++){
-		answer[i] = arr[i+newSize];
-	    }
-	}
-	return answer;
+		int newSize = arr.length/2;
+		int[] answer = new int[newSize];
+		if (part == 0){
+			for (int i = 0; i < newSize; i ++){
+				answer[i] = arr[i];
+			}
+		}
+		else{
+			for (int i = 0; i < newSize;i ++){
+				answer[i] = arr[i+newSize];
+			}
+		}
+		return answer;
     }
 
     /*
@@ -60,56 +60,56 @@ public class MergeSort{
 	
     }
     */
-    
+   
     public int[] mergeSort (int[] a, int[]b){
-	int[] answer = new int[a.length + b.length];
-	int aPlace = 0;
-	int bPlace = 0;
-	while ((aPlace + bPlace) < (a.length + b.length)){
-	    if (aPlace == a.length){
-		answer[aPlace + bPlace] = b[bPlace];
-		bPlace++;
-	    }
-	    else if (bPlace == b.length){
-		answer[aPlace + bPlace] = a[aPlace];
-		aPlace++;
-	    }
-	    else if (a[aPlace] < b[bPlace]){
-		answer[aPlace + bPlace] = a[aPlace];
-		aPlace++;
-	    }
-	    else {
-		answer[aPlace + bPlace] = b[bPlace];
-		bPlace++;
-	    }
-	}
-	return answer;
+		int[] answer = new int[a.length + b.length];
+		int aPlace = 0;
+		int bPlace = 0;
+		while ((aPlace + bPlace) < (a.length + b.length)){
+			if (aPlace == a.length){
+				answer[aPlace + bPlace] = b[bPlace];
+				bPlace++;
+			}
+			else if (bPlace == b.length){
+				answer[aPlace + bPlace] = a[aPlace];
+				aPlace++;
+			}
+			else if (a[aPlace] < b[bPlace]){
+				answer[aPlace + bPlace] = a[aPlace];
+				aPlace++;
+			}
+			else {
+				answer[aPlace + bPlace] = b[bPlace];
+				bPlace++;
+			}
+		}
+		return answer;
     }
     //doesn't catch wordls like ants vs. aaa, and therefore does not work properly yet
     public String[] mergeSortStrings (String[] a, String[]b){
-	String[] answer = new String[a.length + b.length];
-	int aPlace = 0;
-	int bPlace = 0;
-	while ((aPlace + bPlace) < (a.length + b.length)){
-	    if (aPlace == a.length){
-		answer[aPlace + bPlace] = b[bPlace];
-		bPlace++;
-	    }
-	    else if (bPlace == b.length){
-		answer[aPlace + bPlace] = a[aPlace];
-		aPlace++;
-	    }
-	    else if ((a[aPlace].compareTo(b[bPlace]))<0){
-		answer[aPlace + bPlace] = a[aPlace];
-		aPlace++;
-	    }
-	    else {
-		answer[aPlace + bPlace] = b[bPlace];
-		bPlace++;
-	    }
+		String[] answer = new String[a.length + b.length];
+		int aPlace = 0;
+		int bPlace = 0;
+		while ((aPlace + bPlace) < (a.length + b.length)){
+			if (aPlace == a.length){
+				answer[aPlace + bPlace] = b[bPlace];
+				bPlace++;
+			}
+			else if (bPlace == b.length){
+				answer[aPlace + bPlace] = a[aPlace];
+				aPlace++;
+			}
+			else if ((a[aPlace].compareTo(b[bPlace]))<0){
+				answer[aPlace + bPlace] = a[aPlace];
+				aPlace++;
+			}
+			else {
+				answer[aPlace + bPlace] = b[bPlace];
+				bPlace++;
+			}
+		}
+		return answer;
 	}
-	return answer;
-    }
     
     public static void main (String[] args){
 	MergeSort a = new MergeSort();
