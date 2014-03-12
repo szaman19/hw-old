@@ -1,0 +1,23 @@
+import info.gridworld.actor.Bug;
+public class ZBug extends Bug{
+    private int len;
+    private int steps;
+    public Zbug(int length){
+	len = length;
+	steps = 0;
+    }
+
+    public void act(){
+	if (canMove() && steps<len){
+	    move();
+	    steps++;
+	}
+	else if (steps >= len){
+	    turn();
+	    steps = 0;
+	}
+	else{
+	    len = 0;
+	}
+    }
+}

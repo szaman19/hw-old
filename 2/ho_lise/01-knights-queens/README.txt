@@ -1,0 +1,1 @@
+Queens.java still has bugs, it can't backtrack. The problem I believe is that the variable I use to save the temporary board for each solve call is overwritten once another solve is called. I'll probably have to change the way I solve each space... :(
