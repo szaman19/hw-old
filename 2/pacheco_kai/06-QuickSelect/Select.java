@@ -1,4 +1,5 @@
 public class Select{
+	//I have the partitioning correct and the pivot works but I can't get the low and high to position correctly and it goes on in an infinite loop.
 	public static int quickSelect(int[] a,int k, int l, int h){
 		if(l>=h){
 			return a[l];
