@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+public class QuickSelect{
+
+    public int quickselect(int[] a, int k, int low, int high){
+	if(low >= high){
+	    return a[low];
+	}
+	else{
+	    p = (int)(Math.random()*(high - low + 1) + low);
+	    if(p == k){
+		return a[p];
+	    }
+	    ArrayList upper = new ArrayList();
+	    ArrayList lower = new ArrayList();
+	    ArrayList totes = new ArrayList();
+
+	    for(int i = low;i <= high; i++){
+		if(a[i] < a[p]){
+		    lower.add(a[i]);
+		}
+		else{
+		    upper.add(a[i]);
+		}
+	    }
+	    for(int x = 0; x < a.length; x++){
+		if(x < lower.size()){
+		    totes.add(lower.get(x));
+		}
+		else if(x == lower.size()){
+		    totes.add(a[p]);
+		}
+		else{
+		    totes.add(upper.get(x-lower.size()));
+		}
+	    }
+	    if(lower.size() > k){
+		quickselect(a,k,low,lower.size()-1);
+	    }
+	    else{
+		quickselect(a,k,lower.size()+1,high);
+	    }
+	}
+    }
+}
