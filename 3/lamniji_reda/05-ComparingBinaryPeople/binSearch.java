@@ -17,13 +17,37 @@ public class binSearch{
 	    for (int c = i + 1; c<L.length; c++){
 		R[x] = L[c];
 		x++;}
-	    rbsearch(n,R)
-	}else{
-	    return -1;
+	    rbsearch(n,R);
 	}
+	return -1;
+    }
 
-
+    public int ibsearch(int n, int[]L){
+	int i = L.length / 2;
+	int ans = 0;
+	if (L[i] == n){
+	    ans = i;
+	}else if(L[i] > n){
+	    for(int x = i; x >= 0; x--){
+		if(L[i] == n){
+		    ans = x;
+		}
+	    }
+	}else if(L[i] < n){
+	    for(int x = i; x < L.length; x++){
+		if(L[i] == n){
+		    ans = x;
+		}
+	    }
 }
+	return ans;
+    }
 
+
+    public static void main(String[] arrgs){
+	binSearch a = new binSearch();
+	int[] test = {1,2,3,4,5,6,7,8,9,10,11,12};
+	System.out.println(a.ibsearch(8,test));
+}
 
 }

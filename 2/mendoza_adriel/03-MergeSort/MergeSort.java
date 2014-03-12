@@ -10,16 +10,19 @@ public class MergeSort{
         }else{
             int i = a.length/2;
             one = new int[i];
-            two = new int[a.length - i];
+            two = new int[a.length - one.length];
             for(int j = 0; j < a.length; j++){
                 if(j < i){
                     one[j] = a[j];
                 }
                 else{
-                    two[j - i] = a[i];
+                    two[j - i] = a[j];
                 }
             }
 	}
+	System.out.println("One: " + Arrays.toString(one));
+	System.out.println("Two: " + Arrays.toString(two));
+
         one = MergeSort(one);
         two = MergeSort(two);
         a = merge(one, two);

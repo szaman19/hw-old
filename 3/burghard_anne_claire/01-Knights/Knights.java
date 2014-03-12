@@ -67,15 +67,6 @@ public class Knights{
 	    }
 	    
 	}
-<<<<<<< HEAD
-	
-	public static void main(String[] args) {
-	    Knights k = new Knights(5);
-	    
-	    k.solve(0,0);
-	}
-	
-=======
     }
 	
     public static void main(String[] args) {
@@ -85,4 +76,3 @@ public class Knights{
     }
     
 }
->>>>>>> FETCH_HEAD
