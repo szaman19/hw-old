@@ -11,11 +11,15 @@ public class binSearch{
 	    for (int c = 0; c<i; c++){
 		R[c] = L[c];}
 	    rbsearch(n,R);
-	}else{
+	}else if (L[i] < n){
+	    int x = 0;
 	    int[] R = new int[i];
-	    for (int c = 0; c<; c++){
-		R[c] = L[c];}
-	    rbsearch(n,R);
+	    for (int c = i + 1; c<L.length; c++){
+		R[x] = L[c];
+		x++;}
+	    rbsearch(n,R)
+	}else{
+	    return -1;
 	}
 
 
