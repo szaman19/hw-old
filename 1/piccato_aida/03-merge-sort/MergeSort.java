@@ -2,7 +2,7 @@ import java.util.*;
 
 public class MergeSort {
     public String printArray(int[] a) {
-return Arrays.toString(a);
+return Arrays.toString(a)
     }
 
     
