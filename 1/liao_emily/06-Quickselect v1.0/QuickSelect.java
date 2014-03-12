@@ -1,9 +1,12 @@
 public class QuickSelect { 
 
+    //I don't understand... what's wrong with my code? (other than its overcoded)
+    //It just returns the 0 I originally set ans as
+
     public int quickSelect(int[] a, int k, int lo, int hi) {
-	lo = 0;
-	hi = a.length;
-	int ans = -1;
+	//lo = 0;
+	//hi = a.length;
+	int ans = 0;
 	if ( lo >= hi )
 	    ans = (lo + hi) / 2;
 	else {
@@ -35,4 +38,23 @@ public class QuickSelect {
 	}
 	return ans;
     }
+
+    public String printArray(int[] z) {
+	String retStr = "[  ";
+	for ( int i = 0; i < z.length; i++ )
+	    retStr += z[i] + "  ";
+	retStr += "]";
+	return retStr;
+    }
+
+    public static void main (String[] args) {
+	QuickSelect qs = new QuickSelect();
+	int[] newb = new int[11];
+	for (int i = 0; i < newb.length; i++) {
+	    newb[i] = (int) ( Math.random() * 20 );
+	}
+	System.out.println(qs.printArray(newb));
+	System.out.println(qs.quickSelect(newb, 3, 0, 10));
+    }
+
 }
