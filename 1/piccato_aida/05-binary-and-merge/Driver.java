@@ -4,12 +4,25 @@ public class Driver {
 	MergeSort ms = new MergeSort();
 	/*
         Random rand = new Random();
-	int n = 14000000;
+	int n = 10;
         int[] c = new int[n];
         for (int i = 0; i < c.length; i++) {
-            c[i] = rand.nextInt(1000);
+            c[i] = rand.nextInt(100);
 	}
+	*/
+	BinarySearch bs = new BinarySearch();
 	
+	int[] c = {2, 31, 77, 96, 30, 67, 83, 0, 43, 42};
+	c = ms.mergeSort(c);
+
+	System.out.println(ms.printArray(c));
+	
+        System.out.println(bs.rbsearch(67, c));
+
+	
+	
+
+	/*
         int[] a = {1, 4, 6, 9, 32, 76};
         int[] b = {4, 36, 77};
         long start = System.currentTimeMillis();
@@ -29,6 +42,7 @@ public class Driver {
 	System.out.println(ms.mergeSortComparable(a));
 	*/
 
+	/*
 	Person a = new Person("John", 42);
 	Person b = new Person("Paul", 15);
 	Person c = new Person("Ringo", 34);
@@ -41,7 +55,7 @@ public class Driver {
 	array.add(d);
 
 	System.out.println(ms.mergeSortComparable(array));
-
+	*/
 	
     }
 }
