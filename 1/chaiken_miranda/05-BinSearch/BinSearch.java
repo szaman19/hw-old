@@ -45,12 +45,10 @@ public class BinSearch{
 	}
 	return ret;
     }
-
-
     public static void main(String[]args){
 	int[] a={1,2,3,4,5,6,7,8,9,11,12,13,14};
 	BinSearch b=new BinSearch(a);
-	System.out.println(b.ibsearch(12,a));
+	System.out.println(b.ibsearch(15,a));
 	for (int x:a)
 	    System.out.print(x+",");
     }
