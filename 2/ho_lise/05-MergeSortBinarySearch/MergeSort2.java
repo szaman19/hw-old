@@ -2,11 +2,9 @@
 // <E extends Comparable<? super E>> <- I just got this by trying lots of stuff and looking at stack overflow...
 // this version still has bugs that needs to be fixed
 
-
-
 import java.util.*;
 import java.lang.*;
-abstract public class MergeSort2 implements Comparable {
+public class MergeSort2 {
    
     public static <E extends Comparable<? super E>> ArrayList<E> merge(ArrayList<E> A, ArrayList<E> B){
         int a = 0;// index of ArrayList<E> A
@@ -52,33 +50,37 @@ abstract public class MergeSort2 implements Comparable {
 	    return L;
 	}
     }
-     
+   
     public static void main (String[]args){
-	MergeSort X = new MergeSort();
 	ArrayList<String> Y = new ArrayList<String>();
 	Y.add("Apples");
-	Y.add("Asdf");
-	Y.add("Zsdf");
-	Y.add("Bsdf");
-	Y.add("bsdf");
+	Y.add("Pineapples");
+	Y.add("Pears");
+	Y.add("Kiwi");
+	Y.add("Banana");
 
-	System.out.println(Y.toString());
-	ArrayList<String> ans = X.msort(Y);
+	System.out.println("TEST WITH Strings******************\n"+Y.toString());
+	ArrayList<String> ans = msort(Y);
 	System.out.println(ans.toString());
 
-	MergeSort A = new MergeSort();
 	ArrayList<Integer> Z = new ArrayList<Integer>();
 	Z.add(4);
 	Z.add(34);	
 	Z.add(0);
 	Z.add(2);
 	Z.add(21);
+	System.out.println("TEST WITH INTS******************\n"+ Z.toString() );
+	Z = msort(Z);
 	System.out.println(Z.toString());
-	Z = A.msort(Z);
-	System.out.println(Z.toString());
 
-
-
-
-    }
+	ArrayList<Person> A = new ArrayList<Person>();
+	A.add(new Person("Joyce", 15));
+	A.add(new Person("Abel", 23));
+	A.add(new Person("Shawn", 45));
+	A.add(new Person("Mina", 5));
+	A.add(new Person("Jack", 32));
+	System.out.println("TEST WITH Person******************\n"+A.toString());
+	A=msort(A);
+	System.out.println(A.toString());
+        }
 }
