@@ -1,0 +1,11 @@
+import java.util.*;
+public class QuickSelect {
+    private Random rand = new Random();
+  
+    public int quickselect(int[] a, int k, int low, int high) {
+	if (low >= high) {
+	    return a[high];
+	}
+	    int pivot = rand.nextInt(high) + low;
+    }
+}
