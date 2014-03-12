@@ -1,9 +1,12 @@
 import java.io.*;
 import java.util.*;
 
+
+//this ALMOST works
+
 public class SortSearch{
 
-    public int[] a;
+    public ArrayList<Comparable> a;
     Random rnd;
 
     public static void main (String[] args){
@@ -16,19 +19,20 @@ public class SortSearch{
 	System.out.println("Initial Array: " + s.toString());
 	System.out.println();
 	
-	System.out.println("Starting");
-	start = System.currentTimeMillis();
-	int[] d = s.msort(s.a);
-	elapsed = System.currentTimeMillis()-start;
-	System.out.println("Merge sort: "+Arrays.toString(d));
-	System.out.println("Time: "+elapsed+"\n");
+	/*System.out.println("Starting");
+	  start = System.currentTimeMillis();*/
+	ArrayList<Comparable> d = new ArrayList<Comparable>();
+	d = s.msort(s.a);
+	/*elapsed = System.currentTimeMillis()-start;*/
+	System.out.println("Merge sort: "+d);
+	/*System.out.println("Time: "+elapsed+"\n");*/
     }
 
     public SortSearch(int n){
 	rnd = new Random();
-	a = new int[n];
+	a = new ArrayList<Comparable>(n);
 	for (int i=0;i<n;i++)
-	    a[i]=rnd.nextInt(100);
+	    a.add(rnd.nextInt(100));
     }
 
     public SortSearch() {
@@ -36,56 +40,54 @@ public class SortSearch{
     }
 
     public String toString() {
-	String s="";
-	s=s+"\n";
-	s=s+Arrays.toString(a);
-	return s;
+	return ""+a;
     }
 
-    public int[] merge(int[] a, int[] b) {
-	int[] result = new int[a.length+b.length];
+    public ArrayList<Comparable> merge(ArrayList<Comparable> a, ArrayList<Comparable> b) {
+	ArrayList<Comparable> result = new ArrayList<Comparable>(a.size()+b.size());
 	int ia=0,ib=0;
 	int i=0;
-	while (ia<a.length&&ib<b.length) {
-	    if (a[ia]<b[ib]) {
-		result[i]=a[ia];ia++;
+	while (ia<a.size()&&ib<b.size()) {
+	    if (a.get(ia).compareTo(b.get(ib))<-1) {
+		result.add(a.get(ia));ia++;
 	    }  else {
-		result[i]=b[ib];ib++;
+		result.add(b.get(ib));ib++;
 	    }
 	    i++;
 	}
 
-	if (ia>=a.length) {
-	    for (;i<result.length;i++){
-		result[i]=b[ib];ib++;
+	if (ia>=a.size()) {
+	    for (;i<result.size();i++){
+		result.add(b.get(ib));ib++;
 	    }
 	} else {
-	    for (;i<result.length;i++){
-		result[i]=a[ia];ia++;
+	    for (;i<result.size();i++){
+		result.add(a.get(ia));ia++;
 	    }
 	}
 	return result;
     }
     
-    public int[] msort(int[] L) {
+    public ArrayList<Comparable> msort(ArrayList<Comparable> L) {
 	
-	if (L.length<=1){
+	if (L.size()<=1){
 	    return L;
 	}
-	
-	int[] a = new int[L.length/2];
-	int[] b = new int[L.length - a.length];
+        ArrayList<Comparable> a = new ArrayList<Comparable>(L.size()/2);
+	ArrayList<Comparable> b = new ArrayList<Comparable>(L.size() - a.size());
 
 	int i;
-	for (i=0;i<a.length;i++){
-	    a[i]=L[i];
+	for (i=0;i<a.size();i++){
+	    a.set(i, L.get(i));
 	}
-	for ( ; i<L.length;i++){
-	    b[ i-a.length ] = L[i];
+	for ( ; i<L.size();i++){
+	    b.set(i-a.size(),L.get(i));
 	}
 	a = msort(a);
 	b = msort(b);
-	int[] result = merge(a,b);
+	ArrayList<Comparable> result = merge(a,b);
 	return result;
+
     }
 }
+

@@ -80,6 +80,14 @@ public class MergesortB {
 	return returnstring;
 	
     }
+    public static String toStringPerson (ArrayList<Comparable> array){
+	String returnstring = "";
+	for (int i = 0; i < array.size(); i++){
+	    returnstring = returnstring + array.get(i) + ", ";
+	}
+	return returnstring;
+	
+    }
 
 
     public static void main (String [] args){
@@ -88,7 +96,7 @@ public class MergesortB {
 	
 	  System.out.println  (toString(merge (c,d)));
 	*/
-	ArrayList<Comparable> c = new ArrayList<Comparable> ();
+	/*	ArrayList<Comparable> c = new ArrayList<Comparable> ();
 	c.add(8);
 	c.add(7);
 	c.add(6);
@@ -104,7 +112,18 @@ public class MergesortB {
 	d.add("stufg");
 	   
 	System.out.println (toString (mergeSort(c)));
-	System.out.println (toString (mergeSort(d)));
+	System.out.println (toString (mergeSort(d)));*/
+
+	ArrayList<Comparable> e = new ArrayList<Comparable> ();
+	Person p1 = new Person ("Steve", 5);
+	Person p2 = new Person ("Jim", 24);
+	Person p3 = new Person ("Freddy", 20);
+	Person p4 = new Person ("Butch", 53);
+	e.add(p1);
+	e.add(p2);
+	e.add(p3);
+	e.add(p4);
+	System.out.println (toStringPerson (mergeSort(e)));
 
     }
 }

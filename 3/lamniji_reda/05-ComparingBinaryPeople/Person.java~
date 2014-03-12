@@ -6,13 +6,13 @@ public class Person{
 	age = x;
 	name = y;
     }    
-    public int setAge(int x){
+    public void setAge(int x){
 	age = x;
     }
     public int getAge(){
 	return age;
     }
-    public String setName(String y){
+    public void setName(String y){
 	name = y;
     }
     public String getName(){
