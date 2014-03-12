@@ -15,6 +15,7 @@ public class Quickselect {
     }
 
     public int quickSelect(int[] a, int k, int low, int high){
+	k = k - 1; //1st smallest is actually index 0
 	if (low >= high)
 	    return a[low];
 	Random rand = new Random();
@@ -31,17 +32,17 @@ public class Quickselect {
 	}
 	if ( k == pivotIndex )
 	    return a[k];
-	else if ( pivotIndex < k){
-	    return quickSelect(a, k, pivotIndex + 1, high);
+	else if ( pivotIndex < k ){
+	    return quickSelect(a, k + 1, pivotIndex + 1, high);
 	}
 	else {
-	return quickSelect(a, k, low, pivotIndex - 1);
+	return quickSelect(a, k + 1, low, pivotIndex - 1);
 	}
     }
     public String toString(int[] a){
 	String temp = "";
 	for (int i : a){
-	    temp = temp + i;
+	    temp = temp + i + " ";
 	}
 	return temp;
     }
@@ -55,7 +56,9 @@ public class Quickselect {
 	    aray[i] = rand.nextInt(9) + 1;
 	}
 	System.out.println(jdai.toString(aray));
-	System.out.println("The 3rd smallest is:");
+	System.out.println("The 1st, 2nd ,3rd smallest are:");
+	System.out.println(jdai.quickSelect(aray, 1));
+	System.out.println(jdai.quickSelect(aray, 2));
 	System.out.println(jdai.quickSelect(aray, 3));
     }
 }
