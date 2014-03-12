@@ -1,10 +1,10 @@
 import java.util.*;
-abstract public class MergeSort implements Comparable{
-    //I don't understand how to make a comparable arraylist for all objects
-    public static ArrayList<E> merge(ArrayList<E> a, ArrayList<E> b){
+public class MergeSort{
+    //Looked this up but doesn't know what it means
+    private static <T extends Comparable<? super T>> ArrayList<T> merge(ArrayList<T> a, ArrayList<T> b){
 	int ca=0;
 	int cb=0;
-	ArrayList<E> c=new ArrayList<E>();
+	ArrayList c=new ArrayList();
 	for(int i=0;i<a.size()+b.size();i++){
 	    if(ca==a.size()){
 		c.add(b.get(cb));
@@ -22,12 +22,12 @@ abstract public class MergeSort implements Comparable{
 	}
 	return c;
     }
-    public static ArrayList<E> mergesort(ArrayList<E> a){
+    public static <T extends Comparable<? super T>>ArrayList<T> mergesort(ArrayList<T> a){
 	if(a.size()==1){
 	    return a;
 	}else{
-	    ArrayList<E> b=new ArrayList<E>();
-	    ArrayList<E> c=new ArrayList<E>();
+	    ArrayList b=new ArrayList();
+	    ArrayList c=new ArrayList();
 	    for(int i=0;i<a.size()/2;i++){
 		b.add(a.get(i));
 	    }
@@ -37,20 +37,56 @@ abstract public class MergeSort implements Comparable{
 	    return merge(mergesort(b),mergesort(c));
 	}
     }
+    public static class Person implements Comparable<Person>{
+	private int age;
+	private String name;
+	public int getAge(){
+	    return age;
+	}
+	public String getName(){
+	    return name;
+	}
+	public Person(int a, String n){
+	    age=a;
+	    name=n;
+	}
+	@Override
+	    /*
+	public int compareTo(Person a){
+	    if(age>a.getAge()){
+		return 1;
+	    }else if(age<a.getAge()){
+		return -1;
+	    }else{
+		return 0;
+	    }
+	}
+	public String toString(){
+	    return age+" "+name;
+	}
+	    */
+	    public int compareTo(Person a){
+	    return name.compareTo(a.getName());
+	}
+	public String toString(){
+	    return name+" "+age;
+	}
+    }
     public static void main(String[]args){
-	ArrayList<String> a1= new ArrayList<String>();
-	a1.add("hello");
-	a1.add("does this work?");
-	a1.add("zero!");
-	a1.add("apple");
-	a1.add("vex");
-	a1.add("bees");
-	a1.add("haha");
-	a1.add("you work?");
-	ArrayList<String> c1= mergesort(a1);
-	System.out.println(Arrays.toString(c));
+	//ArrayList<String> a1= new ArrayList<String>(Arrays.asList("hello","does this work?","zero!","apple","vex","bees","haha","you work?"));
+	//ArrayList<Integer> a1= new ArrayList<Integer>(Arrays.asList(3,5,23,6,3,2,5,75,9,10,24,44,7,42,15));
+	
+	ArrayList<Person> a1= new ArrayList<Person>();
+	a1.add(new Person(10,"Seadirc"));
+	a1.add(new Person(16,"Dionis"));
+	a1.add(new Person(10,"Bobby"));
+	a1.add(new Person(999,"Troll"));
+	a1.add(new Person(5,"Five"));
+	a1.add(new Person(2,"Bees"));
+	ArrayList c1= mergesort(a1);
 	for(int i=0;i<c1.size();i++){
 	    System.out.println(c1.get(i));
 	}
     }
 }
+

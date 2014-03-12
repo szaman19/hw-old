@@ -1,0 +1,70 @@
+import java.util.*;
+public class MergeSort{
+    
+    public ArrayList<Comparable> msort(ArrayList<Comparable> L){
+	if (L.size() <= 1){
+	    return L;
+	}
+	
+	else{
+	    ArrayList<Comparable> a = new ArrayList();
+	    ArrayList<Comparable> b = new ArrayList();
+	    for (int x = 0; x < L.size(); x++){
+		if (x < L.size() / 2){
+		    a.add(L.get(x));
+		}
+		else{
+		    b.add(L.get(x));
+		}
+	    }
+	    ArrayList<Comparable> c = msort(a);
+	    ArrayList<Comparable> d = msort(b);
+	    L = merge(c,d);
+	    return L;
+	}
+    }
+	
+    public ArrayList<Comparable> merge(ArrayList<Comparable> a, ArrayList<Comparable> b){
+	ArrayList<Comparable> ret = new ArrayList();
+	int counta = 0;
+	int countb = 0;
+	while(ret.size() < a.size() + b.size()){
+	    if(counta >= a.size() || countb >= b.size())
+		break;
+	    if(a.get(counta).compareTo(b.get(countb)) < 0){
+		ret.add(a.get(counta));
+		counta++;
+	    }
+	    else{
+		ret.add(b.get(countb));
+		countb++;
+	    }
+	}
+	if(counta < a.size())
+	    for(;counta<a.size();counta++)
+		ret.add(a.get(counta));
+	else
+	    for(;countb<b.size();countb++)
+		ret.add(b.get(countb));
+	return ret;	
+    }
+
+    public static void main(String[] args){
+
+	MergeSort a = new MergeSort();
+	ArrayList<Comparable> Int = new ArrayList();
+	Int.add(2);
+	Int.add(1);
+	Int.add(53);
+	Int.add(10);
+	System.out.println(Int);
+	System.out.println(a.msort(Int));
+
+	ArrayList<Copmparable> Str = new ArrayList();
+	Str.add("ste");
+	Str.add("Hehwh");
+	Str.add("WHO");
+	System.out.prntln(Str);
+	System.out.pringln(a.msort(Str));
+    }
+}

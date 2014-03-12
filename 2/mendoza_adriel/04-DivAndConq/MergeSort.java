@@ -3,21 +3,18 @@ import java.io.*;
 
 public class MergeSort{
 
-    /* public ArrayList<String> MergeSort(ArrayList<String> a){
-        int[] one;
-        int[] two;
-        if(a.length <= 1){
+    public ArrayList<String> MergeSort(ArrayList<String> a) {
+        ArrayList<String> one = new ArrayList<String>();
+        ArrayList<String> two = new ArrayList<String>();
+        if(a.size() <= 1){
             return a;
         }else{
-            int i = a.length/2;
-            one = new int[i];
-            two = new int[a.length - i];
-            for(int j = 0; j < a.length; j++){
-                if(j < i){
-                    one[j] = a[j];
+            for(int i = 0; i < a.size(); i++){
+                if(i < a.size()/2){
+                    one.add(a.get(i));
                 }
                 else{
-                    two[j - i] = a[i];
+                    two.add(a.get(i));
                 }
             }
 	}
@@ -26,20 +23,18 @@ public class MergeSort{
         a = merge(one, two);
         return a;
     }
-    */
-    // to be edited
 
     public ArrayList<String> merge(ArrayList<String> one, ArrayList<String> two) {
-	ArrayList<String> resp = new ArrayList<String>();
+        ArrayList<String> resp = new ArrayList<String>();
         int oc = 0;
         int tc = 0;
         while(oc < one.size() && tc < two.size()){
-            if(one.get(oc).compareTo(two.get(tc)) < 0){
+            if((one.get(oc)).compareTo(two.get(tc)) <= 0){
                 resp.add(one.get(oc));
 	        oc++;
             }else{
                 resp.add(two.get(tc));
-                tc++;
+		tc++;
 	    }
 	}
         while(oc < one.size()){
@@ -47,18 +42,22 @@ public class MergeSort{
 	    oc++;
 	}
 	while(tc < two.size()){
-	    resp.add(two.get(tc);
+	    resp.add(two.get(tc));
 	    tc++;
 	}
         return resp;
     }
 
-    /*
     public static void main(String args[]){
 	MergeSort m = new MergeSort();
-	int[] i = {1, 5, 32, 42, 24, 12, 98, 3, 21, 4, 16, 3};
-	System.out.println(Arrays.toString(m.MergeSort(i)));
+	ArrayList<String> a = new ArrayList<String>();
+	a.add("bathroom");
+	a.add("oops");
+	a.add("woof");
+	a.add("ouch");
+	a.add("hi mom");
+	a.add("woof");
+	a.add("potato");
+	System.out.println(m.MergeSort(a));
     }
-    */
-    //to be edited
 }

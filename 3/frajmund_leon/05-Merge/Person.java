@@ -16,6 +16,10 @@ public class Person implements Comparable<Person>{
 	return name;
     }
 
+    public int getAge(){
+	return age;
+    }
+
     public int compareTo(Person other){
 	if (this.age < other.age)
 	    return -1;
