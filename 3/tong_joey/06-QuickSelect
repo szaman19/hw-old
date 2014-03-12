@@ -1,3 +1,5 @@
+//NOT FUNCTIONAL, ENCOUNTERED MULTIPLE ISSUES AND TOO TIRED TO CONTINUE
+
 import java.util.Random;
 public class QuickSelect{
     public int quickselect(int[] a, int k, int low, int high){
