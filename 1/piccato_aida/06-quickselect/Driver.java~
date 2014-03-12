@@ -1,0 +1,7 @@
+public class Driver {
+    public static void main(String[] args) {
+	QuickSelect qs = new QuickSelect();
+	int[] a = {23, 3, 7, 12, 34, 6, 1, 9, 13};
+	System.out.println(qs.quickselect(a, 4));
+    }
+}
