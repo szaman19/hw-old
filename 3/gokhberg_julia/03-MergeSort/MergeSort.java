@@ -125,6 +125,49 @@ public class MergeSort{
 	}
 	return C;
     }
+
+    //I'm confused with Comparable and how it works.
+
+    public ArrayList<Comparable> cSort(ArrayList<Comparable> A){
+	if (A.size() <= 1){
+	    return A;
+	}else{
+	    ArrayList<Comparable> a = new ArrayList();
+	    ArrayList<Comparable> b = new ArrayList();
+	    int x = 0;
+	    for (; x < A.size()/2; x++){
+		a.add(A.get(x));
+	    }
+	    for (; x<A.size(); x++){
+		b.add(A.get(x));
+	    }
+	    return cMerge(cSort(a), cSort(b));
+	}
+    }
+
+    public ArrayList<Comparable> cMerge(ArrayList<Comparable> A, ArrayList<Comparable> B){
+	int a = 0;
+	int b = 0;
+	ArrayList<Comparable> C = new ArrayList();
+	for (int c = 0; c < A.size() + B.size(); c++){
+	    if (a >= A.size()){
+		C.add(B.get(b));
+		b ++;
+	    }else if (b >= B.size()){
+		C.add(A.get(a));
+		a ++;
+	    }else if (A.get(a).compareTo(B.get(b)) == -1){
+		C.add(A.get(a));
+		a++;
+	    }else{
+		C.add(B.get(b));
+		b++;
+	    
+	    }
+	}
+	return C;
+    }
+
 		 	    
 }
 		

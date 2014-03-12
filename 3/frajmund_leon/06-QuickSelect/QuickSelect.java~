@@ -1,0 +1,45 @@
+import java.util.Random;
+public class QuickSelect{
+    private Random rand = new Random();
+
+    public QuickSelect(){};
+
+    public int quickWork(int[] array, int k, int low, int high){
+	int value = array[rand.nextInt(high - low) + low];
+	int[] newArray = int[high - low];
+	int left = low; int right = high - 1; int index = low; int pivot;
+	do{
+	    if(array[index] == value){
+		newArray[left] = value;
+		pivot = left;
+		left ++;
+	    }
+	    else if(array[index] < value){
+		if(newArray[left] == 0)
+		    newArray[left] = array[index];
+		else{
+		    newArray[left + 1] = newArray[left];
+		    newArray[left] = array[index];
+		    pivot ++;
+		}
+		left ++;
+	    }
+	    else{
+		newArray[right] = array[index];
+		right --;
+	    }
+	    index ++;
+	}while(right != left);
+	if(pivot == k)
+	    return value;
+	if(pivot > k)
+	    return quickWork(newArray, k, low, pivot);
+	return quickWork(newArray, k, pivot, high); 
+    }
+
+    public int quickSelect(int[] array, int k){
+	return quickWork(array, k, 0, array.length);
+    }
+
+ 
+}
