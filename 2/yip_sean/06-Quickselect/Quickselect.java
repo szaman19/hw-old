@@ -3,7 +3,7 @@ import java.util.Random;
 import static java.lang.System.out;
 
 public class Quickselect { //Quickselect is one word
-	//I tried creating quickselect for ints. It didn't work because with int, one cannot indicate an "empty" space(s) for the pivot: 0, -1, or any other integer don't work. Integer was the next best thing but with the compareTo method, why not with Comparable?
+	//I tried creating quickselect for ints. It didn't work because with int, one cannot indicate "empty" space(s) for the pivot: 0, -1, or any other integer don't work. Integer was the next best thing but with the compareTo method, why not with Comparable?
 	public static <E extends Comparable<? super E>> E quickselect(E[] a, int n) {return quickselect(a, n, 0, a.length);}
 	
 	private static <E extends Comparable<? super E>> E quickselect(E[] a, int n, int left, int right) {
@@ -27,7 +27,7 @@ public class Quickselect { //Quickselect is one word
 		}
 		if (pIndex < n) {return quickselect(aCopy, n, pIndex + 1, right);}
 		if (pIndex > n) {return quickselect(aCopy, n, left, pIndex);} //No need to use pIndex - 1 because the exclusion of the latter in a range already compensates
-		return (E) aCopy[pIndex];
+		return aCopy[pIndex];
 	}
 	
 	public static void main(String[] args) {
