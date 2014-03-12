@@ -7,12 +7,12 @@ public class Sorts{
 	ArrayList<String>h1=new ArrayList<String>;
 
 	for(int x=0;x<a.size/2;x++){
-	    h1[x]=a[x];
+	    h1.set(x,a.get(x));
 	}
 	System.out.println(toString(h1));
 	ArrayList<String>h2=new ArrayList<String>;
 	for(int x=0;x<(a.size-a.size/2);x++){
-	    h2[x]=a[h1.size+x];
+	    h2.set(x,a.get(h1.size+x));
 	}
 	System.out.println(toString(h2));
 	return merge(mergeSort(h1),mergeSort(h2));
@@ -20,9 +20,9 @@ public class Sorts{
     }
     public static ArrayList<String> merge(ArrayList<String> a, ArrayList<String> b){
 	int n;
-	int[] ans=new int[a.size+b.size];
-	int asmallest=0;
-	int bsmallest=0;
+	ArrayList<String> ans=new int[a.size+b.size];
+	String asmallest=0;
+	String bsmallest=0;
 	if(b.size>a.size){
 	    n=a.size*2;
 	}else{
