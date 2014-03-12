@@ -24,7 +24,6 @@ public class merge{
 	        ycount++;
 	    }
 	}
-	System.out.println(toString(result));
 	return result;
     }
 
