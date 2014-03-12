@@ -28,10 +28,33 @@ public class MergeSortComparable {
 	for (int i = 0; i < 15; i++) {
 	   int j = (int) (Math.random () * 50);
 	   list2.add (j);
+
        }
 	System.out.println(list2);
 	
 	System.out.println(m.msort(list2));
+	
+	//Persons
+	MergeSortComparable peepo = new MergeSortComparable();
+	ArrayList<Comparable> list3 = new ArrayList<Comparable>();
+	Person one = new Person ("James", 98);
+	list3.add(one);
+	Person two = new Person ("Alex", 18);
+	list3.add(two);
+	Person three = new Person ("David", 28);
+	list3.add(three);
+	Person fo = new Person ("Bobby", 58);
+	list3.add(fo);
+	Person five = new Person ("Michael", 15);
+	list3.add(five);
+	Person six = new Person ("Jun", 4);
+	list3.add(six);
+	System.out.println(list3);
+	
+	System.out.println(peepo.msort(list3));
+
+	
+	
     }
     public ArrayList<Comparable> msort(ArrayList<Comparable> L){
         if ( L.size()<=1){
