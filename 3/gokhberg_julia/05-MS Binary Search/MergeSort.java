@@ -3,7 +3,7 @@ import java.io.*;
 
 public class MergeSort{
       
-    public int[] merge(int[] A, int[] B){
+ /*   public int[] merge(int[] A, int[] B){
 	int a = 0;
 	int b = 0;
 	int[] C = new int[A.length + B.length];
@@ -125,6 +125,9 @@ public class MergeSort{
 	}
 	return C;
     }
+*/
+
+
 
     //I'm confused with Comparable and how it works.
 
