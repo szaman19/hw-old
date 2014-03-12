@@ -7,7 +7,7 @@ public class MergeSort{
 	//int tret=0;
 	ArrayList<Comparable> ret=new ArrayList();
 	while(topA<a.size() &&topB<b.size()){
-	    if (a.get(topA).compareTo(b.get(topB))<= 0){
+	    if (a.get(topA).compareTo(b.get(topB))< 0){
 		ret.add(a.get(topA));
 		topA++;
 	    }
@@ -55,8 +55,8 @@ public class MergeSort{
 	System.out.println(a);
 
 	a=new ArrayList<Comparable>();
-	for(int i:new int[10])
-	    a.add(new Person((int)(Math.random()*50),(int)(Math.random()*50)+""));
+	for(int i:new int[20])
+	    a.add((int)(Math.random()*100));
 	System.out.println(a);
 	a=mergeSort(a);
 	System.out.println(a);

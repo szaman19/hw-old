@@ -32,7 +32,7 @@ public class Jumper extends Actor{
     public boolean canJump() {
 	Grid<Actor> grid = getGrid();
 	if (grid == null)
-	    reutnr false;
+	    return false;
 	Location a = getLocation ();
 	Location b = loc.getAdjacentLocation(getDirection()); //Get one step
 	Location c = b.getAdjacentLocation (getDirection()); //Get two steps
