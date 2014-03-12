@@ -1,4 +1,4 @@
-
+//Mergesort = log(n): Divide + Conquer Alg ( split) 
 
 public class mergesort {
     
@@ -13,7 +13,7 @@ public class mergesort {
     
     public static int[] mergesort (int[] L) {
 
-	if (L.length <= 1) {
+		if (L.length <= 1) {
 	    return L;
 	}
 	else {
