@@ -2,73 +2,62 @@
 
 import java.io.*;
 import java.util.*;
-public class mergeString {
+public class mergeComp {
 
-    public String[] merge(String[] a, String[] b) {
-	String[] result = new String[a.length+b.length];
+    public ArrayList<Comparable> merge(ArrayList<Comparable> a, ArrayList<Comparable> b) {
+	ArrayList<Comparable> result = new ArrayList();
 	int ia=0,ib=0;
 	int i=0;
-	while (ia<a.length&&ib<b.length) {
-	    if (a[ia].compareTo(b[ib]) < 0) {
-		result[i]=a[ia];ia++;
+	while (ia<a.size()&&ib<b.size()) {
+	    if (a.get(ia).compareTo(b.get(ib)) < 0) {
+		result.add(a.get(ia));ia++;
 	    }  else {
-		result[i]=b[ib];ib++;
+		//result[i]=b[ib];ib++;
+		result.add(b.get(ib));ib++;
 	    }
 	    i++;
 	}
 
-	if (ia>=a.length) {
-	    for (;i<result.length;i++){
-		result[i]=b[ib];ib++;
+    if (ia>=a.size()) {
+	for (;i<result.size();i++){
+		result.add(b.get(ib));ib++;
 	    }
 	} else {
-	    for (;i<result.length;i++){
-		result[i]=a[ia];ia++;
+	for (;i<result.size();i++){
+		result.add(a.get(ia));ia++;
 	    }
 	}
 	return result;
     }
     
-    public String[] stringSort(String[] L) {
-	
-	if (L.length<=1){
+    public ArrayList<Comparable> compSort(ArrayList<Comparable> L) {	
+	if (L.size()<=1){
 	    return L;
 	}
 	
-	String[] a = new String[L.length/2];
-	String[] b = new String[L.length - a.length];
+	ArrayList <Comparable> a = new ArrayList();
+	ArrayList <Comparable> b = new ArrayList();
 
 	int i;
-	for (i=0;i<a.length;i++){
-	    a[i]=L[i];
+	for (i=0;i<L.size()/2;i++){
+	    a.add(L.get(i));
 	}
-	for ( ; i<L.length;i++){
-	    b[ i-a.length ] = L[i];
+	for ( ; i<L.size();i++){
+	    b.add(L.get(i));
 	}
-	a = stringSort(a);
-	b = stringSort(b);
-	String[] result = merge(a,b);
+	a = compSort(a);
+	b = compSort(b);
+	ArrayList<Comparable> result = merge(a,b);
 	return result;
     }
    
-    //Linear Search// 
-    public int search(String s, String[] L){
-	L = stringSort(L);
-	for (int i = 0; i < L.length; i++){
-	    if (L[i] == s){
-	    return i;
-	    }
-	}
-	return -1;
-    }
 
     public static void main(String[] args){
-	mergeString a = new mergeString();
-	String[] one = {"Hello","Woah","Rich","Chives","Fork","Barrel"};
-	System.out.println(Arrays.toString(a.stringSort(one)));
-	System.out.println("Should be: [Barrel, Chives, Fork, Hello, Rich, Woah]");
-	System.out.println(a.search("Fork",one));
-	System.out.println(a.search("Idk",one));
+	mergeComp a = new mergeComp();
+	ArrayList<Comparable> x = new ArrayList();
+	x.add(8);x.add(4);x.add(73);x.add(16);x.add(23);x.add(54);x.add(32);x.add(3);x.add(85);
+	System.out.println(a.compSort(x));
+	
     }
 
 }

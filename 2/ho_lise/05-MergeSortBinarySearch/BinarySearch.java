@@ -38,14 +38,8 @@ public class BinarySearch{
 	    }
 	    i=(h+l)/2;
 	}
-
-	
 	return -1;
-
-
-
     }
-
 
     public static void main(String[]tests){
 	int[] A = new int[7];

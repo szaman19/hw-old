@@ -76,5 +76,17 @@ public class MergeC{
 	i.add(6);
 	System.out.println(i);
 	System.out.println("Result: "+m.mergesortC(i)+"\n");
+<<<<<<< HEAD
+=======
+
+	ArrayList<Comparable> p = new ArrayList<Comparable>();
+	p.add(new Person("Bob",23));
+	p.add(new Person("Jill",4));
+	p.add(new Person("Harry",78));
+	p.add(new Person("Jamaica",15));
+	p.add(new Person("ANewHope",10));
+	System.out.println(p);
+	System.out.println("Result: "+m.mergesortC(p)+"\n");
+>>>>>>> 69206892ccbcf6dbea1e581c22e615d00a3b23f9
     }
 }

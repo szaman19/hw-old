@@ -2,15 +2,12 @@ import java.util.Arrays;
 public class BinarySearch{
     
     //recursive binary search
-    //i dont understand why im gettign a stack overflow error
+    //fixed recursive error, trouble was with the value of 'middle'
     public static int searcher(int n, int[] L, int lo, int hi){
-	if(hi == 0 ){
+	if((hi == 0)||(L.length==0)||(lo<0)){
 	    return -1;
 	}
-	int middle = lo + (hi / 2) ;
-	if( (lo+1)==(hi) ){
-	    return middle;
-	}
+	int middle = (lo+hi) / 2 ;
 	if(L[middle] ==  n){
 	    return middle;
 	}
@@ -48,7 +45,7 @@ public class BinarySearch{
 	int[] a = {1,5,7,12,41,67,235,573,821,4102} ;
 	int[] b = {34,8,656,2,1,7,6,823,7,243,835,23} ;
 
-	/*	System.out.println("rbsearch\n");
+	System.out.println("rbsearch\n");
 	System.out.println(rbsearch(1,a));
 	System.out.println(rbsearch(5,a));
 	System.out.println(rbsearch(7,a));
@@ -59,7 +56,7 @@ public class BinarySearch{
 	System.out.println(rbsearch(573,a));
 	System.out.println(rbsearch(821,a));
 	System.out.println(rbsearch(4102,a));
-	*/	System.out.println("ibsearch\n");
+	System.out.println("ibsearch\n");
 	System.out.println(ibsearch(1,a));
 	System.out.println(ibsearch(5,a));
 	System.out.println(ibsearch(7,a));
