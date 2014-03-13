@@ -68,18 +68,24 @@ public class MergeSort2 {
 		}
 	}
 
-	public int ibsearch(int n, int[] L) {
-		return n;
-		int midInd = L.length/2
-		while (midInd != 0) {
-			if (L[midInd] == n) {
-				return midInd;
-			}
-			if (n > L[midInd]) {
-				//how to reduce???
-				}
-			else {
-				//how to reduce????
-			}
+	public int ibsearch(int n, int[] L){
+		private int high = L.length-1
+		private int low = 0;
+		while (high>=low && (low+high)/2 < L.length && (low+high)/2 >= 0){
+	    mid= (low+high)/2;
+		private int fin = mid
+	    if(L[mid]== n){
+		mid = fin; 
+		break;
+		    }  
+	    else if(L[mid] > n){
+		high=mid;
+	    }
+	    else if(L[mid] < n){
+		low=mid+1;
+	    }	    
+	}
+	return ret;
+    }
 	}
 }   

@@ -1,8 +1,6 @@
 import java.util.*;
 import java.io.*;
 
-//bsr is broken
-
 public class Driver {
     public static void main(String[] args) {
 	Sort s = new Sort();
@@ -16,29 +14,30 @@ public class Driver {
 	ArrayList<String> words = new ArrayList<String>();
 	ArrayList<Comparable> damnit = new ArrayList<Comparable>();
 
-	for(int i=0; i<100; i++) {
-	    ints.add(rng.nextInt(100));
+	for(int i=0; i<17; i++) {
+	    //ints.add(rng.nextInt(100));
+	    ints.add(n[i]);
 	}
 	words = tw.getWords(new File("test2.txt"));
 	for(int i=0; i<words.size(); i++) {
 	    damnit.add((Comparable)words.get(i));
 	}
 
-	start = System.currentTimeMillis();
+	//start = System.currentTimeMillis();
 	sorted = s.mergesort(ints);
-	diff = System.currentTimeMillis()-start;
-	System.out.println("mergesorted "+sorted.size()+
-			   " Integers in "+diff+"ms ");
+	//diff = System.currentTimeMillis()-start;
+	//System.out.println("mergesorted "+sorted.size()+
+	//		   " Integers in "+diff+"ms ");
 	System.out.println(sorted);
 
-	System.out.println(s.binsearchrec(50,sorted));
-	System.out.println(ints.get(s.binsearchrec(50,sorted)));
+	System.out.println(s.binsearchrec(0,sorted));
+	System.out.println(ints.get(s.binsearchrec(0,sorted)));
 
-	start = System.currentTimeMillis();
-	sorted = s.mergesort(damnit);
-	diff = System.currentTimeMillis()-start;
-	System.out.println("mergesorted "+sorted.size()+
-			   " Strings in "+diff+"ms ");
+	//start = System.currentTimeMillis();
+	//sorted = s.mergesort(damnit);
+	//diff = System.currentTimeMillis()-start;
+	//System.out.println("mergesorted "+sorted.size()+
+	//		   " Strings in "+diff+"ms ");
 	//System.out.println(sorted);
 
 	
