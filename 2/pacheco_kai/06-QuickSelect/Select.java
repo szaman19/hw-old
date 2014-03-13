@@ -31,7 +31,7 @@ public class Select{
 				return copy[l];
 			}else{
 				if(k<l){
-					return quickSelect(copy,k,0,l-1);
+					return quickSelect(copy,k,0,l);
 				}else{
 					return quickSelect(copy,k,l,copy.length-1);
 				}
