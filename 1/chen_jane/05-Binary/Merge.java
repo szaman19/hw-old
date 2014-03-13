@@ -4,15 +4,20 @@ import java.util.*;
 public class Merge {
 
     public static ArrayList<Comparable> mergeSort(ArrayList<Comparable> A) {
-	if (A.size() == 1)
+	if (A.size() <= 1)
 	    return A;
 	else {
 	    ArrayList<Comparable> a = new ArrayList<Comparable>();
 	    ArrayList<Comparable> b  = new ArrayList<Comparable>();
-	    for (int i=0; i<A.size()/2; i++)
-		a.add(A.get(i));
-	    for (int i=A.size()/2; i<A.size(); i++)
-		b.add(A.get(i));
+	    int half = A.size() / 2;
+	    for (int i=0; i<half; i++) {
+		if (i < half) {
+		    a.add(A.get(i));
+		}
+		else {
+		    b.add(A.get(i));
+		}
+	    }
 	    a = mergeSort(a);
 	    b = mergeSort(b);
 	    return merge(a,b);
@@ -65,6 +70,12 @@ public class Merge {
 	L.add(new Person("Chris",22));
 	L.add(new Person("Shiro",18));
 	System.out.println(toString(mergeSort(L)));
-    }
 
+	Person p1 = new Person();
+	Person p2 = new Person("Sam",18);
+	Person p3 = new Person("Tom",30);
+	System.out.println(p1.compareTo(p2));
+	System.out.println(p2.compareTo(p1));
+	System.out.println(p1.compareTo(p3));
+    }
 }
