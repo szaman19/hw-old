@@ -4,11 +4,13 @@ import java.util.Arrays;
 public class Binary {
 
     // recursive
-
     public int rbSearch(int n, int[] L) {
 	int middle = L.length/2;
 	if (L[middle] == n) {
 	    return middle;
+	}
+	else if (L.length <= 1 && L[0]!= n) {
+	    return -1;
 	}
 	else {
 	    int[] temp;
@@ -17,18 +19,14 @@ public class Binary {
 		for (int i=0; i<middle; i++) {
 		    temp[i] = L[i];
 		}
+		return rbSearch(n,temp);
 	    }
 	    else {
-		temp = new int[L.length - middle - 1];
-		for (int i=middle+1; i<L.length; i++) {
-		    temp[i-middle-1] = L[i];
+		temp = new int[L.length - middle];
+		for (int i=0; i<L.length-middle; i++) {
+		    temp[i] = L[i+middle];
 		}
-	    }
-	    // to prevent error if n is not in array L
-	    try{
-		return rbSearch(n,temp);
-	    } catch (Exception e) {
-		return -1;
+		return rbSearch(n,temp) + middle;
 	    }
 	}
     }
@@ -58,7 +56,6 @@ public class Binary {
 	Binary b = new Binary();
 	int[] test = {0,1,2,3,4,5,6,7,8,9};
 	System.out.println(b.rbSearch(5,test));
-
 
 	System.out.println(b.ibSearch(0,test));
 	System.out.println(b.ibSearch(5,test));

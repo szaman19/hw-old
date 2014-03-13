@@ -25,7 +25,7 @@ public class QuickSelect
     // QuickSelect Method
     public static int quickselect(int[] a, int k)
     {
-        return quickselect(a, k, 0, a.length - 1);
+        return quickselect(a, k - 1, 0, a.length - 1);
     }
     
     // Partition Method
@@ -62,7 +62,7 @@ public class QuickSelect
     public static void main(String[] arg)
     {
         int[] test = new int[] {10, 3, 9, 7, 14, 2, 5, 6, 13, 121, 8, 11};
-        int n = 0;
+        int n = 1;
         
         String s = "Array: [";
         
@@ -71,7 +71,7 @@ public class QuickSelect
         
         s = s.substring(0, s.length() - 1);
         
-        s += ("]\n" + n + " number: " + quickselect(test, n));
+        s += ("]\n" + n + " st/nd/rd/th number: " + quickselect(test, n));
         
         System.out.println(s);
     }
