@@ -1,0 +1,6 @@
+// Nicholas Romanoff
+// Period One
+// Homework #04 Part 2: Search Algorithm Description
+// 2014-03-04
+
+It is logical to take a "divide and conquer" approach to search algorithms just like we have done with sorting algorithms.  The method will be recursive and will be very closely modeled off of our MergeSort function.  Given an ArrayList of either Strings or Integers, the function will first check for the base case: if the size of the ArrayList is equal to or less than one, than it shall return true or false, depending on whether that one item is equal to the target.  If there is more than one item in the ArrayList, then the ArrayList will be split into two halves. The function will be called recursively on each of those halves, and if one of those halves yields true, then the function will return true, otherwise returning false.
