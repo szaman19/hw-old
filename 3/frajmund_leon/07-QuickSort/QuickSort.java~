@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+import java.util.Array;
+import java.util.Random;
+public class QuickSort{
+    private Random rand = new Random();
+
+
+    public int[] sort(int[] array){
+	//base
+	if (array.length < 2)
+	    return array;
+	
+                  	//the hard stuff//
+	//pivoting
+	int pivot = rand.nextInt(array.length);
+	partition(array, pivot);
+
+	//new Arrays
+	int[] lower = Arrays.copyOfRange(array, 0, pivot);
+	int[] upper = Arrays.copyOfRange(array, pivot + 1, array.length);
+	
+	//recursion
+	lower = sort(lower);
+	upper = sort(upper);
+
+	//the merge
+	return merge(lower, pivot, upper);
+
+    }
+
+}
