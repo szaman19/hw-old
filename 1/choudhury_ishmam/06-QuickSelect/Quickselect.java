@@ -1,15 +1,46 @@
-//I got home at 8 and felt a little sick, so I thought taking a 2 hour nap would help.
-//Sadly my body decided to sleep through alarms until 4AM and I have to start getting
-//ready for school right now. I will work on this later today.
-//Also, hopefully me not quite understanding will be cleared up..
 import java.io.*;
 import java.util.*;
 
 public class Quickselect {
 	
-	public int quickSelect( int[] a, ink k, int low, int high ) {
-		int piv = high - low / 2;
-		int[] temp = new int[high-low+1];
+	public int quickSelect( int[] a, int k, int hi, int lo) {
+		int high = a.length-1;
+		int low = 0;
+		int piv = (int)(Math.random() * (high - low)) + low;
+		int[] temp = new int[a.length];
+		
 		for (int i = 0; i < a.length; i++) {
 		
+		if (i == piv) {
+			i++;
+			}
+		if (a[i] > a[piv] ) {
+			temp[high] = a[i];
+			high--;
 		}
+		else if (a[i] <= a[piv] ) {
+			temp[low] = a[i];
+			low++;
+		}
+		} 
+		temp[low] = a[piv];
+		piv = low;
+		
+		if (piv == k) {
+			return piv;
+		}
+		else {
+			int p = 0;
+			for (int item: temp) {
+				a[p] = item;
+				p++;
+			}
+			if (k < piv) {
+				return quickSelect(a, k, piv -1, lo);
+				}
+			else {
+				return quickSelect(a, k, lo, piv+1);
+			}
+		}
+	}
+}
