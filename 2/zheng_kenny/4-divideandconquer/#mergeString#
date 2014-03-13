@@ -1,0 +1,8 @@
+import java.util.*;
+public class mergeString{
+    public ArrayList<String> mergeString(ArrayList<String> L){
+	if(L.size() <= 1){
+	    return L;
+	}
+	
+	
