@@ -1,3 +1,6 @@
+import java.util.Random;
+import java.util.Arrays;
+
 public class QuickSelect
 {
     // QuickSelect Method (Helper)
@@ -61,17 +64,26 @@ public class QuickSelect
     // Main Method
     public static void main(String[] arg)
     {
-        int[] test = new int[] {10, 3, 9, 7, 14, 2, 5, 6, 13, 121, 8, 11};
-        int n = 1;
+        int n = 10;
+        int k = 1;
+    
+        try
+        {
+            n = Integer.parseInt( arg[0] );
+            k = Integer.parseInt( arg[1] );
+        }
+        catch (NumberFormatException e) {}
+        catch (ArrayIndexOutOfBoundsException e) {}
+    
+        Random rnd = new Random();
+        int[] test = new int[n];
         
-        String s = "Array: [";
+        for (int i = 0; i < n ; i++)
+            test[i] = rnd.nextInt(100);
         
-        for (int i : test)
-            s += ("" + i + " ");
-        
-        s = s.substring(0, s.length() - 1);
-        
-        s += ("]\n" + n + " st/nd/rd/th number: " + quickselect(test, n));
+        String s = "Array: " + Arrays.toString(test);
+
+        s += ( "\n#" + k + ": " + quickselect(test, k) ); 
         
         System.out.println(s);
     }
