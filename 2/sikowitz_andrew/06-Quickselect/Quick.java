@@ -6,32 +6,31 @@ public class Quick {
 
     public int quickselect(int[] a, int k, int low, int high) {
 	if (low >= high)
-	    return low;
-
+	    return a[low];
+	
+	int[] b = new int[a.length];
+	int h = high, l = low;
 	int pivot = r.nextInt(high-low)+low; //pick pivot
-	int c = pivot + 1;
-	int store;
-
-	for (int i=low; i<high; i++) { //partitioning
-	    if (a[i]>a[pivot]) {
-		store = a[i];
-		while (a[c]>a[pivot]) { //swaps until no swaps left
-		    c++;
-		    if (c > high) {
-			int x=low;
-			store = a[pivot];
-			while (a[x] < a[pivot]) //moves pivot
-			    x++;
-			a[pivot] = a[x];
-			a[x] = store;
-			pivot = x;
-			c = x-1;
-		    }
-		}
-		a[i]=a[c];
-		a[c]=store;
+	for (int i=low; i<=high; i++) { //partitioning
+	    if (a[i] > a[pivot]) {
+		b[h] = a[i];
+		h--;
+	    }
+	    else if (a[i] < a[pivot]){
+		b[l] = a[i];
+		l++;
 	    }
 	}
+
+	while (l <= h) { //deals with duplicates
+	    b[l] = a[pivot];
+	    l++;
+	}
+	pivot = h;
+
+
+	for (int i=low; i<=high; i++) //Copy back
+	    a[i] = b[i];
 
 	if (pivot == k)
 	    return a[pivot];
@@ -42,12 +41,16 @@ public class Quick {
     }
 
     public static void main(String[] args) {
+	Random r = new Random();
 	int x = Integer.parseInt(args[0]);
 	int[] a = new int[x];
 	for (int i=0; i<x; i++)
-	    a[i] = i;
+	    a[i] = r.nextInt(100);
 
 	Quick q = new Quick();
-	System.out.println(q.quickselect(a, x/2, 0, x-1));
+	System.out.println(q.quickselect(a, Integer.parseInt(args[1]), 0, x-1));
+	Arrays.sort(a);
+	System.out.println(a[Integer.parseInt(args[1])]); //Check
+
     }
 }
