@@ -1,0 +1,22 @@
+public class select{
+    private static int find(int[]a, int k){
+	while (int i = 0; i < a.length; i++){
+	    if (a[i] = k){
+		reutn i;
+	    }
+	}return -1;
+    }
+
+    public static int quickSelect(int[]a, int k, int low, int high){
+	int half = a.length /2;
+	int rand = a[half];
+	if (low > = high){
+	    return low;
+	}else{
+	    int[]b = new int[a.length];
+	    int l = 0;
+	    int h = a.length -1;
+	    
+	}
+    }
+}
