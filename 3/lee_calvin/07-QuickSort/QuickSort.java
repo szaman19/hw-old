@@ -1,5 +1,5 @@
 
-public class QuickSelect {
+public class QuickSort {
 	public static int partition(int[] a, int pivot, int lo, int hi){
 		//returns where the pivot ends up.
 		int[] b = new int[a.length];
@@ -43,6 +43,23 @@ public class QuickSelect {
 			return quickSelectAUX(a,k,lo,n);
 		}
 	}
+	public static void quickSortAUX(int[] a, int lo, int hi){
+		if(lo >= hi){
+			return;
+		}
+//		for(int i : a){//for debugging, uncomment these lines.
+//			System.out.print(i+" ");
+//		}System.out.println();
+		int p = lo + (int)(Math.random() * (hi - lo));
+		int n = partition(a,p,lo,hi);
+		quickSortAUX(a,lo,n);
+		quickSortAUX(a,n+1,hi);
+		return;
+	}
+	public static void quickSort(int[] a){
+		quickSortAUX(a,0,a.length);
+		return;
+	}
 
 	/**
 	 * @param args
@@ -51,11 +68,12 @@ public class QuickSelect {
 		// TODO Auto-generated method stub
 		int[] a = new int[] {4,1,8,6,2,7,5,0,3,9};
 		//System.out.println(partition(a,0,0,a.length));
-		System.out.println(quickSelect(a,4));
+		//System.out.println(quickSelect(a,4));
 //		partition(a,0,0,a.length);
-//		for(int i : a){
-//			System.out.print(i+" ");
-//		}
+		quickSort(a);
+		for(int i : a){
+			System.out.print(i+" ");
+		}
 	}
 
 }
