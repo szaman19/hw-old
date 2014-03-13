@@ -1,0 +1,33 @@
+import java.util.*;
+
+public class QuickSort {
+
+    public static ArrayList<Integer> quicksort(int[] a) {
+	if(a.length <= 1) {
+	    return a;
+	}
+	else {
+	    int[] final = new int[a.length];
+	    int low = 0;
+	    int high = a.length - 1;
+	    
+
+    public static int partition(int[] a, int low, int high) {
+        int p = low + new Random().nextInt(high - low + 1);
+	int t = a[high];
+	a[high] = a[p];
+	a[p] = t;
+        int track = low;
+        for (int i = track; i < high; i++) {
+            if (a[i] < a[high]) {
+		t = a[i];
+		a[i] = a[track];
+		a[track] = t;
+                track++;
+            }
+        }
+	t = a[track];
+	a[track] = a[high];
+	a[high] = t;
+        return track;
+    }
