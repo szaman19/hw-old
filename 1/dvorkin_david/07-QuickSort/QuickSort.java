@@ -1,10 +1,12 @@
 public class QuickSort{
 
-	public void quickSort(int[] a, int low, int high){//copied my quickselect code
+	public void quickSort(int[] a, int low, int high){//not sure how to do it, will hopefully fix when we go over it! Don't understand .toArray
 
-	int x = 0; int y = 0; int z = a.indexOf(k) + 1; int p = 0;
+	int x = 0; int y = 0; int z = 0; int p = 0;
 	
-	int[] b = new int[a.length];
+	int[] b = new int[a.length/2];
+	
+	int [c] = new int [a.length/2]
 	
 	Random generator = new Random();
 
@@ -30,7 +32,7 @@ public class QuickSort{
 
 		if (a[i] > p){
 
-		    b[z] = a[i];
+		    c[z] = a[i];
 		    
 		    z++;
 	
@@ -60,7 +62,7 @@ public class QuickSort{
 
 		low = p;
 
-		quickselect(a, k, low, high);
+		quicksort(a, low, high);
 
 	    }
 
@@ -68,7 +70,7 @@ public class QuickSort{
 
 		high = p;
 
-		quickselect(a, k, low, high);
+		quicksort (a, low, high);
 
 	    }
 	
