@@ -1,0 +1,1 @@
+Having a lot of trouble with quicksort as well. I can't seem to find the algorithm to make it work. Proof that I worked on it attached. 
