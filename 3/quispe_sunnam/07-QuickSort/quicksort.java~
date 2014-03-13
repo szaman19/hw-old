@@ -22,9 +22,19 @@ public class quicksort{
 		count++;
 	    }
 	}
+	//Integer[] G = new Integer[F.size()];
+	//Integer[] H = new Integer[E.size()];
 	Integer[] G= F.toArray(new Integer[F.size()]);
 	Integer[] H= E.toArray(new Integer[E.size()]);
+	/* The LONG WAY
+	 for (int x = 0; x<F.size(); x++){
+	     G[x] = F.get(x);
+	 }
 
+	 for (int x = 0; x<E.size(); x++){
+	     H[x] = E.get(x);
+	 }
+	*/
 	 G= quicksort(G);
 	 H= quicksort(H);
 
