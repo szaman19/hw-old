@@ -2,35 +2,69 @@ import java.io.*;
 import java.util.*;
 
 public class Quicksort {
-    //doesn't work; only sorts 80%    
-    public int[] Sort(int[] L){
-	if (L.length <= 1)
-	    return L;
-	Random rand = new Random();
-	int pivotIndex = rand.nextInt(L.length);
-	for (int i = 0; i<L.length; i++){
-	    if (L[i] < L[pivotIndex] && i > pivotIndex){
-		L = Swap(L, i, pivotIndex);
-		pivotIndex = i;
-	    }
-	    else if (L[i] > L[pivotIndex] && i < pivotIndex){
-		L = Swap(L, i, pivotIndex);
-		pivotIndex = i;
-	    }
-	    else if (L[pivotIndex] == L[i] && i > pivotIndex){
-		L = Swap(L, i, pivotIndex);
-		pivotIndex = i;
-	    }
-	}	
-	if (L.length < 3)
-	    return L;
-	int[] R1 = Sort(getList(L, 0, pivotIndex - 1));
-	int[] R2 = Sort(getList(L, pivotIndex + 1, L.length - 1));
-	System.out.println("-----\n" + toString(R1));
-	System.out.println("" + L[pivotIndex]);
-	System.out.println(toString(R2)+"\n ====");
-	return Combine(R1, L[pivotIndex], R2);
+
+    public int partition(int[] a){
+	return partition(a, 0, a.length - 1);
     }
+    public int partition(int[] a, int l, int r){
+	Random rand = new Random();
+	int pivIndex = rand.nextInt(a.length);
+	if (a.length == 1)
+	    return 0;
+	while (l<r){
+	    while (a[l] <= a[pivIndex]){
+		l++;
+	    }
+	    while (a[r] > a[pivIndex]){
+		r--;
+	    }
+	    if (l < r ) { 
+		Swap(a, l, r);
+	    }
+	}
+	return l;
+    }
+
+    public int[] Sort(int[] L){
+	return Sort(L, 0, L.length-1);
+    }
+    public int[] Sort(int[] L, int l, int r){
+	int pivInd = partition(L, l, r);
+	if ( l < pivInd - 1 )
+	    return Sort(L, l, pivInd - 1);
+	if ( pivInd + 1 < r)
+	    return Sort(L, pivInd + 1, r);
+	return L;
+    }
+    
+    // public int[] Sort(int[] L){
+    // 	if (L.length <= 1)
+    // 	    return L;
+    // 	Random rand = new Random();
+    // 	int pivotIndex = rand.nextInt(L.length);
+    // 	for (int i = 0; i<L.length; i++){
+    // 	    if (L[i] < L[pivotIndex] && i > pivotIndex){
+    // 		L = Swap(L, i, pivotIndex);
+    // 		pivotIndex = i;
+    // 	    }
+    // 	    else if (L[i] > L[pivotIndex] && i < pivotIndex){
+    // 		L = Swap(L, i, pivotIndex);
+    // 		pivotIndex = i;
+    // 	    }
+    // 	    else if (L[pivotIndex] == L[i] && i > pivotIndex){
+    // 		L = Swap(L, i, pivotIndex);
+    // 		pivotIndex = i;
+    // 	    }
+    // 	}	
+    // 	if (L.length < 3)
+    // 	    return L;
+    // 	int[] R1 = Sort(getList(L, 0, pivotIndex - 1));
+    // 	int[] R2 = Sort(getList(L, pivotIndex + 1, L.length - 1));
+    // 	System.out.println("-----\n" + toString(R1));
+    // 	System.out.println("" + L[pivotIndex]);
+    // 	System.out.println(toString(R2)+"\n ====");
+    // 	return Combine(R1, L[pivotIndex], R2);
+    // }
 
     public int[] Swap(int[] L, int a, int b){
 	int temp = L[a];
